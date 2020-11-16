@@ -65,6 +65,12 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grModificar.Visibility = Visibility.Hidden;
             grModificar.IsEnabled = false;
+
+            MesasNegocio mesas = new MesasNegocio();
+            DataTable datos = new DataTable();
+            datos = mesas.Listar();
+            dtListarMesas.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
 
         private void btnirEstadoMesas_Click(object sender, RoutedEventArgs e)
@@ -86,6 +92,7 @@ namespace RestoAPPWPF
                 MesasNegocio mesas = new MesasNegocio();
                 DataTable datos = new DataTable();
                 datos = mesas.Listar();
+               
 
 
                 if (datos.DefaultView != null)
@@ -136,7 +143,7 @@ namespace RestoAPPWPF
 
         private void dtListarMesas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int index = dtListarMesas.CurrentCell.Column.DisplayIndex;
+         //   int index = dtListarMesas.CurrentCell.Column.DisplayIndex;
         }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)

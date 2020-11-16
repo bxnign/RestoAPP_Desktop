@@ -88,6 +88,12 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grModificar.Visibility = Visibility.Hidden;
             grModificar.IsEnabled = false;
+
+            StockNegocio stock = new StockNegocio();
+            DataTable datos = new DataTable();
+            datos = stock.ListarStock();
+            dtgridListaStock.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         public void CargarVariablesAgregar(ref StockNegocio stock)
         {
@@ -158,6 +164,7 @@ namespace RestoAPPWPF
             StockNegocio stock = new StockNegocio();
             DataTable datos = new DataTable();
             datos = stock.ListarStock();
+           
 
             try
             {
@@ -216,7 +223,7 @@ namespace RestoAPPWPF
         private void dtgridListaStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaStock.CurrentCell.Column.DisplayIndex;
+          //  int index = dtgridListaStock.CurrentCell.Column.DisplayIndex;
         }
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {

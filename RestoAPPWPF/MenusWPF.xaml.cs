@@ -128,6 +128,13 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grModificar.Visibility = Visibility.Hidden;
             grModificar.IsEnabled = false;
+
+            MenusNegocio menus = new MenusNegocio();
+            DataTable datos = new DataTable();
+            datos = menus.Listar();
+            dtListarMenus.ItemsSource = datos.DefaultView;
+            conexion.Close();
+
         }
 
 

@@ -49,6 +49,11 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos = new DataTable();
+            datos = reportes.ListarReporteIngresos();
+            dtgridListaIngresos.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         private void btnReporteConsumos_Click(object sender, RoutedEventArgs e)
         {
@@ -60,6 +65,12 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
+
+            StockNegocio stock = new StockNegocio();
+            DataTable datos = new DataTable();
+            datos = stock.ListarStock();
+            dtgridListaConsumos.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         private void btnReporteAtencion_Click(object sender, RoutedEventArgs e)
         {
@@ -71,12 +82,18 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Visible;
             grListarAtencion.IsEnabled = true;
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos = new DataTable();
+            datos = reportes.ListarReporteAtencion();
+            dtgridListaAtencion.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         private void btnBuscarListaIngresos_Click(object sender, RoutedEventArgs e)
         {
             ReportesNegocio reportes = new ReportesNegocio();
             DataTable datos = new DataTable();
             datos = reportes.ListarReporteIngresos();
+           
 
             try
             { 
@@ -102,7 +119,7 @@ namespace RestoAPPWPF
             StockNegocio stock = new StockNegocio();
             DataTable datos = new DataTable();
             datos = stock.ListarStock();
-
+            
             try
             {
                 if (datos.DefaultView != null)
@@ -127,6 +144,7 @@ namespace RestoAPPWPF
             ReportesNegocio reportes = new ReportesNegocio();
             DataTable datos = new DataTable();
             datos = reportes.ListarReporteAtencion();
+            
 
             try
             {
@@ -150,17 +168,17 @@ namespace RestoAPPWPF
         private void dtgridListaIngresos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaIngresos.CurrentCell.Column.DisplayIndex;
+         //   int index = dtgridListaIngresos.CurrentCell.Column.DisplayIndex;
         }
         private void dtgridListaConsumos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaConsumos.CurrentCell.Column.DisplayIndex;
+           // int index = dtgridListaConsumos.CurrentCell.Column.DisplayIndex;
         }
         private void dtgridListaAtencion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaAtencion.CurrentCell.Column.DisplayIndex;
+           // int index = dtgridListaAtencion.CurrentCell.Column.DisplayIndex;
         }
         private void btnGenerarReporteIngresos_Click(object sender, RoutedEventArgs e)
         {

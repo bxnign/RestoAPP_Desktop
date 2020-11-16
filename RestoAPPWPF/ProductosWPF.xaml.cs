@@ -89,6 +89,12 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grModificar.Visibility = Visibility.Hidden;
             grModificar.IsEnabled = false;
+
+            ProductosNegocio productos = new ProductosNegocio();
+            DataTable datos = new DataTable();
+            datos = productos.ListarProductos();
+            dtgridListaProductos.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         public void CargarVariablesAgregar(ref ProductosNegocio producto)
         {
@@ -164,7 +170,7 @@ namespace RestoAPPWPF
             ProductosNegocio productos = new ProductosNegocio();
             DataTable datos = new DataTable();
             datos = productos.ListarProductos();
-
+           
             try
             {
 

@@ -88,6 +88,14 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grModificar.Visibility = Visibility.Hidden;
             grModificar.IsEnabled = false;
+
+            PorcionesNegocio porciones = new PorcionesNegocio();
+            DataTable datos = new DataTable();
+            datos = porciones.ListarPorciones();
+            dtgridListaPorcion.ItemsSource = datos.DefaultView;
+            conexion.Close();
+
+
         }
         public void CargarVariablesAgregar(ref PorcionesNegocio porcion)
         {
@@ -169,7 +177,7 @@ namespace RestoAPPWPF
             PorcionesNegocio porciones = new PorcionesNegocio();
             DataTable datos = new DataTable();
             datos = porciones.ListarPorciones();
-
+            
             try
             {
 
@@ -227,7 +235,7 @@ namespace RestoAPPWPF
         private void dtgridListaPorcion_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaPorcion.CurrentCell.Column.DisplayIndex;
+          //  int index = dtgridListaPorcion.CurrentCell.Column.DisplayIndex;
         }
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {

@@ -36,6 +36,11 @@ namespace RestoAPPWPF
         public FinanzasWPF()
         {
             InitializeComponent();
+            FinanzasNegocio finanzas = new FinanzasNegocio();
+            DataTable datos = new DataTable();
+            datos = finanzas.ListarFinanzas();
+            dtgridListaFinanzas.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -43,7 +48,7 @@ namespace RestoAPPWPF
             FinanzasNegocio finanzas = new FinanzasNegocio();
             DataTable datos = new DataTable();
             datos = finanzas.ListarFinanzas();
-
+            
             try
             {
 
@@ -69,7 +74,7 @@ namespace RestoAPPWPF
         private void dtgridListaStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //  CargarCasillasModificar();
-            int index = dtgridListaFinanzas.CurrentCell.Column.DisplayIndex;
+          //  int index = dtgridListaFinanzas.CurrentCell.Column.DisplayIndex;
         }
 
         private void btnIrReportes_Click(object sender, RoutedEventArgs e)
