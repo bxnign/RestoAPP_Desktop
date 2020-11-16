@@ -1,0 +1,65 @@
+﻿<Window x:Class="RestoAPPWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestoAPPWPF"
+        mc:Ignorable="d"
+        Title="RestoApp Inicio de Sesion" Height="450" Width="800" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Icon="Imagenes/rest.png"  >
+    <Grid Margin="0,0,0,-1">
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/fondo final.jpg" Stretch="UniformToFill" Opacity="0.89"/>
+        </Grid.Background>
+        <UniformGrid Margin="73,52,71,22">
+            <UniformGrid.Background>
+                <SolidColorBrush Color="White" Opacity="0.785"/>
+
+            </UniformGrid.Background>
+        </UniformGrid>
+        
+        <Label x:Name="lblniciarSesion" Content="Inicia Sesion" Margin="334,64,305,312" Background="#00000000" Foreground="black" FontFamily="Impact" FontWeight="Bold" FontSize="20"/>
+        <Label  Content="Ingrese Rut" Margin="290,110,362,268" Background="#00000000" Foreground="black" FontFamily="Candara Light" FontSize="20"/>
+        <Label  Content="Contraseña" Margin="290,220,373,162" Background="#00000000" Foreground="black" FontFamily="Candara Light" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="txtRut" Height="27" Margin="290,159,296,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="#FF666464" Opacity="0.715"/>
+            </TextBox.Background>
+        </TextBox>
+        <PasswordBox x:Name="txtContraseña" Height="30" Margin="290,260,296,0"  VerticalAlignment="Top" BorderBrush="Black">
+            <PasswordBox.Background>
+                <SolidColorBrush Color="#FF636262" Opacity="0.715"/>
+            </PasswordBox.Background>
+        </PasswordBox>
+        <Button x:Name="btnIniciar" Margin="311,333,362,62" Content="Iniciar" Click="btnIniciar_Click"
+                Background="#FF33DC70"
+                Foreground="White"
+                FontFamily="Arial"
+                FontSize="20" Style="{DynamicResource RoundedButtonStyle}"/>
+        <Label Content="Resto" Margin="281,-18,352,370" FontFamily="MV Boli" FontWeight="Bold" FontSize="48">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.69"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Color="#00000000" Opacity="0.37"/>
+            </Label.Background>
+        </Label>
+        <Label Content="APP" Margin="419,0,209,349" Background="#00000000" FontFamily="Impact" FontWeight="Bold" FontSize="36">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.71"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Resto" Margin="290,-18,343,340" FontFamily="MV Boli" FontWeight="Bold" FontSize="48" Background="{x:Null}" Foreground="White"/>
+        <Label Content="APP" Margin="428,0,200,335" Background="#00000000" Foreground="White" FontFamily="Impact" FontWeight="Bold" FontSize="36"/>
+        <Button x:Name="btnCerrar"  HorizontalAlignment="Left" Margin="774,0,0,0" VerticalAlignment="Top" Width="26" Height="25" Click="Button_Click" Foreground="{x:Null}">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFB9B7B7" Opacity="0.89"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="#FFB9B7B7" Opacity="0.89"/>
+            </Button.Background>
+            <Image Source="Imagenes/Ico/cerrar.png" ></Image>
+        </Button>
+
+        <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="47" Margin="10,0,0,0" VerticalAlignment="Top" Width="764" MouseDown="Rectangle_MouseDown"/>
+    </Grid>
+</Window>

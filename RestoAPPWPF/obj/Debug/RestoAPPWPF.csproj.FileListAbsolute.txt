@@ -1,0 +1,612 @@
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\App.g.cs
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\App.baml
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\MainWindow.baml
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+C:\Users\benja\source\repos\RestoAPP\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\App.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\App.baml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MainWindow.baml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+D:\Portafolio\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+D:\Portafolio\nofsdfs\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+C:\proyectos\portafolio\git ric\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+D:\Portafolio\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe.config
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.exe
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPWPF.pdb
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.dll
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.pdb
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPBD.dll.config
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\RestoAPPNegocio.pdb
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\BouncyCastle.Crypto.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.pdb
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.pdb
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\Common.Logging.Core.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\FontAwesome.WPF.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.barcodes.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.forms.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.io.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.kernel.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.layout.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.pdfa.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.sign.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.styledxmlparser.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\bin\Debug\itext.svg.xml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csprojAssemblyReference.cache
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.g.cs
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\App.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AjustesWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\EstadoMesaWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\FinanzasWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MainWindow.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MenusWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\MesasWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PedidosWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PersonasWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PorcionesWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\PrincipalWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ProductosWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\ReportesWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\StockWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.baml
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
+D:\Ramos\BDD\IT2\Sistema\Escritorio C#\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.g.cs
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\AyudaWPF.baml
+C:\Users\benja\Downloads\RestoAPP_Portafolio\RestoAPP_Portafolio\RestoAPPWPF\obj\Debug\TutorialWPF.baml

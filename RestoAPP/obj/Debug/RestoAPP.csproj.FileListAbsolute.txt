@@ -1,0 +1,2 @@
+C:\Users\benja\source\repos\RestoAPP\RestoAPP\obj\Debug\RestoAPP.csprojAssemblyReference.cache
+C:\Users\benja\source\repos\RestoAPP\RestoAPP\obj\Debug\RestoAPP.csproj.CoreCompileInputs.cache

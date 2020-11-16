@@ -1,0 +1,23 @@
+﻿<Window x:Class="RestoAPPWPF.EstadoMesasWPF"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:local="clr-namespace:RestoAPPWPF"
+      mc:Ignorable="d"
+      Title="Personas" Height="520.661" Width="916.529" ResizeMode="NoResize"  ShowInTaskbar="True" WindowStartupLocation="CenterScreen" >
+    <Grid OpacityMask="Black" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/fondo.jpg" Opacity="1"/>
+        </Grid.Background>
+        <Grid x:Name="grContenedorLista" Margin="65,35,60,50">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.78"/>
+            </Grid.Background>
+            <Label Content="Estado Mesa" HorizontalAlignment="Left" Margin="290,10,0,0" VerticalAlignment="Top" Height="61" Width="225" Background="{x:Null}" Foreground="White" FontSize="36"/>
+            <Grid HorizontalAlignment="Left" Height="100" Margin="418,208,0,0" VerticalAlignment="Top" Width="100"/>
+
+        </Grid>
+    </Grid>
+</Window>
