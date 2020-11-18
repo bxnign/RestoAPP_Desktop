@@ -165,21 +165,6 @@ namespace RestoAPPWPF
                 MessageBox.Show("Se actualizo la lista");
             }
         }
-        private void dtgridListaIngresos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-         //   int index = dtgridListaIngresos.CurrentCell.Column.DisplayIndex;
-        }
-        private void dtgridListaConsumos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-           // int index = dtgridListaConsumos.CurrentCell.Column.DisplayIndex;
-        }
-        private void dtgridListaAtencion_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-           // int index = dtgridListaAtencion.CurrentCell.Column.DisplayIndex;
-        }
         private void btnGenerarReporteIngresos_Click(object sender, RoutedEventArgs e)
         {
             PdfWriter pdfWriter = new PdfWriter("reporte.pdf");

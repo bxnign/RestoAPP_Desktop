@@ -49,7 +49,7 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <DataGrid x:Name="dtgridListaFinanzas" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="57,255,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" SelectionChanged="dtgridListaStock_SelectionChanged" />
+            <DataGrid x:Name="dtgridListaFinanzas" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="57,255,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" />
         </Grid>
     </Grid>
 </Window>

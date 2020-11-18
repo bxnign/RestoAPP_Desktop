@@ -295,11 +295,6 @@ namespace RestoAPPWPF
             }
         }
 
-        private void dtListarMenus_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = dtListarMenus.CurrentCell.Column.DisplayIndex;
-        }
-
         private void btnirPorciones_Click(object sender, RoutedEventArgs e)
         {
             PorcionesWPF ver_porciones = new PorcionesWPF();

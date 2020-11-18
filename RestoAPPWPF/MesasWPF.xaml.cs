@@ -141,10 +141,6 @@ namespace RestoAPPWPF
             }
         }
 
-        private void dtListarMesas_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-         //   int index = dtListarMesas.CurrentCell.Column.DisplayIndex;
-        }
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {

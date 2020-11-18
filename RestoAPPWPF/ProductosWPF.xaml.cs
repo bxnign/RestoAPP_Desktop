@@ -224,11 +224,6 @@ namespace RestoAPPWPF
                 conexion.Close();
             }
         }
-        private void dtgridListaProductos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-            int index = dtgridListaProductos.CurrentCell.Column.DisplayIndex;
-        }
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             CargarCasillasModificar();

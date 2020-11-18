@@ -71,11 +71,6 @@ namespace RestoAPPWPF
                 MessageBox.Show("Se actualizo la lista");
             }
         }
-        private void dtgridListaStock_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-          //  int index = dtgridListaFinanzas.CurrentCell.Column.DisplayIndex;
-        }
 
         private void btnIrReportes_Click(object sender, RoutedEventArgs e)
         {

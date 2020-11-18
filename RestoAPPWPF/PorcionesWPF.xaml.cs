@@ -232,11 +232,7 @@ namespace RestoAPPWPF
         }
                    
         
-        private void dtgridListaPorcion_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //  CargarCasillasModificar();
-          //  int index = dtgridListaPorcion.CurrentCell.Column.DisplayIndex;
-        }
+ 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
             CargarCasillasModificar();

@@ -75,7 +75,7 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <DataGrid x:Name="dtgridListaIngresos"  IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" SelectionChanged="dtgridListaIngresos_SelectionChanged" />
+            <DataGrid x:Name="dtgridListaIngresos"  IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" />
             <Button x:Name="btnGenerarReporteIngresos" Content="Generar Reporte" HorizontalAlignment="Left" Margin="590,539,0,0" VerticalAlignment="Top" Width="128" Height="63" Click="btnGenerarReporteIngresos_Click"
                     Background="#FF03030F"
                     Foreground="White"
@@ -103,7 +103,7 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <DataGrid x:Name="dtgridListaConsumos" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" SelectionChanged="dtgridListaConsumos_SelectionChanged" />
+            <DataGrid x:Name="dtgridListaConsumos" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4"  />
             <Button x:Name="btnGenerarReporteConsumos" Content="Generar Reporte" HorizontalAlignment="Left" Margin="590,539,0,0" VerticalAlignment="Top" Width="128" Height="64" Click="btnGenerarReporteConsumos_Click"  Background="#FF03030F"
                     Foreground="White"
                     FontFamily="Arial"
@@ -130,7 +130,7 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <DataGrid x:Name="dtgridListaAtencion" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" SelectionChanged="dtgridListaAtencion_SelectionChanged" />
+            <DataGrid x:Name="dtgridListaAtencion" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4"  />
             <Button x:Name="btnGenerarReporteAtencion"  Content="Generar Reporte" HorizontalAlignment="Left" Margin="590,539,0,0" VerticalAlignment="Top" Width="127" Height="63" Click="btnGenerarReporteAtencion_Click" Background="#FF03030F"
                     Foreground="White"
                     FontFamily="Arial"
