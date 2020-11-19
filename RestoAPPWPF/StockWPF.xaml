@@ -6,7 +6,7 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:RestoAPPWPF"
         mc:Ignorable="d"
-        Title="Stock" Height="844.661" Width="1201.529" ResizeMode="NoResize"  ShowInTaskbar="True" WindowStartupLocation="CenterScreen" Icon="Imagenes/rest.png">
+        Title="Stock" Height="844.661" Width="1201.529" ResizeMode="NoResize"  ShowInTaskbar="True" WindowStartupLocation="CenterScreen" Icon="Imagenes/rest.png" WindowStyle="None">
     <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/fondo final.jpg" Opacity="1"/>
@@ -142,5 +142,25 @@
             />
             <DataGrid x:Name="dtgridListaStock" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="57,255,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4"  />
         </Grid>
+        <Button x:Name="btnCerrar"  HorizontalAlignment="Left" Margin="1171,0,-0.471,0" VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.662,0.275" Height="28" Foreground="White" FontWeight="Bold" Click="btnCerrar_Click" FontFamily="Microsoft Sans Serif" FontSize="18">
+            <Button.Background>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.BorderBrush>
+            <Image Source="Imagenes/Ico/cerrar.png"></Image>
+        </Button>
+        <Button x:Name="btnminimizar"  HorizontalAlignment="Left" Margin="1139,0,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.662,0.275" Height="28" Foreground="White" FontFamily="Goudy Stout" Click="btnMinimizar_Click" FontWeight="Bold" FontSize="16">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.Background>
+            <Image Source="Imagenes/Ico/minimizar.png"></Image>
+        </Button>
+        <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="44" Margin="10,0,0,0"  VerticalAlignment="Top" Width="1124" MouseDown="Rectangle_MouseDown"/>
     </Grid>
+    
 </Window>
