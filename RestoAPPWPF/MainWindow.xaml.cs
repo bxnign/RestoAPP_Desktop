@@ -94,6 +94,21 @@ namespace RestoAPPWPF
                 this.DragMove();
             }
         }
+
+        private void txtRut_KeyDown(object sender, KeyEventArgs e)
+        {
+
+                // solo numeros y letras, sin simbolos
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+
+        }
     }
 
     }

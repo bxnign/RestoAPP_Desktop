@@ -20,7 +20,7 @@
         <Label x:Name="lblniciarSesion" Content="Inicia Sesion" Margin="334,64,305,312" Background="#00000000" Foreground="black" FontFamily="Impact" FontWeight="Bold" FontSize="20"/>
         <Label  Content="Ingrese Rut" Margin="290,110,362,268" Background="#00000000" Foreground="black" FontFamily="Candara Light" FontSize="20"/>
         <Label  Content="Contraseña" Margin="290,220,373,162" Background="#00000000" Foreground="black" FontFamily="Candara Light" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="txtRut" Height="27" Margin="290,159,296,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" BorderBrush="Black">
+        <TextBox MaxLength="10"  x:Name="txtRut" Height="27" Margin="290,159,296,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" BorderBrush="Black" KeyDown="txtRut_KeyDown">
             <TextBox.Background>
                 <SolidColorBrush Color="#FF666464" Opacity="0.715"/>
             </TextBox.Background>

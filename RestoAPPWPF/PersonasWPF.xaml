@@ -70,12 +70,12 @@
             <Label Content="@gmail.com:" HorizontalAlignment="Left" Margin="366,550,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Cargo:" HorizontalAlignment="Left" Margin="436,57,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Rol:" HorizontalAlignment="Left" Margin="436,152,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
-            <TextBox x:Name="txtRut_personas" HorizontalAlignment="Left" Height="23" Margin="170,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
-            <TextBox x:Name="txtNombrePer" HorizontalAlignment="Left" Height="24" Margin="170,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
-            <TextBox x:Name="txtApellidoPat" HorizontalAlignment="Left" Height="23" Margin="170,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
-            <TextBox  x:Name="txtApellidoMat" HorizontalAlignment="Left" Height="24" Margin="170,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
-            <DatePicker  x:Name="dtpFechaNac" HorizontalAlignment="Left" Margin="170,458,0,0" VerticalAlignment="Top" Height="36" Width="174"  Background="#FFAAA9A9" BorderBrush="Black"/>
-            <TextBox  x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="170,550,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
+            <TextBox MaxLength="10" x:Name="txtRut_personas" HorizontalAlignment="Left" Height="23" Margin="170,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRut_personas_KeyDown"/>
+            <TextBox  MaxLength="15" x:Name="txtNombrePer" HorizontalAlignment="Left" Height="24" Margin="170,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtNombrePer_KeyDown"/>
+            <TextBox MaxLength="35" x:Name="txtApellidoPat" HorizontalAlignment="Left" Height="23" Margin="170,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtApellidoPat_KeyDown"/>
+            <TextBox MaxLength="35" x:Name="txtApellidoMat" HorizontalAlignment="Left" Height="24" Margin="170,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtApellidoMat_KeyDown"/>
+            <DatePicker   x:Name="dtpFechaNac" HorizontalAlignment="Left" Margin="170,458,0,0" VerticalAlignment="Top" Height="36" Width="174"  Background="#FFAAA9A9" BorderBrush="Black" KeyDown="dtpFechaNac_KeyDown"/>
+            <TextBox MaxLength="40"  x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="170,550,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black"/>
             <ComboBox x:Name="cboCargo" HorizontalAlignment="Left" Margin="565,64,0,0" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black">
                 <ComboBoxItem x:Name="cboitemSeleccione" IsSelected="True" Content="Seleccione"/>
                 <ComboBoxItem x:Name="cboitemAdministrador" Content="Administrador" />
