@@ -107,7 +107,7 @@
 
         </Grid>
 
-        <Grid x:Name="grModificar" Visibility="Visible" IsEnabled="True" Margin="390,75,0,0" HorizontalAlignment="Left" Width="785" Height="697" VerticalAlignment="Top">
+        <Grid x:Name="grModificar" Visibility="Hidden" IsEnabled="True" Margin="390,75,0,0" HorizontalAlignment="Left" Width="785" Height="697" VerticalAlignment="Top">
             <Grid.Background>
                 <SolidColorBrush Color="#FFF5F6F6" Opacity="0.96"/>
             </Grid.Background>
@@ -117,7 +117,7 @@
 
             <Label Content="Personas" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="210" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="678,5,0,0" VerticalAlignment="Top" Width="60" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
-            <TextBox x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
+            <TextBox IsEnabled="False" x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
             <Label Content="*Rut:" Margin="35,115,651,556" Foreground="Black"/>
             <Label Content="*Nombre:" Margin="35,194,651,477" Foreground="Black"/>
             <Label Content=" Password: " Margin="35,272,645,399" Foreground="Black"/>
@@ -169,13 +169,13 @@
 
 
         </Grid>
-        <Grid x:Name="grListar" Margin="390,49,21,44" Visibility="Hidden" IsEnabled="True">
+        <Grid x:Name="grListar" Margin="390,49,21,44" Visibility="Visible" IsEnabled="True">
             <Grid x:Name="grContenedorLista" Margin="0,0,10,0" Height="631" VerticalAlignment="Bottom">
                 <Grid.Background>
                     <SolidColorBrush Color="White" Opacity="0.925"/>
                 </Grid.Background>
                 <Label Content="Buscar por su Rut" HorizontalAlignment="Left" Margin="57,157,0,0" VerticalAlignment="Top" Width="287" Foreground="Black" FontSize="24" Height="46" FontStyle="Italic"/>
-                <TextBox x:Name="txtRut" HorizontalAlignment="Left" Height="23" Margin="57,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="241" BorderBrush="Black" RenderTransformOrigin="0.484,2.565" KeyUp="BuscarRut_KeyUp"/>
+                <TextBox MaxLength="10" x:Name="txtRut" HorizontalAlignment="Left" Height="23" Margin="57,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="241" BorderBrush="Black" RenderTransformOrigin="0.484,2.565" KeyUp="BuscarRut_KeyUp" KeyDown="txtRut_KeyDown"/>
                 <Button Content="Button" HorizontalAlignment="Left" Margin="303,184,0,0" VerticalAlignment="Top" Width="50" Height="47" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_1" RenderTransformOrigin="-0.14,0.024">
 
                     <Button.Background>

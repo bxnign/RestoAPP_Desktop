@@ -58,7 +58,7 @@
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
         </Grid>
-        <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
+        <Grid x:Name="grAgregar" Visibility="Hidden"  IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
@@ -70,7 +70,7 @@
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Cantidad productos:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top"/>
             <ComboBox x:Name="cboNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="4" x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidad_KeyDown"/>
             <Button x:Name="btnAgregar"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
@@ -102,7 +102,7 @@
             <Label Content="Cantidad productos:" HorizontalAlignment="Left" Margin="50,247,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtidStockMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" TextWrapping="Wrap" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
             <ComboBox x:Name="cboNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtCantidadMod" HorizontalAlignment="Left" Height="26" Margin="189,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="4" x:Name="txtCantidadMod" HorizontalAlignment="Left" Height="26" Margin="189,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidadMod_KeyDown"/>
             <Button x:Name="btnGuardarMod"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
