@@ -62,7 +62,7 @@
             <Label Content="Nombre porcion:" HorizontalAlignment="Left" Margin="50,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Cantidad porcion:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top"/>
             <ComboBox x:Name="cboNombreProd" HorizontalAlignment="Left" Height="26" Margin="189,252,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="5" x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidad_KeyDown"/>
             <Button x:Name="btnAgregar"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
@@ -71,10 +71,10 @@
                 >
                 <Image Height="68" Source="Imagenes/Ico/guardar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <TextBox x:Name="txtNombrePorcion" HorizontalAlignment="Left" Height="23" Margin="189,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="30" x:Name="txtNombrePorcion" HorizontalAlignment="Left" Height="23" Margin="189,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombrePorcion_KeyDown"/>
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,252,0,0" VerticalAlignment="Top"/>
             <Label Content="Precio porcion:" HorizontalAlignment="Left" Margin="50,330,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="189,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="5" x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="189,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtPrecio_KeyDown"/>
         </Grid>
         <Grid x:Name="grModificar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
@@ -85,15 +85,15 @@
             <Label Content="Porciones" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Id porcion:" HorizontalAlignment="Left" Margin="50,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
-            <TextBox x:Name="txtIdPorcionMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" TextWrapping="Wrap" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="3" x:Name="txtIdPorcionMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" TextWrapping="Wrap" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtIdPorcionMod_KeyDown"/>
             <Label Content="Nombre porcion:" HorizontalAlignment="Left" Margin="50,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
-            <TextBox x:Name="txtNombrePorcionMod" HorizontalAlignment="Left" Height="23" Margin="189,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="30" x:Name="txtNombrePorcionMod" HorizontalAlignment="Left" Height="23" Margin="189,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombrePorcionMod_KeyDown"/>
             <Label Content="Cantidad porcion:" HorizontalAlignment="Left" Margin="50,207,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtCantidadMod" HorizontalAlignment="Left" Height="23" Margin="189,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="5" x:Name="txtCantidadMod" HorizontalAlignment="Left" Height="23" Margin="189,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidadMod_KeyDown"/>
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,265,0,0" VerticalAlignment="Top"/>
             <ComboBox x:Name="cboNombreProductoMod" HorizontalAlignment="Left" Height="26" Margin="189,265,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
             <Label Content="Precio porcion:" HorizontalAlignment="Left" Margin="50,330,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtPrecioMod" HorizontalAlignment="Left" Height="23" Margin="189,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="5" x:Name="txtPrecioMod" HorizontalAlignment="Left" Height="23" Margin="189,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtPrecioMod_KeyDown"/>
             <Button x:Name="btnGuardarMod"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
@@ -113,7 +113,7 @@
             <Label Content="Porciones" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/listar  banner.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Buscar" HorizontalAlignment="Left" Margin="57,157,0,0" VerticalAlignment="Top" Width="287" Foreground="Black" FontSize="24" Height="46" FontStyle="Italic"/>
-            <TextBox x:Name="txtBuscarid" HorizontalAlignment="Left" Height="23" Margin="57,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="241" BorderBrush="Black" RenderTransformOrigin="0.484,2.565" KeyUp="Buscarid_KeyUp" TextChanged="txtBuscarid_TextChanged"/>
+            <TextBox MaxLength="4" x:Name="txtBuscarid" HorizontalAlignment="Left" Height="23" Margin="57,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="241" BorderBrush="Black" RenderTransformOrigin="0.484,2.565" KeyUp="Buscarid_KeyUp" TextChanged="txtBuscarid_TextChanged" KeyDown="txtBuscarid_KeyDown"/>
             <Button x:Name="btnBuscar" Content="btnBuscar" HorizontalAlignment="Left" Margin="303,184,0,0" VerticalAlignment="Top" Width="50" Height="47" BorderBrush="{x:Null}" Foreground="{x:Null}"  RenderTransformOrigin="-0.14,0.024" Click="btnBuscar_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>

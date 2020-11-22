@@ -348,5 +348,41 @@ namespace RestoAPPWPF
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdProductoMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombreMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

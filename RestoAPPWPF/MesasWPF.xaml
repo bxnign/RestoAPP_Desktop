@@ -103,7 +103,7 @@
             <Label Content="Nro Mesa" HorizontalAlignment="Left" Margin="52,180,0,0" VerticalAlignment="Top"/>
             <Label Content="Cantidad de Sillas" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top"/>
             <Label Content="Estado de la Mesa" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtIdMod" HorizontalAlignment="Left" Height="23" Margin="152,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" RenderTransformOrigin="0.5,0.5">
+            <TextBox MaxLength="2" x:Name="txtIdMod" HorizontalAlignment="Left" Height="23" Margin="152,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" RenderTransformOrigin="0.5,0.5" KeyDown="txtIdMod_KeyDown">
             </TextBox>
             <TextBox MaxLength="2" x:Name="txtNroMesaMod" HorizontalAlignment="Left" Height="23" Margin="149,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNroMesaMod_KeyDown"/>
             <TextBox MaxLength="2" x:Name="txtCantSillasMod" HorizontalAlignment="Left" Height="23" Margin="149,267,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="32" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantSillasMod_KeyDown"/>

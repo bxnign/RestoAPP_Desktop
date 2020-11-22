@@ -344,5 +344,101 @@ namespace RestoAPPWPF
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void txtNombrePorcion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtIdPorcionMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombrePorcionMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCantidadMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecioMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBuscarid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

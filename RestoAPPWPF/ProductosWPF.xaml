@@ -60,7 +60,7 @@
             <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="61,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Tipo de peso:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Tipo Especificacion:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="25" x:Name="txtNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombre_KeyDown"/>
             <ComboBox x:Name="cboDistribucion" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14">
                 <ComboBoxItem x:Name="cboitemSeleccione" IsSelected="True" Content="Seleccione"/>
                 <ComboBoxItem x:Name="cboitemKilogramos" Content="Kilogramos"/>
@@ -90,8 +90,8 @@
             <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Tipo de peso:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
             <Label Content="Tipo Especificacion:" HorizontalAlignment="Left" Margin="61,339,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtIdProductoMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="4" x:Name="txtIdProductoMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtIdProductoMod_KeyDown"/>
+            <TextBox MaxLength="25" x:Name="txtNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombreMod_KeyDown"/>
             <ComboBox x:Name="cboDistribucionMod" HorizontalAlignment="Left" Height="26" Margin="189,250,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14">
                 <ComboBoxItem x:Name="cboitemModSeleccione" IsSelected="True" Content="Seleccione"/>
                 <ComboBoxItem x:Name="cboitemModKilogramos" Content="Kilogramos"/>

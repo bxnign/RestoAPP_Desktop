@@ -169,7 +169,7 @@
 
 
         </Grid>
-        <Grid x:Name="grListar" Margin="390,49,21,44" Visibility="Visible" IsEnabled="True">
+        <Grid x:Name="grListar" Margin="390,49,21,44" Visibility="Hidden" IsEnabled="True">
             <Grid x:Name="grContenedorLista" Margin="0,0,10,0" Height="631" VerticalAlignment="Bottom">
                 <Grid.Background>
                     <SolidColorBrush Color="White" Opacity="0.925"/>

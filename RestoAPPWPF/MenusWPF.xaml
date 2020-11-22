@@ -68,11 +68,11 @@
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="52,180,0,0" VerticalAlignment="Top"/>
             <Label Content="Precio" HorizontalAlignment="Left" Margin="63,264,0,0" VerticalAlignment="Top"/>
             <Label Content="Descipcion" HorizontalAlignment="Left" Margin="52,358,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="149,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="149,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="1000" x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="149,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombre_KeyDown"/>
+            <TextBox MaxLength="5" x:Name="txtPrecio" HorizontalAlignment="Left" Height="23" Margin="149,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtPrecio_KeyDown"/>
             <ComboBox x:Name="cboPorciones" HorizontalAlignment="Left" Height="23" Margin="149,112,0,0"  VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.592,-1.783" >
             </ComboBox>
-            <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" IsEnabled="True" Height="194" Margin="149,358,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="370" Background="#FFAAA9A9"  BorderBrush="Black"  FontSize="14"/>
+            <TextBox MaxLength="200" x:Name="txtDescripcion" HorizontalAlignment="Left" IsEnabled="True" Height="194" Margin="149,358,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="370" Background="#FFAAA9A9"  BorderBrush="Black"  FontSize="14" KeyDown="txtDescripcion_KeyDown"/>
             <Button  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
@@ -95,11 +95,11 @@
             <Label Content="Nombre" HorizontalAlignment="Left" Margin="52,196,0,0" VerticalAlignment="Top"/>
             <Label Content="Precio" HorizontalAlignment="Left" Margin="63,264,0,0" VerticalAlignment="Top"/>
             <Label Content="Descipcion" HorizontalAlignment="Left" Margin="38,358,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtId_Mod" HorizontalAlignment="Left" Height="23" Margin="149,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <TextBox MaxLength="4" x:Name="txtId_Mod" HorizontalAlignment="Left" Height="23" Margin="149,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtId_Mod_KeyDown"/>
             <ComboBox x:Name="cboPorcionesMod" HorizontalAlignment="Left" Height="23" Margin="149,135,0,0"  VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.592,-1.783" ></ComboBox>
-            <TextBox x:Name="txtNombreMod" HorizontalAlignment="Left" Height="23" Margin="149,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtPrecioMod" HorizontalAlignment="Left" Height="23" Margin="149,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
-            <TextBox x:Name="txtDescripcionMod" HorizontalAlignment="Left" IsEnabled="True" Height="194" Margin="149,358,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="370" Background="#FFAAA9A9"  BorderBrush="Black"  FontSize="14"/>
+            <TextBox MaxLength="100" x:Name="txtNombreMod" HorizontalAlignment="Left" Height="23" Margin="149,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombreMod_KeyDown"/>
+            <TextBox MaxLength="5" x:Name="txtPrecioMod" HorizontalAlignment="Left" Height="23" Margin="149,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtPrecioMod_KeyDown"/>
+            <TextBox MaxLength="200" x:Name="txtDescripcionMod" HorizontalAlignment="Left" IsEnabled="True" Height="194" Margin="149,358,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="370" Background="#FFAAA9A9"  BorderBrush="Black"  FontSize="14" KeyDown="txtDescripcionMod_KeyDown"/>
             <Button  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
