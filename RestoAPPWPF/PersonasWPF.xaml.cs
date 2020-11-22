@@ -485,6 +485,66 @@ namespace RestoAPPWPF
             e.Handled = true;
         }
 
+        // VALIDACION TEXTBOX MODIFICAR
+
+        private void txtRutMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombremod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtpassmod_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtApellidoPatMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellidoMatMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.A && e.Key <= Key.Z)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtFechaNacMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+
 
         // ------- Metodos de Controles ------- //
 
