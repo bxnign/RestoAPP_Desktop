@@ -56,13 +56,34 @@ namespace RestoAPPWPF
         }
 
         // ------- Metodos Propios ------- //
+
+        public bool ProhibirSimbolos(string rut , string nombre, string apellido1, string apellido2)
+        {
+            string exp, exp1;
+            exp = "^[A-Za-z0-9]*$";
+            exp1 = "^[ A-Za-z ]*$";
+
+            if (Regex.IsMatch(rut, exp) == false || Regex.IsMatch(nombre, exp1) == false || Regex.IsMatch(apellido1, exp1) == false || Regex.IsMatch(apellido2, exp1) == false)
+            {
+
+
+                MessageBox.Show("No se aceptan caracteres como !#$%&/()=?¡-., \n revise su formato e intente nuevamente");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
         public bool CargarVariablesAgregar(ref PersonasNegocio personas)
         {
-           
-         
-             
+
+
+
             if (dtpFechaNac.Text == string.Empty || txtRut_personas.Text == string.Empty || txtNombrePer.Text == string.Empty ||
-                txtApellidoPat.Text == string.Empty || txtApellidoMat.Text == string.Empty || cboCargo.Text == string.Empty || cboRoles.Text == string.Empty )
+                txtApellidoPat.Text == string.Empty || txtApellidoMat.Text == string.Empty || cboCargo.Text == string.Empty || cboRoles.Text == string.Empty)
             {
                 MessageBox.Show("Debe llenar todos los campos obligatorios (*)");
                 return false;
@@ -70,57 +91,65 @@ namespace RestoAPPWPF
             }
             else
             {
-                    if (cboCargo.SelectedItem != cboitemSeleccione && cboRoles.SelectedItem != cborolSeleccione)
-                    {
+                if (cboCargo.SelectedItem != cboitemSeleccione && cboRoles.SelectedItem != cborolSeleccione)
+                {
 
                     if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
                     {
                         DateTime año = (DateTime)dtpFechaNac.SelectedDate;
-                        int edad = ( DateTime.Now.Year - año.Year );
-                        if(edad >= 16)
+                        int edad = (DateTime.Now.Year - año.Year);
+                        if (edad >= 16)
                         {
-                            personas.Rut_Persona = txtRut_personas.Text;
-                            personas.Nom_Persona = txtNombrePer.Text;
-                            personas.Apel_Pat_Persona = txtApellidoPat.Text;
-                            personas.Apel_Mat_Persona = txtApellidoMat.Text;
-                            personas.Email = txtCorreo.Text;
-                            DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
-                            string formato = "dd/MM/yyyy";
-                            personas.Fecha_Nac = fecha.ToString(formato);
-                            string contraseña = txtRut_personas.Text;
-                            string contraseña_pt2 = fecha.ToString(formato);
-                            personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
-                            personas.Id_Cargo = Convert.ToString(cboCargo.Text);
-                            personas.Id_Rol = Convert.ToString(cboRoles.Text);
-                            return true;
+                            if (ProhibirSimbolos(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
+                            {
+                                personas.Rut_Persona = txtRut_personas.Text;
+                                personas.Nom_Persona = txtNombrePer.Text;
+                                personas.Apel_Pat_Persona = txtApellidoPat.Text;
+                                personas.Apel_Mat_Persona = txtApellidoMat.Text;
+                                personas.Email = txtCorreo.Text;
+                                DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
+                                string formato = "dd/MM/yyyy";
+                                personas.Fecha_Nac = fecha.ToString(formato);
+                                string contraseña = txtRut_personas.Text;
+                                string contraseña_pt2 = fecha.ToString(formato);
+                                personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
+                                personas.Id_Cargo = Convert.ToString(cboCargo.Text);
+                                personas.Id_Rol = Convert.ToString(cboRoles.Text);
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                            
                         }
                         else
                         {
                             MessageBox.Show("El Usuario debe ser mayor de 15 años");
                             return false;
                         }
-                      
+
                     }
                     else
                     {
 
                         return false;
                     }
-                       
-                    }
-                    else
-                    {
+
+                }
+                else
+                {
                     MessageBox.Show("Debe llenar todos los campos obligatorios (*)");
                     return false;
-                    }
+                }
             }
-           
+
         }
 
-        public bool LargoString(string rut, string nombre, string apellido , string apellido2)
+        public bool LargoString(string rut, string nombre, string apellido, string apellido2)
         {
 
-            if(rut.Length <= 2 || nombre.Length <= 2 || apellido.Length <=2 || apellido2.Length <= 2)
+            if (rut.Length <= 2 || nombre.Length <= 2 || apellido.Length <= 2 || apellido2.Length <= 2)
             {
                 MessageBox.Show("El largo del rut , nombre o apellidos son muy cortos \n Ingrese minimo 3 caracteres");
                 return false;
@@ -133,7 +162,7 @@ namespace RestoAPPWPF
 
         public bool CargarVariablesModificar(ref PersonasNegocio personas)
         {
-            if(txtRutMod.Text == string.Empty || txtpassmod.Text == string.Empty || txtNombremod.Text == string.Empty
+            if (txtRutMod.Text == string.Empty || txtpassmod.Text == string.Empty || txtNombremod.Text == string.Empty
                  || txtApellidoPatMod.Text == string.Empty || txtApellidoMatMod.Text == string.Empty || dtFechaNacMod.Text == string.Empty
                   || cboCargoMod.Text == string.Empty || cboRolMod.Text == string.Empty)
             {
@@ -143,27 +172,35 @@ namespace RestoAPPWPF
             }
             else
             {
-                if(cboCargoMod.SelectedItem != cboitemSeleccioneMOD && cboRolMod.SelectedItem != cborolSeleccioneMOD)
+                if (cboCargoMod.SelectedItem != cboitemSeleccioneMOD && cboRolMod.SelectedItem != cborolSeleccioneMOD)
                 {
-                    if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
+                    if (LargoString(txtRutMod.Text, txtNombremod.Text, txtApellidoPatMod.Text, txtApellidoMatMod.Text))
                     {
                         DateTime año = (DateTime)dtFechaNacMod.SelectedDate;
                         int edad = (DateTime.Now.Year - año.Year);
                         if (edad >= 16)
                         {
-                            personas.Rut_Persona = txtRutMod.Text;
-                            personas.Pass = txtpassmod.Text;
-                            personas.Nom_Persona = txtNombremod.Text;
-                            personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
-                            personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
-                            DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
-                            string formato = "dd/MM/yyyy";
-                            personas.Email = txtCorreoMod.Text;
-                            personas.Fecha_Nac = fecha.ToString(formato);
-                            personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
-                            personas.Id_Rol = Convert.ToString(cboRolMod.Text);
+                            if (ProhibirSimbolos(txtRutMod.Text, txtNombremod.Text, txtApellidoPatMod.Text, txtApellidoMatMod.Text))
+                            {
+                                personas.Rut_Persona = txtRutMod.Text;
+                                personas.Pass = txtpassmod.Text;
+                                personas.Nom_Persona = txtNombremod.Text;
+                                personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
+                                personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
+                                DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
+                                string formato = "dd/MM/yyyy";
+                                personas.Email = txtCorreoMod.Text;
+                                personas.Fecha_Nac = fecha.ToString(formato);
+                                personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
+                                personas.Id_Rol = Convert.ToString(cboRolMod.Text);
 
-                            return true;
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                            
                         }
                         else
                         {
@@ -175,17 +212,17 @@ namespace RestoAPPWPF
                     {
                         return false;
                     }
-                   
+
                 }
                 else
                 {
                     MessageBox.Show("Los campos Obligatorios (*) No deben estar vacios");
                     return false;
-                    
+
                 }
-               
+
             }
-            
+
         }
 
         public void VaciarCasillasModificar()
@@ -240,35 +277,35 @@ namespace RestoAPPWPF
 
             return false;
         }
-    
+
 
         public void CargarCasillasModificar()
         {
 
-                
-                if (dtgridListaPersonas.SelectedItem == null)
-                {
 
-                }
-                else
-                {
-                    DataRowView view = (DataRowView)dtgridListaPersonas.SelectedItem;
-                    txtRutMod.Text = view.Row.ItemArray[0].ToString();
-                    txtNombremod.Text = view.Row.ItemArray[1].ToString();
-                    txtApellidoPatMod.Text = view.Row.ItemArray[2].ToString();
-                    txtApellidoMatMod.Text = view.Row.ItemArray[3].ToString();
-                    dtFechaNacMod.Text = view.Row.ItemArray[4].ToString();
-                    txtpassmod.Text = view.Row.ItemArray[5].ToString();
-                    cboCargoMod.Text = view.Row.ItemArray[6].ToString();
-                    cboRolMod.Text = view.Row.ItemArray[7].ToString();
-                    txtCorreoMod.Text = view.Row.ItemArray[8].ToString();
-                    txtRutMod.IsEnabled = false;
-                }
+            if (dtgridListaPersonas.SelectedItem == null)
+            {
+
             }
-           
+            else
+            {
+                DataRowView view = (DataRowView)dtgridListaPersonas.SelectedItem;
+                txtRutMod.Text = view.Row.ItemArray[0].ToString();
+                txtNombremod.Text = view.Row.ItemArray[1].ToString();
+                txtApellidoPatMod.Text = view.Row.ItemArray[2].ToString();
+                txtApellidoMatMod.Text = view.Row.ItemArray[3].ToString();
+                dtFechaNacMod.Text = view.Row.ItemArray[4].ToString();
+                txtpassmod.Text = view.Row.ItemArray[5].ToString();
+                cboCargoMod.Text = view.Row.ItemArray[6].ToString();
+                cboRolMod.Text = view.Row.ItemArray[7].ToString();
+                txtCorreoMod.Text = view.Row.ItemArray[8].ToString();
+                txtRutMod.IsEnabled = false;
+            }
+        }
 
-           
-        
+
+
+
         private void EnviarEmail()
         {
 
@@ -297,7 +334,7 @@ namespace RestoAPPWPF
             {
                 From = fromEmail,
                 Subject = "Bienvenido a Restaurant XXI",
-                Body ="Se genero un usuario en el restaurant RestoAPP \n" + txtNombrePer.Text + " " + txtApellidoPat.Text + " " + txtApellidoMat.Text + "\n" + "Usuario: " + txtRut_personas.Text + " y contraseña: " + contrasenna + "\n" + "Porfavor Actualice su contraseña en: http://127.0.0.1:8000/accounts/password_reset/"
+                Body = "Se genero un usuario en el restaurant RestoAPP \n" + txtNombrePer.Text + " " + txtApellidoPat.Text + " " + txtApellidoMat.Text + "\n" + "Usuario: " + txtRut_personas.Text + " y contraseña: " + contrasenna + "\n" + "Porfavor Actualice su contraseña en: http://127.0.0.1:8000/accounts/password_reset/"
             };
             message.To.Add(toEmail);
             try
@@ -305,7 +342,7 @@ namespace RestoAPPWPF
                 client.Send(message);
                 MessageBox.Show("Se envio el correo exitosamente");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("no se mando el correo" + ex);
             }
@@ -322,7 +359,7 @@ namespace RestoAPPWPF
             PersonasNegocio personas = new PersonasNegocio();
             if (CargarVariablesAgregar(ref personas) == true)
             {
-                if(LargoString(txtRut_personas.Text,txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
+                if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
                 {
                     if (ValidarEspaciosEnBlancos(txtRut_personas.Text) == false)
                     {
@@ -362,14 +399,14 @@ namespace RestoAPPWPF
                             conexion.Close();
                         }
                     }
-                
+
                 }
             }
             else
             {
-               
+
             }
-            
+
         }
 
         // Mantenedor listar todos listos 
@@ -382,21 +419,21 @@ namespace RestoAPPWPF
             try
             {
 
-            
-            if (datos.DefaultView != null)
-            {
-                MessageBox.Show("Estos son todos los usuarios encontrados");
-                dtgridListaPersonas.ItemsSource = datos.DefaultView;
-                conexion.Close();
-            }
-            else if (datos.DefaultView == null)
-            {
-                MessageBox.Show("No existe personas en la base de datos");
-                conexion.Close();
-            }
+
+                if (datos.DefaultView != null)
+                {
+                    MessageBox.Show("Estos son todos los usuarios encontrados");
+                    dtgridListaPersonas.ItemsSource = datos.DefaultView;
+                    conexion.Close();
+                }
+                else if (datos.DefaultView == null)
+                {
+                    MessageBox.Show("No existe personas en la base de datos");
+                    conexion.Close();
+                }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Se ha actualizado la lista");
             }
@@ -407,15 +444,15 @@ namespace RestoAPPWPF
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             PersonasNegocio personas = new PersonasNegocio();
-           if( CargarVariablesModificar(ref personas))
+            if (CargarVariablesModificar(ref personas))
             {
 
-                    if (LargoString(txtRutMod.Text, txtNombremod.Text, txtApellidoPatMod.Text, txtApellidoMatMod.Text))
-                    {
+                if (LargoString(txtRutMod.Text, txtNombremod.Text, txtApellidoPatMod.Text, txtApellidoMatMod.Text))
+                {
                     if (ValidarEspaciosEnBlancos(txtRutMod.Text) == false)
                     {
                         MessageBox.Show("No deben haber espacios en el Rut");
-                    }else
+                    } else
                     {
                         try
                         {
@@ -451,10 +488,10 @@ namespace RestoAPPWPF
                             conexion.Close();
                         }
                     }
-                       
+
                 }
-                  
-            }     
+
+            }
         }
 
 
@@ -480,7 +517,7 @@ namespace RestoAPPWPF
             string rut;
             rut = view.Row.ItemArray[0].ToString();
             personas.Rut_Persona = rut;
-            
+
             try
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea eliminar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
@@ -498,8 +535,8 @@ namespace RestoAPPWPF
                     }
 
                 }
-               
-            }catch(Exception ex)
+
+            } catch (Exception ex)
             {
                 MessageBox.Show("Error en la base de datos: " + ex);
             }
@@ -589,50 +626,82 @@ namespace RestoAPPWPF
         // VALIDACIONES TEXTBOX AGREGAR
         private void txtRut_personas_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+          
         }
 
         private void txtNombrePer_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+           
         }
 
         private void txtApellidoPat_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+           
         }
 
         private void txtApellidoMat_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+           
         }
 
         private void dtpFechaNac_KeyDown(object sender, KeyEventArgs e)
@@ -644,26 +713,43 @@ namespace RestoAPPWPF
 
         private void txtRutMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+
         }
 
         private void txtNombremod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            
         }
 
         private void txtpassmod_KeyDown(object sender, KeyEventArgs e)
@@ -673,26 +759,47 @@ namespace RestoAPPWPF
 
         private void txtApellidoPatMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+
         }
 
-        private void txtApellidoMatMod_KeyDown(object sender, KeyEventArgs e)
+
+
+    private void txtApellidoMatMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+
+            {
+                if (e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+
+            }
+          
         }
 
         private void dtFechaNacMod_KeyDown(object sender, KeyEventArgs e)
@@ -702,14 +809,22 @@ namespace RestoAPPWPF
 
         private void txtRut_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
-            {
-                e.Handled = false;
-            }
-            else
+            if (e.Key == Key.LeftShift || e.Key == Key.RightShift || e.Key == Key.LeftCtrl || e.Key == Key.RightCtrl || e.Key == Key.LeftAlt || e.Key == Key.RightAlt)
             {
                 e.Handled = true;
             }
+            else
+            {
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+           
         }
 
 

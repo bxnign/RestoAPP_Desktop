@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using RestoAPPNegocio;
 using RestoAPPBD;
 using System.Data.OracleClient;
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -32,6 +33,55 @@ namespace RestoAPPWPF
         }
 
 
+        private bool Validaciones()
+        {
+            if (ValidarEspaciosEnBlancos(txtRut.Text))
+            {
+                    if (LargoString(txtRut.Text))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool LargoString(string rut)
+        {
+
+            if (rut.Length <= 7)
+            {
+                MessageBox.Show("El largo del rut es muy corto \nIngrese minimo 8 caracteres");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool ValidarEspaciosEnBlancos(string dato)
+        {
+            string val = "^[A-Za-z0-9]*$";
+            if (Regex.IsMatch(dato, val))
+            {
+                return true;
+            }
+
+            MessageBox.Show("No se aceptan ESPACIOS ni simbolos como !#$%&/()=?¡-., \n revise su formato e intente nuevamente");
+            return false;
+        }
+
+        // ------- Metodos Propios ------- //
+
+   
+
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
@@ -47,22 +97,30 @@ namespace RestoAPPWPF
                     MessageBox.Show("Debe llenar todos los campos para ingresar");
                 }else
                 {
-                    if (personas.Login())
+                    if (Validaciones())
                     {
-                        PrincipalWPF ventana_principal = new PrincipalWPF();               
-                        ventana_principal.rut = personas.Validacion();
-                        ventana_principal.datos = personas.ListarPorRUT();
-                        ventana_principal.validacion_rol();
-                        ventana_principal.Show();
-                        this.Hide();
-                        conexion.Close();
+                        if (personas.Login())
+                        {
+                            PrincipalWPF ventana_principal = new PrincipalWPF();
+                            ventana_principal.rut = personas.Validacion();
+                            ventana_principal.datos = personas.ListarPorRUT();
+                            ventana_principal.validacion_rol();
+                            ventana_principal.Show();
+                            this.Hide();
+                            conexion.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario y la contraseña no existen o son incorrectas");
+
+                            conexion.Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("El usuario y la contraseña no existen o son incorrectas");
-
-                        conexion.Close();
+                        
                     }
+                    
 
                 }
             }catch(Exception ex)
@@ -97,16 +155,16 @@ namespace RestoAPPWPF
 
         private void txtRut_KeyDown(object sender, KeyEventArgs e)
         {
-
-                // solo numeros y letras, sin simbolos
-                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
                 {
                     e.Handled = false;
                 }
                 else
                 {
                     e.Handled = true;
-                }
+                }  
+            
+          
 
         }
     }
