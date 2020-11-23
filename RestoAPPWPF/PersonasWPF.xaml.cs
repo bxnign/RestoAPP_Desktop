@@ -75,21 +75,31 @@ namespace RestoAPPWPF
 
                     if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
                     {
-                        personas.Rut_Persona = txtRut_personas.Text;
-                        personas.Nom_Persona = txtNombrePer.Text;
-                        personas.Apel_Pat_Persona = txtApellidoPat.Text;
-                        personas.Apel_Mat_Persona = txtApellidoMat.Text;
-                        personas.Email = txtCorreo.Text;
-                        DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
-                        string formato = "dd/MM/yyyy";
-                        personas.Fecha_Nac = fecha.ToString(formato);
-                        string contraseña = txtRut_personas.Text;
-                        string contraseña_pt2 = fecha.ToString(formato);
-                        personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
-                        personas.Id_Cargo = Convert.ToString(cboCargo.Text);
-                        personas.Id_Rol = Convert.ToString(cboRoles.Text);
-
-                        return true;
+                        DateTime año = (DateTime)dtpFechaNac.SelectedDate;
+                        int edad = ( DateTime.Now.Year - año.Year );
+                        if(edad >= 16)
+                        {
+                            personas.Rut_Persona = txtRut_personas.Text;
+                            personas.Nom_Persona = txtNombrePer.Text;
+                            personas.Apel_Pat_Persona = txtApellidoPat.Text;
+                            personas.Apel_Mat_Persona = txtApellidoMat.Text;
+                            personas.Email = txtCorreo.Text;
+                            DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
+                            string formato = "dd/MM/yyyy";
+                            personas.Fecha_Nac = fecha.ToString(formato);
+                            string contraseña = txtRut_personas.Text;
+                            string contraseña_pt2 = fecha.ToString(formato);
+                            personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
+                            personas.Id_Cargo = Convert.ToString(cboCargo.Text);
+                            personas.Id_Rol = Convert.ToString(cboRoles.Text);
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Usuario debe ser mayor de 15 años");
+                            return false;
+                        }
+                      
                     }
                     else
                     {
@@ -137,19 +147,29 @@ namespace RestoAPPWPF
                 {
                     if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
                     {
-                        personas.Rut_Persona = txtRutMod.Text;
-                        personas.Pass = txtpassmod.Text;
-                        personas.Nom_Persona = txtNombremod.Text;
-                        personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
-                        personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
-                        DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
-                        string formato = "dd/MM/yyyy";
-                        personas.Email = txtCorreoMod.Text;
-                        personas.Fecha_Nac = fecha.ToString(formato);
-                        personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
-                        personas.Id_Rol = Convert.ToString(cboRolMod.Text);
+                        DateTime año = (DateTime)dtFechaNacMod.SelectedDate;
+                        int edad = (DateTime.Now.Year - año.Year);
+                        if (edad >= 16)
+                        {
+                            personas.Rut_Persona = txtRutMod.Text;
+                            personas.Pass = txtpassmod.Text;
+                            personas.Nom_Persona = txtNombremod.Text;
+                            personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
+                            personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
+                            DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
+                            string formato = "dd/MM/yyyy";
+                            personas.Email = txtCorreoMod.Text;
+                            personas.Fecha_Nac = fecha.ToString(formato);
+                            personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
+                            personas.Id_Rol = Convert.ToString(cboRolMod.Text);
 
-                        return true;
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Usuario debe ser mayor de 15 años");
+                            return false;
+                        }
                     }
                     else
                     {
