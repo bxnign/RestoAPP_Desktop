@@ -43,43 +43,82 @@ namespace RestoAPPWPF
             grListar.IsEnabled = false;
         }
 
+
+        public bool ValidarEspaciosEnBlancos(string dato)
+        {
+            string val = "^[A-Za-z0-9]*$";
+            if (Regex.IsMatch(dato, val))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         // ------- Metodos Propios ------- //
         public bool CargarVariablesAgregar(ref PersonasNegocio personas)
         {
-
-            
+           
+         
+             
             if (dtpFechaNac.Text == string.Empty || txtRut_personas.Text == string.Empty || txtNombrePer.Text == string.Empty ||
-                txtApellidoPat.Text == string.Empty || txtApellidoMat.Text == string.Empty || cboCargo.Text == string.Empty || cboRoles.Text == string.Empty)
+                txtApellidoPat.Text == string.Empty || txtApellidoMat.Text == string.Empty || cboCargo.Text == string.Empty || cboRoles.Text == string.Empty )
             {
+                MessageBox.Show("Debe llenar todos los campos obligatorios (*)");
+                return false;
+
+            }
+            else
+            {
+                    if (cboCargo.SelectedItem != cboitemSeleccione && cboRoles.SelectedItem != cborolSeleccione)
+                    {
+
+                    if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
+                    {
+                        personas.Rut_Persona = txtRut_personas.Text;
+                        personas.Nom_Persona = txtNombrePer.Text;
+                        personas.Apel_Pat_Persona = txtApellidoPat.Text;
+                        personas.Apel_Mat_Persona = txtApellidoMat.Text;
+                        personas.Email = txtCorreo.Text;
+                        DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
+                        string formato = "dd/MM/yyyy";
+                        personas.Fecha_Nac = fecha.ToString(formato);
+                        string contraseña = txtRut_personas.Text;
+                        string contraseña_pt2 = fecha.ToString(formato);
+                        personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
+                        personas.Id_Cargo = Convert.ToString(cboCargo.Text);
+                        personas.Id_Rol = Convert.ToString(cboRoles.Text);
+
+                        return true;
+                    }
+                    else
+                    {
+
+                        return false;
+                    }
+                       
+                    }
+                    else
+                    {
+                    MessageBox.Show("Debe llenar todos los campos obligatorios (*)");
+                    return false;
+                    }
+            }
+           
+        }
+
+        public bool LargoString(string rut, string nombre, string apellido , string apellido2)
+        {
+
+            if(rut.Length <= 2 || nombre.Length <= 2 || apellido.Length <=2 || apellido2.Length <= 2)
+            {
+                MessageBox.Show("El largo del rut , nombre o apellidos son muy cortos \n Ingrese minimo 3 caracteres");
                 return false;
             }
             else
             {
-                if(cboCargo.SelectedItem != cboitemSeleccione && cboRoles.SelectedItem != cborolSeleccione)
-                {
-                    personas.Rut_Persona = txtRut_personas.Text;
-                    personas.Nom_Persona = txtNombrePer.Text;
-                    personas.Apel_Pat_Persona = txtApellidoPat.Text;
-                    personas.Apel_Mat_Persona = txtApellidoMat.Text;
-                    personas.Email = txtCorreo.Text;
-                    DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
-                    string formato = "dd/MM/yyyy";
-                    personas.Fecha_Nac = fecha.ToString(formato);
-                    string contraseña = txtRut_personas.Text;
-                    string contraseña_pt2 = fecha.ToString(formato);
-                    personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
-                    personas.Id_Cargo = Convert.ToString(cboCargo.Text);
-                    personas.Id_Rol = Convert.ToString(cboRoles.Text);
-
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
+                return true;
             }
-           
         }
 
         public bool CargarVariablesModificar(ref PersonasNegocio personas)
@@ -88,29 +127,41 @@ namespace RestoAPPWPF
                  || txtApellidoPatMod.Text == string.Empty || txtApellidoMatMod.Text == string.Empty || dtFechaNacMod.Text == string.Empty
                   || cboCargoMod.Text == string.Empty || cboRolMod.Text == string.Empty)
             {
+                MessageBox.Show("Los campos Obligatorios (*) No deben estar vacios");
                 return false;
+
             }
             else
             {
                 if(cboCargoMod.SelectedItem != cboitemSeleccioneMOD && cboRolMod.SelectedItem != cborolSeleccioneMOD)
                 {
-                    personas.Rut_Persona = txtRutMod.Text;
-                    personas.Pass = txtpassmod.Text;
-                    personas.Nom_Persona = txtNombremod.Text;
-                    personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
-                    personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
-                    DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
-                    string formato = "dd/MM/yyyy";
-                    personas.Email = txtCorreoMod.Text;
-                    personas.Fecha_Nac = fecha.ToString(formato);
-                    personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
-                    personas.Id_Rol = Convert.ToString(cboRolMod.Text);
+                    if (LargoString(txtRut_personas.Text, txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
+                    {
+                        personas.Rut_Persona = txtRutMod.Text;
+                        personas.Pass = txtpassmod.Text;
+                        personas.Nom_Persona = txtNombremod.Text;
+                        personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
+                        personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
+                        DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
+                        string formato = "dd/MM/yyyy";
+                        personas.Email = txtCorreoMod.Text;
+                        personas.Fecha_Nac = fecha.ToString(formato);
+                        personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
+                        personas.Id_Rol = Convert.ToString(cboRolMod.Text);
 
-                    return true;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                   
                 }
                 else
                 {
+                    MessageBox.Show("Los campos Obligatorios (*) No deben estar vacios");
                     return false;
+                    
                 }
                
             }
@@ -250,43 +301,53 @@ namespace RestoAPPWPF
         {
             PersonasNegocio personas = new PersonasNegocio();
             if (CargarVariablesAgregar(ref personas) == true)
-                
             {
-                try
+                if(LargoString(txtRut_personas.Text,txtNombrePer.Text, txtApellidoPat.Text, txtApellidoMat.Text))
                 {
-                    if (ValidarCorreoAgregar())
+                    if (ValidarEspaciosEnBlancos(txtRut_personas.Text) == false)
                     {
-
-                    
-                    if (personas.Agregar() == 1)
-                    {
-                        MessageBox.Show("El usuario se creo correctamente.  \n " + "Se Genero la contraseña: " + personas.Pass);
-                        EnviarEmail();
-                        VaciarCasillasAgregar();     
-                        conexion.Close();
-                    }
-                    else if (personas.Agregar() == 0)
-                    {
-                        MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
-                        conexion.Close();
-                    }
-
+                        MessageBox.Show("No pueden Existir Espacios en el RUT");
                     }
                     else
                     {
-                        MessageBox.Show("El Email ingresado no cumple con el formato de un correo");
-                        conexion.Close();
+                        try
+                        {
+                            if (ValidarCorreoAgregar())
+                            {
+
+
+                                if (personas.Agregar() == 1)
+                                {
+                                    MessageBox.Show("El usuario se creo correctamente.  \n " + "Se Genero la contraseña: " + personas.Pass);
+                                    EnviarEmail();
+                                    VaciarCasillasAgregar();
+                                    conexion.Close();
+                                }
+                                else if (personas.Agregar() == 0)
+                                {
+                                    MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                                    conexion.Close();
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("El Email ingresado no cumple con el formato de un correo");
+                                conexion.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error de Conexion: " + ex);
+                            conexion.Close();
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error de Conexion: " + ex);
-                    conexion.Close();
+                
                 }
             }
             else
             {
-                MessageBox.Show("Debe llenar todos los campos obligatorios (*)");
+               
             }
             
         }
@@ -328,45 +389,52 @@ namespace RestoAPPWPF
             PersonasNegocio personas = new PersonasNegocio();
            if( CargarVariablesModificar(ref personas))
             {
-                try
-                {
-                    if (ValidarCorreoModificar())
+
+                    if (LargoString(txtRutMod.Text, txtNombremod.Text, txtApellidoPatMod.Text, txtApellidoMatMod.Text))
                     {
-                        MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea Modificar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                        if (result == MessageBoxResult.Yes)
+                    if (ValidarEspaciosEnBlancos(txtRutMod.Text) == false)
+                    {
+                        MessageBox.Show("No deben haber espacios en el Rut");
+                    }else
+                    {
+                        try
                         {
-
-                            if (personas.ModificarPersonas() == 1)
+                            if (ValidarCorreoModificar())
                             {
-                                MessageBox.Show("El usuario se modifico correctamente");
-                                VaciarCasillasModificar();
-                                conexion.Close();
+                                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea Modificar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                                if (result == MessageBoxResult.Yes)
+                                {
+
+                                    if (personas.ModificarPersonas() == 1)
+                                    {
+                                        MessageBox.Show("El usuario se modifico correctamente");
+                                        VaciarCasillasModificar();
+                                        conexion.Close();
+                                    }
+
+                                    else if (personas.ModificarPersonas() == 0)
+                                    {
+                                        MessageBox.Show("El usuario no existe");
+                                        conexion.Close();
+                                    }
+                                }
                             }
-
-                            else if (personas.ModificarPersonas() == 0)
+                            else
                             {
-                                MessageBox.Show("El usuario no existe");
-                                conexion.Close();
+                                MessageBox.Show("El email ingresado no cumple con el formato de un correo");
+
                             }
                         }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error de Conexion: " + ex);
+                            conexion.Close();
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("El email ingresado no cumple con el formato de un correo");
-
-                    }
+                       
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error de Conexion: " + ex);
-                    conexion.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Los campos Obligatorios (*) No deben estar vacios");
-            }
-            
+                  
+            }     
         }
 
 
@@ -392,7 +460,7 @@ namespace RestoAPPWPF
             string rut;
             rut = view.Row.ItemArray[0].ToString();
             personas.Rut_Persona = rut;
-
+            
             try
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea eliminar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
