@@ -19,6 +19,7 @@ using RestoAPPNegocio;
 using System.Net.Mail;
 using System.Net;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -54,21 +55,29 @@ namespace RestoAPPWPF
             }
             else
             {
-                personas.Rut_Persona = txtRut_personas.Text;
-                personas.Nom_Persona = txtNombrePer.Text;
-                personas.Apel_Pat_Persona = txtApellidoPat.Text;
-                personas.Apel_Mat_Persona = txtApellidoMat.Text;
-                personas.Email = txtCorreo.Text;
-                DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
-                string formato = "dd/MM/yyyy";
-                personas.Fecha_Nac = fecha.ToString(formato);
-                string contraseña = txtRut_personas.Text;
-                string contraseña_pt2 = fecha.ToString(formato);
-                personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
-                personas.Id_Cargo = Convert.ToString(cboCargo.Text);
-                personas.Id_Rol = Convert.ToString(cboRoles.Text);
+                if(cboCargo.SelectedItem != cboitemSeleccione && cboRoles.SelectedItem != cborolSeleccione)
+                {
+                    personas.Rut_Persona = txtRut_personas.Text;
+                    personas.Nom_Persona = txtNombrePer.Text;
+                    personas.Apel_Pat_Persona = txtApellidoPat.Text;
+                    personas.Apel_Mat_Persona = txtApellidoMat.Text;
+                    personas.Email = txtCorreo.Text;
+                    DateTime fecha = (DateTime)dtpFechaNac.SelectedDate;
+                    string formato = "dd/MM/yyyy";
+                    personas.Fecha_Nac = fecha.ToString(formato);
+                    string contraseña = txtRut_personas.Text;
+                    string contraseña_pt2 = fecha.ToString(formato);
+                    personas.Pass = contraseña.Substring(0, 2) + contraseña_pt2.Substring(0, 2);
+                    personas.Id_Cargo = Convert.ToString(cboCargo.Text);
+                    personas.Id_Rol = Convert.ToString(cboRoles.Text);
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
            
         }
@@ -83,18 +92,27 @@ namespace RestoAPPWPF
             }
             else
             {
-                personas.Rut_Persona = txtRutMod.Text;
-                personas.Pass = txtpassmod.Text;
-                personas.Nom_Persona = txtNombremod.Text;
-                personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
-                personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
-                DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
-                string formato = "dd/MM/yyyy";
-                personas.Email = txtCorreoMod.Text;
-                personas.Fecha_Nac = fecha.ToString(formato);
-                personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
-                personas.Id_Rol = Convert.ToString(cboRolMod.Text);
-                return true;
+                if(cboCargoMod.SelectedItem != cboitemSeleccioneMOD && cboRolMod.SelectedItem != cborolSeleccioneMOD)
+                {
+                    personas.Rut_Persona = txtRutMod.Text;
+                    personas.Pass = txtpassmod.Text;
+                    personas.Nom_Persona = txtNombremod.Text;
+                    personas.Apel_Pat_Persona = txtApellidoPatMod.Text;
+                    personas.Apel_Mat_Persona = txtApellidoMatMod.Text;
+                    DateTime fecha = (DateTime)dtFechaNacMod.SelectedDate;
+                    string formato = "dd/MM/yyyy";
+                    personas.Email = txtCorreoMod.Text;
+                    personas.Fecha_Nac = fecha.ToString(formato);
+                    personas.Id_Cargo = Convert.ToString(cboCargoMod.Text);
+                    personas.Id_Rol = Convert.ToString(cboRolMod.Text);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+               
             }
             
         }
@@ -124,6 +142,34 @@ namespace RestoAPPWPF
             cboCargo.Text = string.Empty;
             cboRoles.Text = string.Empty;
         }
+
+        public bool ValidarCorreoAgregar()
+        {
+            string validando;
+            validando = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+            if (Regex.IsMatch(txtCorreo.Text, validando))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public bool ValidarCorreoModificar()
+        {
+            string validando;
+            validando = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+            if (Regex.IsMatch(txtCorreoMod.Text, validando))
+            {
+                return true;
+            }
+
+            return false;
+        }
+    
 
         public void CargarCasillasModificar()
         {
@@ -204,9 +250,14 @@ namespace RestoAPPWPF
         {
             PersonasNegocio personas = new PersonasNegocio();
             if (CargarVariablesAgregar(ref personas) == true)
+                
             {
                 try
                 {
+                    if (ValidarCorreoAgregar())
+                    {
+
+                    
                     if (personas.Agregar() == 1)
                     {
                         MessageBox.Show("El usuario se creo correctamente.  \n " + "Se Genero la contraseña: " + personas.Pass);
@@ -217,6 +268,13 @@ namespace RestoAPPWPF
                     else if (personas.Agregar() == 0)
                     {
                         MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                        conexion.Close();
+                    }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Email ingresado no cumple con el formato de un correo");
                         conexion.Close();
                     }
                 }
@@ -268,25 +326,34 @@ namespace RestoAPPWPF
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             PersonasNegocio personas = new PersonasNegocio();
-           if( CargarVariablesModificar(ref personas)== true)
+           if( CargarVariablesModificar(ref personas))
             {
                 try
                 {
-                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea Modificar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                    if (result == MessageBoxResult.Yes)
+                    if (ValidarCorreoModificar())
                     {
-                        if (personas.ModificarPersonas() == 1)
+                        MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea Modificar esta persona?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                        if (result == MessageBoxResult.Yes)
                         {
-                            MessageBox.Show("El usuario se modifico correctamente");
-                            VaciarCasillasModificar();
-                            conexion.Close();
-                        }
 
-                        else if (personas.ModificarPersonas() == 0)
-                        {
-                            MessageBox.Show("El usuario no existe");
-                            conexion.Close();
+                            if (personas.ModificarPersonas() == 1)
+                            {
+                                MessageBox.Show("El usuario se modifico correctamente");
+                                VaciarCasillasModificar();
+                                conexion.Close();
+                            }
+
+                            else if (personas.ModificarPersonas() == 0)
+                            {
+                                MessageBox.Show("El usuario no existe");
+                                conexion.Close();
+                            }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El email ingresado no cumple con el formato de un correo");
+
                     }
                 }
                 catch (Exception ex)

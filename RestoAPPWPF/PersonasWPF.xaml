@@ -57,8 +57,6 @@
             </Grid.Background>
             <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
             </Rectangle>
-
-
             <Label Content="Personas" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="210" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/agregar banner.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="*Rut:" HorizontalAlignment="Left" Margin="28,60,0,0" VerticalAlignment="Top" Width="99" Foreground="Black"/>
@@ -67,7 +65,6 @@
             <Label Content="*Apellido Materno:" HorizontalAlignment="Left" Margin="28,358,0,0" VerticalAlignment="Top" Width="117" Foreground="Black"/>
             <Label Content="*Nacimiento" HorizontalAlignment="Left" Margin="28,457,0,0" VerticalAlignment="Top" Width="78" Foreground="Black" Height="37"/>
             <Label Content="Correo:" HorizontalAlignment="Left" Margin="28,550,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
-            <Label Content="@gmail.com:" HorizontalAlignment="Left" Margin="366,550,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Cargo:" HorizontalAlignment="Left" Margin="436,57,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Rol:" HorizontalAlignment="Left" Margin="436,152,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <TextBox MaxLength="10" x:Name="txtRut_personas" HorizontalAlignment="Left" Height="23" Margin="170,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRut_personas_KeyDown"/>
@@ -125,7 +122,6 @@
             <Label Content="*Apellido Materno:" Margin="28,455,640,216" Foreground="Black"/>
             <Label Content="Nacimiento:" Margin="35,546,612,125" Foreground="Black"/>
             <Label Content="Correo:" Margin="35,619,672,52" Foreground="Black" RenderTransformOrigin="1.141,0.462"/>
-            <Label Content="@gmail.com:" HorizontalAlignment="Left" Margin="356,619,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Cargo:" HorizontalAlignment="Left" Margin="398,111,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Rol:" HorizontalAlignment="Left" Margin="398,191,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Button  Visibility="Hidden" HorizontalAlignment="Left" Margin="339,111,0,0" VerticalAlignment="Top" Width="30" Height="26" BorderBrush="{x:Null}" Foreground="{x:Null}">
