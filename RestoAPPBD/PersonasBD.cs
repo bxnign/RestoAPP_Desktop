@@ -45,9 +45,9 @@ namespace RestoAPPBD
             adaptador.Fill(table);
             return table;
         }
-        public int Agregar(string rut , string nombre , string apellido_pat , string apellido_mat, string pass, string fecha_naci, string rol, string cargo, string correo)
+        public int Agregar(string rut, string nombre, string apellido_pat, string apellido_mat, string pass, string fecha_naci, string rol, string cargo, string correo)
         {
-            
+
             conexion.Open();
             // especifico  el nombre del procedimiento y la conexion
             OracleCommand comando = new OracleCommand("PKG_MANT_PERSONAS.SP_INGRESAR_PERSONA", conexion);
@@ -64,12 +64,34 @@ namespace RestoAPPBD
             comando.Parameters.Add("CORREO", OracleType.NVarChar).Value = correo;
             comando.Parameters.Add("ROL", OracleType.NVarChar).Value = rol;
             comando.Parameters.Add("CARGO", OracleType.NVarChar).Value = cargo;
-            int resultado = comando.ExecuteNonQuery();
+            
             // se devuelte el resultado que es un int
             // update , insert , delete , retorna el numero de filas
             // drop y create devuelve un 0
             // todo lo demas un -1
-            return resultado;
+            DataTable datos = SolucionError();
+            int numerito = 0;
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (row["Rut persona"].ToString() == rut)
+                {
+
+                    numerito = 5;
+                    break;
+                }
+                
+                else
+                {
+                    numerito = 1;
+                }
+
+               
+
+            }
+            comando.ExecuteNonQuery();
+            return numerito;
+
         }
 
         public int ModificarPersonas(string rut, string nombre, string apellido_pat, string apellido_mat, string pass, string fecha_naci, string rol, string cargo, string correo)
@@ -87,8 +109,31 @@ namespace RestoAPPBD
             comando.Parameters.Add("CORREO", OracleType.NVarChar).Value = correo;
             comando.Parameters.Add("ROL", OracleType.NVarChar).Value = rol;
             comando.Parameters.Add("CARGO", OracleType.NVarChar).Value = cargo;
-            int resultado = comando.ExecuteNonQuery();
-            return resultado;
+
+            DataTable datos = SolucionError();
+            int numerito = 0;
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (row["Rut persona"].ToString() == rut)
+                {
+
+                    numerito = 1;
+                    break;
+
+                }
+
+                else
+                {
+                    numerito = 5;
+                   
+                }
+
+
+
+            }
+            comando.ExecuteNonQuery();
+            return numerito;
         }
 
         public DataTable ListarPersonas()
@@ -97,6 +142,20 @@ namespace RestoAPPBD
             OracleCommand comando = new OracleCommand("PKG_MANT_PERSONAS.SP_LISTAR_PERSONA", conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("registros", OracleType.Cursor).Direction=ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            conexion.Close();
+            return table;
+        }
+
+        public DataTable SolucionError()
+        {
+
+            OracleCommand comando = new OracleCommand("PKG_MANT_PERSONAS.SP_LISTAR_PERSONA", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter adaptador = new OracleDataAdapter();
             DataTable table = new DataTable();
             adaptador.SelectCommand = comando;

@@ -299,7 +299,7 @@ namespace RestoAPPWPF
                 cboCargoMod.Text = view.Row.ItemArray[6].ToString();
                 cboRolMod.Text = view.Row.ItemArray[7].ToString();
                 txtCorreoMod.Text = view.Row.ItemArray[8].ToString();
-                txtRutMod.IsEnabled = false;
+               // txtRutMod.IsEnabled = false;
             }
         }
 
@@ -371,16 +371,14 @@ namespace RestoAPPWPF
                         {
                             if (ValidarCorreoAgregar())
                             {
-
-
                                 if (personas.Agregar() == 1)
                                 {
-                                    MessageBox.Show("El usuario se creo correctamente.  \n " + "Se Genero la contraseña: " + personas.Pass);
+                                    MessageBox.Show("El usuario se creo correctamente.  \n" + "Se Genero la contraseña: " + personas.Pass);
                                     EnviarEmail();
                                     VaciarCasillasAgregar();
                                     conexion.Close();
                                 }
-                                else if (personas.Agregar() == 0)
+                                else
                                 {
                                     MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
                                     conexion.Close();
@@ -469,7 +467,7 @@ namespace RestoAPPWPF
                                         conexion.Close();
                                     }
 
-                                    else if (personas.ModificarPersonas() == 0)
+                                    else
                                     {
                                         MessageBox.Show("El usuario no existe");
                                         conexion.Close();

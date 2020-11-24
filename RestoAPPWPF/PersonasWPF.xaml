@@ -114,7 +114,7 @@
 
             <Label Content="Personas" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="210" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="678,5,0,0" VerticalAlignment="Top" Width="60" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
-            <TextBox IsEnabled="False" x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
+            <TextBox x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
             <Label Content="*Rut:" Margin="35,115,651,556" Foreground="Black"/>
             <Label Content="*Nombre:" Margin="35,194,651,477" Foreground="Black"/>
             <Label Content=" Password: " Margin="35,272,645,399" Foreground="Black"/>

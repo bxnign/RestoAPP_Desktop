@@ -77,6 +77,8 @@ namespace RestoAPPWPF
                 cboNombreProductoMod.Items.Add(registro[1].ToString());
             }
             conexion.Close();
+            cboNombreProductoMod.Items.Insert(0, "Seleccione un tipo");
+            cboNombreProductoMod.SelectedIndex = 0;
         }
 
         private void btnirListarPorcion_Click(object sender, RoutedEventArgs e)
@@ -118,13 +120,26 @@ namespace RestoAPPWPF
             return false;
 
         }
-        public void CargarVariablesModificar(ref PorcionesNegocio porcion)
+        public bool CargarVariablesModificar(ref PorcionesNegocio porcion)
         {
-            porcion.Id_porcion = Convert.ToInt32(txtIdPorcionMod.Text);
-            porcion.Cant_porcion = Convert.ToDecimal(txtCantidadMod.Text);
-            porcion.Id_producto = cboNombreProductoMod.Text;
-            porcion.Nombre_porcion = txtNombrePorcionMod.Text;
-            porcion.Precio_porcion = Convert.ToInt32(txtPrecioMod.Text);
+            if (ValidacionTexBoxVacioModificar())
+            {
+                if (ValidacionEspaciosEnBlancos(txtCantidadMod.Text) && ValidacionEspacioEnBlancosPrecio(txtPrecioMod.Text))
+                {
+                    if (ValidacionNumeros(txtCantidadMod.Text, txtPrecioMod.Text))
+                    {
+                        porcion.Id_porcion = Convert.ToInt32(txtIdPorcionMod.Text);
+                        porcion.Cant_porcion = Convert.ToDecimal(txtCantidadMod.Text);
+                        porcion.Id_producto = cboNombreProductoMod.Text;
+                        porcion.Nombre_porcion = txtNombrePorcionMod.Text;
+                        porcion.Precio_porcion = Convert.ToInt32(txtPrecioMod.Text);
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+           
         }
         public void VaciarCasillasModificar()
         {
@@ -152,11 +167,11 @@ namespace RestoAPPWPF
                 DataRowView view = (DataRowView)dtgridListaPorcion.SelectedItem;
 
                 txtIdPorcionMod.Text = view.Row.ItemArray[0].ToString();
-                txtCantidadMod.Text = view.Row.ItemArray[1].ToString();
-                cboNombreProductoMod.Text = view.Row.ItemArray[2].ToString();
-                txtNombrePorcionMod.Text = view.Row.ItemArray[3].ToString();
+                txtNombrePorcionMod.Text = view.Row.ItemArray[1].ToString();
+                txtCantidadMod.Text = view.Row.ItemArray[2].ToString();
+                cboNombreProductoMod.Text = view.Row.ItemArray[3].ToString();
                 txtPrecioMod.Text = view.Row.ItemArray[4].ToString();
-                txtIdPorcionMod.IsEnabled = true;
+                txtIdPorcionMod.IsEnabled = false;
             }
         }
 
@@ -199,7 +214,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if(cboNombreProductoMod.Text != "Seleccione")
+                if(cboNombreProductoMod.Text != "Seleccione un tipo")
                 {
                     return true;
                 }
@@ -214,14 +229,24 @@ namespace RestoAPPWPF
         public bool ValidacionEspaciosEnBlancos(string dato)
         {
             // Valida espacios en blancos y que no exista signo que no sea la coma
-            string val = "^[0-9,]*$";
+            string val = "[0-9]*[,]?[0-9]*$";
             if (Regex.IsMatch(dato, val))
             {
-                return true;
+                if(dato != ",")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que insertar Numeros");
+                    return false;
+                }
+
+               
             }
-            else
+            
             {
-                MessageBox.Show("No se aceptan espacios ni signos distintos a: , \nVuelva a Intentarlo");
+                MessageBox.Show("No se aceptan espacios ni signos distintos a: , sin estar asociados a un numero \nVuelva a Intentarlo");
                 return false;
             }
 
@@ -244,8 +269,9 @@ namespace RestoAPPWPF
 
         public bool ValidacionNumeros(string dato , string precio)
         {
-
-            if (Convert.ToDecimal(dato) == 0 || Convert.ToInt32(precio) == 0)
+           
+                
+            if (Convert.ToDouble(dato) < 0.01 || Convert.ToInt32(precio) == 0)
             {
 
                 MessageBox.Show("No puede ingresar un valor 0 \nVuelva a Intentarlo ");
@@ -337,38 +363,41 @@ namespace RestoAPPWPF
         private void btnGuardarMod_Click(object sender, RoutedEventArgs e)
         {
             PorcionesNegocio porciones = new PorcionesNegocio();
-            CargarVariablesModificar(ref porciones);
-            try
+            if(CargarVariablesModificar(ref porciones))
             {
-                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar la porcion?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                if (result == MessageBoxResult.Yes)
+                try
                 {
-                    if (porciones.ModificarPorciones() == 1)
+                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar la porcion?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("El usuario se modifico correctamente");
-                        VaciarCasillasModificar();
-                        conexion.Close();
-                    }
-                    else if (porciones.ModificarPorciones() == 0)
-                    {
-                        MessageBox.Show("El usuario no existe");
-                        conexion.Close();
-                    }
+                        if (porciones.ModificarPorciones() == 1)
+                        {
+                            MessageBox.Show("La porcion se modifico correctamente");
+                            VaciarCasillasModificar();
+                            conexion.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La porcion no existe");
+                            conexion.Close();
+                        }
 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de Conexion: " + ex);
+                    conexion.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+            
         }
                    
         
  
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            CargarCasillasModificar();
+            
             grModificar.Visibility = Visibility.Visible;
             grModificar.IsEnabled = true;
             grAgregar.Visibility = Visibility.Hidden;
@@ -400,7 +429,9 @@ namespace RestoAPPWPF
                         cboNombreProductoMod.Text = dato;
                     }
                 }
+                cboNombreProductoMod.Items.Insert(0, "Seleccione un tipo");
                 conexion.Close();
+                CargarCasillasModificar();
             }
             
         }
