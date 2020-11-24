@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
 using RestoAPPNegocio;
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -97,12 +98,25 @@ namespace RestoAPPWPF
 
 
         }
-        public void CargarVariablesAgregar(ref PorcionesNegocio porcion)
+        public bool CargarVariablesAgregar(ref PorcionesNegocio porcion)
         {
-            porcion.Cant_porcion = Convert.ToDecimal(txtCantidad.Text);
-            porcion.Id_producto = cboNombreProd.Text;
-            porcion.Nombre_porcion = txtNombrePorcion.Text;
-            porcion.Precio_porcion = Convert.ToInt32(txtPrecio.Text);
+            if (ValidacionTexBoxVacioAgregar())
+            {
+                if(ValidacionEspaciosEnBlancos(txtCantidad.Text) && ValidacionEspacioEnBlancosPrecio(txtPrecio.Text))
+                {
+                    if(ValidacionNumeros(txtCantidad.Text , txtPrecio.Text))
+                    {
+                        porcion.Cant_porcion = Convert.ToDecimal(txtCantidad.Text);
+                        porcion.Id_producto = cboNombreProd.Text;
+                        porcion.Nombre_porcion = txtNombrePorcion.Text;
+                        porcion.Precio_porcion = Convert.ToInt32(txtPrecio.Text);
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+
         }
         public void CargarVariablesModificar(ref PorcionesNegocio porcion)
         {
@@ -145,32 +159,151 @@ namespace RestoAPPWPF
                 txtIdPorcionMod.IsEnabled = true;
             }
         }
+
+        //VALIDACIONES
+        public bool ValidacionTexBoxVacioAgregar()
+        {
+            
+            if(txtCantidad.Text == string.Empty ||
+            cboNombreProd.Text == string.Empty ||
+            txtNombrePorcion.Text == string.Empty ||
+            txtPrecio.Text == string.Empty)
+            {
+                MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                return false;
+            }
+            else
+            {
+                if(cboNombreProd.Text != "Seleccione un tipo")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                    return false;
+                }
+            }
+        }
+
+        public bool ValidacionTexBoxVacioModificar()
+        {
+            if(txtIdPorcionMod.Text == string.Empty ||
+            txtCantidadMod.Text == string.Empty ||
+            cboNombreProductoMod.Text == string.Empty ||
+            txtNombrePorcionMod.Text == string.Empty ||
+            txtPrecioMod.Text == string.Empty)
+            {
+                MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                return false;
+            }
+            else
+            {
+                if(cboNombreProductoMod.Text != "Seleccione")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                    return false;
+                }
+            }
+        }
+
+        public bool ValidacionEspaciosEnBlancos(string dato)
+        {
+            // Valida espacios en blancos y que no exista signo que no sea la coma
+            string val = "^[0-9,]*$";
+            if (Regex.IsMatch(dato, val))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("No se aceptan espacios ni signos distintos a: , \nVuelva a Intentarlo");
+                return false;
+            }
+
+           
+        }
+
+        public bool ValidacionEspacioEnBlancosPrecio(string dato)
+        {
+            string val2 = "^[0-9]*$";
+            if (Regex.IsMatch(dato, val2))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("En Precio no se aceptan espacios signos como  !#$%&/()=?¡ : , \nVuelva a Intentarlo");
+                return false;
+            }
+        }
+
+        public bool ValidacionNumeros(string dato , string precio)
+        {
+
+            if (Convert.ToDecimal(dato) == 0 || Convert.ToInt32(precio) == 0)
+            {
+
+                MessageBox.Show("No puede ingresar un valor 0 \nVuelva a Intentarlo ");
+                return false;
+            }
+            else
+            {
+
+                if(Convert.ToInt32(precio) < 600)
+                {
+                    MessageBoxResult result = System.Windows.MessageBox.Show("El precio ingresado es muy bajo \n ¿esta seguro que desea ingresarlo?", "Cuidado", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                   
+                }
+
+                return true;
+            }
+        }
+
+        //VALIDACIONES
+
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             PorcionesNegocio porciones = new PorcionesNegocio();
 
 
-            CargarVariablesAgregar(ref porciones);
-            try
+           if(CargarVariablesAgregar(ref porciones))
             {
+                try
+                {
 
-                if (porciones.AgregarPorciones() == 1)
-                {
-                    MessageBox.Show("El usuario se creo correctamente.");
-                    VaciarCasillasAgregar();
-                    conexion.Close();
+                    if (porciones.AgregarPorciones() == 1)
+                    {
+                        MessageBox.Show("El usuario se creo correctamente.");
+                        VaciarCasillasAgregar();
+                        conexion.Close();
+                    }
+                    else if (porciones.AgregarPorciones() == 0)
+                    {
+                        MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                        conexion.Close();
+                    }
                 }
-                else if (porciones.AgregarPorciones() == 0)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                    MessageBox.Show("Error de Conexion: " + ex);
                     conexion.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+           
         }
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
