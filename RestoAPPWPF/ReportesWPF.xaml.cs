@@ -49,11 +49,6 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
-            ReportesNegocio reportes = new ReportesNegocio();
-            DataTable datos = new DataTable();
-            datos = reportes.ListarReporteIngresos();
-            dtgridListaIngresos.ItemsSource = datos.DefaultView;
-            conexion.Close();
         }
         private void btnReporteConsumos_Click(object sender, RoutedEventArgs e)
         {
@@ -65,12 +60,6 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
-
-            StockNegocio stock = new StockNegocio();
-            DataTable datos = new DataTable();
-            datos = stock.ListarStock();
-            dtgridListaConsumos.ItemsSource = datos.DefaultView;
-            conexion.Close();
         }
         private void btnReporteAtencion_Click(object sender, RoutedEventArgs e)
         {
@@ -82,21 +71,15 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Visible;
             grListarAtencion.IsEnabled = true;
-            ReportesNegocio reportes = new ReportesNegocio();
-            DataTable datos = new DataTable();
-            datos = reportes.ListarReporteAtencion();
-            dtgridListaAtencion.ItemsSource = datos.DefaultView;
-            conexion.Close();
         }
         private void btnBuscarListaIngresos_Click(object sender, RoutedEventArgs e)
         {
             ReportesNegocio reportes = new ReportesNegocio();
             DataTable datos = new DataTable();
             datos = reportes.ListarReporteIngresos();
-           
 
             try
-            { 
+            {
                 if (datos.DefaultView != null)
                 {
                     MessageBox.Show("Estos el stock encontrado");
@@ -116,19 +99,21 @@ namespace RestoAPPWPF
         }
         private void btnBuscarListaConsumos_Click(object sender, RoutedEventArgs e)
         {
-            StockNegocio stock = new StockNegocio();
-            DataTable datos = new DataTable();
-            datos = stock.ListarStock();
-            
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos1 = new DataTable();
+            DataTable datos2 = new DataTable();
+            datos1 = reportes.ListarReporteConsumosMenu();
+            datos2 = reportes.ListarReporteConsumosPorcion();
             try
             {
-                if (datos.DefaultView != null)
+                if (datos1.DefaultView != null || datos2.DefaultView != null)
                 {
                     MessageBox.Show("Estos el stock encontrado");
-                    dtgridListaConsumos.ItemsSource = datos.DefaultView;
+                    dtgridListaConsumos1.ItemsSource = datos1.DefaultView;
+                    dtgridListaConsumos2.ItemsSource = datos2.DefaultView;
                     conexion.Close();
                 }
-                else if (datos.DefaultView == null)
+                else if (datos1.DefaultView == null || datos2.DefaultView != null)
                 {
                     MessageBox.Show("No existe personas en la base de datos");
                     conexion.Close();
@@ -144,7 +129,6 @@ namespace RestoAPPWPF
             ReportesNegocio reportes = new ReportesNegocio();
             DataTable datos = new DataTable();
             datos = reportes.ListarReporteAtencion();
-            
 
             try
             {
@@ -165,9 +149,10 @@ namespace RestoAPPWPF
                 MessageBox.Show("Se actualizo la lista");
             }
         }
+
         private void btnGenerarReporteIngresos_Click(object sender, RoutedEventArgs e)
         {
-            PdfWriter pdfWriter = new PdfWriter("reporte.pdf");
+            PdfWriter pdfWriter = new PdfWriter("reporteInicioIngresos.pdf");
             PdfDocument pdf = new PdfDocument(pdfWriter);
             PageSize tamannoH = new PageSize(792, 612);
             Document documento = new Document(pdf, tamannoH);
@@ -200,7 +185,7 @@ namespace RestoAPPWPF
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporte.pdf"), new PdfWriter("ReporteQl.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporteInicioIngresos.pdf"), new PdfWriter("ReporteIngresos.pdf"));
             Document doc = new Document(pdfDoc);
 
             int numeros = pdfDoc.GetNumberOfPages();

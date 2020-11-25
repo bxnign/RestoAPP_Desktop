@@ -50,5 +50,13 @@ namespace RestoAPPNegocio
         {
             return new ReportesBD().ReporteMinutosPedidos();
         }
+        public DataTable ListarReporteConsumosPorcion()
+        {
+            return new ReportesBD().ListarReporteConsumosPorcion();
+        }
+        public DataTable ListarReporteConsumosMenu()
+        {
+            return new ReportesBD().ListarReporteConsumosMenu();
+        }
     }
 }

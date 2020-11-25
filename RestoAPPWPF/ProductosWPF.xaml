@@ -25,7 +25,7 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnirAgregarProductos_Click">
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Button x:Name="btnirModificarStock" Margin="84,308,0,0"
+            <Button x:Name="btnirModificarStock" Visibility="Hidden" IsEnabled="False" Margin="84,308,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"

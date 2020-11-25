@@ -17,6 +17,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
+            <Slider x:Name="slider2" HorizontalAlignment="Left" Margin="779,582,0,0" VerticalAlignment="Top" Width="178" ValueChanged="slider2_ValueChanged" LargeChange="0.1" Maximum="1"/>
 
         </Grid>
 
@@ -42,8 +43,10 @@
             </Button.Background>
             <Image Source="Imagenes/Ico/minimizar.png"></Image>
         </Button>
-
+        <MediaElement x:Name="video" LoadedBehavior="Manual" Margin="136,197,146.6,194.8"/>
+        <Button x:Name="btnPlay" Content="Play" Click="btnPlay_Click" Height="25" Margin="401,669,703.6,150.8"/>
+        <Button x:Name="btnPause" Content="Pause" Click="btnPause_Click" Height="25" Margin="549,669,555.6,150.8"/>
+        <Button x:Name="btnStop" Content="Stop" Click="btnStop_Click" Height="25" Margin="703,669,401.6,150.8"/>
 
     </Grid>
 </Window>
-

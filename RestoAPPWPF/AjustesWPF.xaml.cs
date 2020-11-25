@@ -22,7 +22,7 @@ namespace RestoAPPWPF
     /// </summary>
     public partial class AjustesWPF : Window
     {
-    
+
         public AjustesWPF()
         {
             InitializeComponent();
@@ -31,19 +31,19 @@ namespace RestoAPPWPF
 
         public string rol;
         public string cargo;
-        public  string rut;
+        public string rut;
         public void AjustedPersonales(DataTable datos_final)
         {
             rut = datos_final.Rows[0]["Rut persona"].ToString();
-            lblRut.Content = "Su Rut es "+datos_final.Rows[0]["Rut persona"].ToString();
-            lblNombre.Content = "Nombre: " + datos_final.Rows[0]["Nombre persona"].ToString() +"  "+ datos_final.Rows[0]["Apellido paterno"].ToString();
-            lblCargo.Content = "Su cargo es "+datos_final.Rows[0]["Cargo"].ToString();
-            lblRol.Content = "Su rol es "+datos_final.Rows[0]["Rol"].ToString();
-            txtNombre.Text  = datos_final.Rows[0]["Nombre persona"].ToString();
+            lblRut.Content = "Su Rut es " + datos_final.Rows[0]["Rut persona"].ToString();
+            lblNombre.Content = "Nombre: " + datos_final.Rows[0]["Nombre persona"].ToString() + "  " + datos_final.Rows[0]["Apellido paterno"].ToString();
+            lblCargo.Content = "Su cargo es " + datos_final.Rows[0]["Cargo"].ToString();
+            lblRol.Content = "Su rol es " + datos_final.Rows[0]["Rol"].ToString();
+            txtNombre.Text = datos_final.Rows[0]["Nombre persona"].ToString();
             txtApellidoPat.Text = datos_final.Rows[0]["Apellido paterno"].ToString();
             txtApellidoMat.Text = datos_final.Rows[0]["Apellido materno"].ToString();
             dtpFechaNacimiento.Text = datos_final.Rows[0]["Fecha de nacimiento"].ToString();
-            txtCorreo.Text = datos_final.Rows[0]["Correo"].ToString(); 
+            txtCorreo.Text = datos_final.Rows[0]["Correo"].ToString();
             txtPass.Text = datos_final.Rows[0]["Contraseña"].ToString();
             rol = datos_final.Rows[0]["Rol"].ToString();
             cargo = datos_final.Rows[0]["Cargo"].ToString();
@@ -70,7 +70,7 @@ namespace RestoAPPWPF
                     MessageBox.Show("Tus datos se Actualizaron");
                     DataTable datos = personas.ListarPorRUT();
                     lblRut.Content = "Su Rut es " + datos.Rows[0]["Rut persona"].ToString();
-                    lblNombre.Content = "Nombre: " + datos.Rows[0]["Nombre persona"].ToString() + datos.Rows[0]["Apellido paterno"].ToString();
+                    lblNombre.Content = "Nombre: " + datos.Rows[0]["Nombre persona"].ToString() + " " + datos.Rows[0]["Apellido paterno"].ToString();
                     lblCargo.Content = "Su cargo es " + datos.Rows[0]["Cargo"].ToString();
                     lblRol.Content = "Su rol es " + datos.Rows[0]["Rol"].ToString();
                     txtNombre.Text = datos.Rows[0]["Nombre persona"].ToString();
@@ -85,9 +85,10 @@ namespace RestoAPPWPF
                     MessageBox.Show("Tus datos no se pudieron actualizar :(");
                 }
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("ERROR DE BASE DE DATOS: \n"+ex);
+                MessageBox.Show("ERROR DE BASE DE DATOS: \n" + ex);
             }
 
         }
@@ -99,10 +100,19 @@ namespace RestoAPPWPF
 
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = System.Windows.WindowState.Minimized;
+            txtNombre.Text = string.Empty;
+            txtApellidoPat.Text = string.Empty;
+            txtApellidoMat.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
+            txtPass.Text = string.Empty;
+            lblRut.Content = string.Empty;
+            lblNombre.Content = string.Empty;
+            lblCargo.Content = string.Empty;
+            lblRol.Content = string.Empty;
+            this.Close();
         }
 
-     
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -115,8 +125,8 @@ namespace RestoAPPWPF
             {
                 this.DragMove();
             }
-          
-            
+
+
         }
     }
 }

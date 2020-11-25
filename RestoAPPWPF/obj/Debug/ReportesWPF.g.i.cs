@@ -123,7 +123,7 @@ namespace RestoAPPWPF {
         
         #line 106 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGrid dtgridListaConsumos;
+        internal System.Windows.Controls.DataGrid dtgridListaConsumos1;
         
         #line default
         #line hidden
@@ -131,13 +131,21 @@ namespace RestoAPPWPF {
         
         #line 107 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.DataGrid dtgridListaConsumos2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 108 "..\..\ReportesWPF.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnGenerarReporteConsumos;
         
         #line default
         #line hidden
         
         
-        #line 112 "..\..\ReportesWPF.xaml"
+        #line 113 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grListarAtencion;
         
@@ -145,7 +153,7 @@ namespace RestoAPPWPF {
         #line hidden
         
         
-        #line 120 "..\..\ReportesWPF.xaml"
+        #line 121 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnBuscarAtencion;
         
@@ -153,7 +161,7 @@ namespace RestoAPPWPF {
         #line hidden
         
         
-        #line 133 "..\..\ReportesWPF.xaml"
+        #line 134 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid dtgridListaAtencion;
         
@@ -161,7 +169,7 @@ namespace RestoAPPWPF {
         #line hidden
         
         
-        #line 134 "..\..\ReportesWPF.xaml"
+        #line 135 "..\..\ReportesWPF.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnGenerarReporteAtencion;
         
@@ -265,36 +273,39 @@ namespace RestoAPPWPF {
             #line hidden
             return;
             case 11:
-            this.dtgridListaConsumos = ((System.Windows.Controls.DataGrid)(target));
+            this.dtgridListaConsumos1 = ((System.Windows.Controls.DataGrid)(target));
             return;
             case 12:
+            this.dtgridListaConsumos2 = ((System.Windows.Controls.DataGrid)(target));
+            return;
+            case 13:
             this.btnGenerarReporteConsumos = ((System.Windows.Controls.Button)(target));
             
-            #line 107 "..\..\ReportesWPF.xaml"
+            #line 108 "..\..\ReportesWPF.xaml"
             this.btnGenerarReporteConsumos.Click += new System.Windows.RoutedEventHandler(this.btnGenerarReporteConsumos_Click);
             
             #line default
             #line hidden
             return;
-            case 13:
+            case 14:
             this.grListarAtencion = ((System.Windows.Controls.Grid)(target));
             return;
-            case 14:
+            case 15:
             this.btnBuscarAtencion = ((System.Windows.Controls.Button)(target));
             
-            #line 120 "..\..\ReportesWPF.xaml"
+            #line 121 "..\..\ReportesWPF.xaml"
             this.btnBuscarAtencion.Click += new System.Windows.RoutedEventHandler(this.btnBuscarListaAtencion_Click);
             
             #line default
             #line hidden
             return;
-            case 15:
+            case 16:
             this.dtgridListaAtencion = ((System.Windows.Controls.DataGrid)(target));
             return;
-            case 16:
+            case 17:
             this.btnGenerarReporteAtencion = ((System.Windows.Controls.Button)(target));
             
-            #line 134 "..\..\ReportesWPF.xaml"
+            #line 135 "..\..\ReportesWPF.xaml"
             this.btnGenerarReporteAtencion.Click += new System.Windows.RoutedEventHandler(this.btnGenerarReporteAtencion_Click);
             
             #line default

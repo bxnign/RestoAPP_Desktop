@@ -33,10 +33,22 @@ namespace RestoAPPBD
             adaptador.Fill(table);
             return table;
         }
-        public DataTable ListarReporteConsumos()
+        public DataTable ListarReporteConsumosPorcion()
         {
             conexion.Open();
-            OracleCommand comando = new OracleCommand("", conexion);
+            OracleCommand comando = new OracleCommand("SP_LISTAR_REPORTE_CONSUMOS_PORCION", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            return table;
+        }
+        public DataTable ListarReporteConsumosMenu()
+        {
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("SP_LISTAR_REPORTE_CONSUMOS_MENU", conexion);
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
             OracleDataAdapter adaptador = new OracleDataAdapter();
@@ -60,7 +72,7 @@ namespace RestoAPPBD
         public Table ReporteIngresos()
         {
             conexion.Open();
-            string oracle = "select re.ID_REGISTRO as id, pe.NOM_PERSONA as nombre, INGRESO as ingreso, to_char(bo.fecha_boleta,'hh/mm/yyyy') as fecha, bo.ID_BOLETA as boleta from REGISTROS re join BOLETAS bo on re.id_boleta = bo.id_boleta join PERSONAS pe on bo.RUT_PERSONA = pe.RUT_PERSONA";
+            string oracle = "select re.ID_REGISTRO id, NOMBRE_PERSONA as nombre, INGRESO as ingreso, to_char(bo.fecha_boleta,'hh/mm/yyyy') as fecha, bo.ID_BOLETA as boleta from REGISTROS re join BOLETAS bo on re.id_boleta = bo.id_boleta";
             OracleCommand comando = new OracleCommand(oracle, conexion);
             OracleDataReader reader = comando.ExecuteReader();
             OracleDataAdapter adaptador = new OracleDataAdapter();
@@ -220,6 +232,6 @@ namespace RestoAPPBD
             }
             return tabla;
         }
-        
+
     }
 }
