@@ -156,7 +156,7 @@ namespace RestoAPPWPF
         public bool LargoString(string nombre, string apellido, string apellido2)
         {
 
-            if (rut.Length <= 2 || nombre.Length <= 2 || apellido.Length <= 2 || apellido2.Length <= 2)
+            if (nombre.Length <= 2 || apellido.Length <= 2 || apellido2.Length <= 2)
             {
                 MessageBox.Show("El largo del  nombre o apellidos son muy cortos \n Ingrese minimo 3 caracteres");
                 return false;
