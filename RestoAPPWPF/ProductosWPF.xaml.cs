@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Drawing;
 using RestoAPPNegocio;
-
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -32,7 +32,7 @@ namespace RestoAPPWPF
         }
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
-
+        //CAMBIO DE VENTANA PRINCIPAL
         private void btnirAgregarProductos_Click(object sender, RoutedEventArgs e)
         {
             grAgregar.Visibility = Visibility.Visible;
@@ -53,7 +53,7 @@ namespace RestoAPPWPF
                 cboEspecificacion.Items.Add(registro[1].ToString());
             }
             conexion.Close();
-            cboEspecificacion.Items.Insert(0, "Seleccione un tipo");
+            cboEspecificacion.Items.Insert(0, "Seleccione");
             cboEspecificacion.SelectedIndex = 0;
         }
 
@@ -96,20 +96,57 @@ namespace RestoAPPWPF
             dtgridListaProductos.ItemsSource = datos.DefaultView;
             conexion.Close();
         }
-        public void CargarVariablesAgregar(ref ProductosNegocio producto)
+
+        // FIN CAMBIO DE VENTANA PRINCIPAL
+
+        // CARGA DE VARIABLES
+        public bool CargarVariablesAgregar(ref ProductosNegocio producto)
         {
-            producto.Nom_producto = txtNombre.Text;
-            producto.Distribucion_product = cboDistribucion.Text;
-            producto.Id_tipo = Convert.ToString(cboEspecificacion.Text);
+            if (ValidacionAgregar())
+            {
+                producto.Nom_producto = txtNombre.Text;
+                producto.Distribucion_product = cboDistribucion.Text;
+                producto.Id_tipo = Convert.ToString(cboEspecificacion.Text);
+
+                return true;
+            }
+
+
+            return false;
         }
-        public void CargarVariablesModificar(ref ProductosNegocio Producto)
+        public bool CargarVariablesModificar(ref ProductosNegocio Producto)
         {
-            Producto.Id_producto = Convert.ToInt32(txtIdProductoMod.Text);
-            Producto.Nom_producto = txtNombreMod.Text;
-            Producto.Distribucion_product = cboDistribucionMod.Text;
-            Producto.Id_tipo = Convert.ToString(cboEspecificacionMod.Text); 
-            
+            if (ValidacionModificar())
+            {
+                Producto.Id_producto = Convert.ToInt32(txtIdProductoMod.Text);
+                Producto.Nom_producto = txtNombreMod.Text;
+                Producto.Distribucion_product = cboDistribucionMod.Text;
+                Producto.Id_tipo = Convert.ToString(cboEspecificacionMod.Text);
+
+                return true;
+            }
+
+            return false;
         }
+      
+        public void CargarCasillasModificar() { 
+            if (dtgridListaProductos.SelectedItem == null)
+            {
+
+            }
+            else
+            {
+                DataRowView view = (DataRowView)dtgridListaProductos.SelectedItem;
+
+                txtIdProductoMod.Text = view.Row.ItemArray[0].ToString();
+                txtNombreMod.Text = view.Row.ItemArray[1].ToString();
+                cboDistribucionMod.Text = view.Row.ItemArray[3].ToString();
+            }
+        }
+
+        // CARGA DE VARIABLES
+
+        // LIMPIAR ELEMENTOS
         public void VaciarCasillasModificar()
         {
             txtIdProductoMod.Text = string.Empty;
@@ -123,47 +160,140 @@ namespace RestoAPPWPF
             cboDistribucion.Text = string.Empty;
             cboEspecificacion.Text = string.Empty;
         }
-        public void CargarCasillasModificar() { 
-            if (dtgridListaProductos.SelectedItem == null)
-            {
 
+        // FIN LIMPIAR ELEMENTOS
+
+        // VALIDACIONES
+        public bool ValidacionAgregar()
+        {
+            if (ValidacionTexBoxVacioAgregar())
+            {
+                if (ProhibirSimbolos(txtNombre.Text))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public bool ValidacionModificar()
+        {
+            if (ValidacionTexBoxVacioModificar())
+            {
+                if (ProhibirSimbolos(txtNombreMod.Text))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public bool ValidacionTexBoxVacioModificar()
+        {
+
+            if (txtNombreMod.Text == string.Empty || txtIdProductoMod.Text == string.Empty )
+            {
+                MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                return false;
             }
             else
             {
-                DataRowView view = (DataRowView)dtgridListaProductos.SelectedItem;
-
-                txtIdProductoMod.Text = view.Row.ItemArray[0].ToString();
-                txtNombreMod.Text = view.Row.ItemArray[1].ToString();
-                cboDistribucionMod.Text = view.Row.ItemArray[3].ToString();
-                txtIdProductoMod.IsEnabled = true;
+                if (cboDistribucionMod.SelectedItem != cboitemModSeleccione || cboEspecificacionMod.Text != "Seleccione")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                    return false;
+                }
             }
         }
-        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+
+        public bool ValidacionTexBoxVacioAgregar()
         {
+
+            if (txtNombre.Text == string.Empty || cboDistribucion.Text == string.Empty || cboEspecificacion.Text == string.Empty)
+            {
+                MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                return false;
+            }
+            else
+            {
+
+                if (cboDistribucion.SelectedItem != cboitemSeleccione && cboEspecificacion.Text != "Seleccione" )
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Ninguna Casilla debe ir Vacia");
+                    return false;
+                }
+            }
+        }
+        public bool ProhibirSimbolos(string dato)
+        {
+            string exp1;
+            exp1 = "^[A-Za-z]*$";
+
+            if (Regex.IsMatch(dato, exp1) == false)
+            {
+
+
+                MessageBox.Show("No se aceptan Espacios ni caracteres como !#$%&/()=?¡-., \n revise su formato e intente nuevamente");
+                return false;
+            }
+            else
+            {
+                if(txtNombre.Text.Length >= 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("El lago del nombre del producto no pueden ser menos de 3 caracteres");
+                    return false;
+                }
+                
+            }
+
+
+        }
+
+        //FIN VALIDACIONES
+
+        // BOTONES Y EVENTOS HASTA EL FINAL
+
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+            { 
             ProductosNegocio productos = new ProductosNegocio();
 
 
-            CargarVariablesAgregar(ref productos);
-            try
+            if(CargarVariablesAgregar(ref productos))
             {
+                try
+                {
 
-                if (productos.AgregarProductos() == 1)
-                {
-                    MessageBox.Show("El usuario se creo correctamente.");
-                    VaciarCasillasAgregar();
-                    conexion.Close();
+                    if (productos.AgregarProductos() == 1)
+                    {
+                        MessageBox.Show("El usuario se creo correctamente.");
+                        VaciarCasillasAgregar();
+                        conexion.Close();
+                    }
+                    else if (productos.AgregarProductos() == 0)
+                    {
+                        MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                        conexion.Close();
+                    }
                 }
-                else if (productos.AgregarProductos() == 0)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                    MessageBox.Show("Error de Conexion: " + ex);
                     conexion.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+            
         }
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -197,71 +327,75 @@ namespace RestoAPPWPF
         private void btnGuardarMod_Click(object sender, RoutedEventArgs e)
         {
             ProductosNegocio productos = new ProductosNegocio();
-            CargarVariablesModificar(ref productos);
-            try
+           if( CargarVariablesModificar(ref productos))
             {
-                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar el producto?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                if (result == MessageBoxResult.Yes)
+                try
                 {
-                    if (productos.ModificarProductos() == 1)
+                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar el producto?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("El producto se modifico correctamente");
-                        VaciarCasillasModificar();
-                        conexion.Close();
+                        if (productos.ModificarProductos() == 1)
+                        {
+                            MessageBox.Show("El producto se modifico correctamente");
+                            VaciarCasillasModificar();
+                            conexion.Close();
+                        }
+                        else if (productos.ModificarProductos() == 0)
+                        {
+                            MessageBox.Show("El producto no existe");
+                            conexion.Close();
+                        }
                     }
-                    else if (productos.ModificarProductos() == 0)
-                    {
-                        MessageBox.Show("El producto no existe");
-                        conexion.Close();
-                    }
-                }
-                   
 
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de Conexion: " + ex);
+                    conexion.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+            
         }
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            CargarCasillasModificar();
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
-
-            cboEspecificacionMod.Items.Clear();
-            OracleCommand comando = new OracleCommand("SELECT * FROM ESPECIFICACIONES", conexion);
-            conexion.Open();
-            OracleDataReader registro = comando.ExecuteReader();
-            string dato;
-            DataRowView view = (DataRowView)dtgridListaProductos.SelectedItem;
-            if (dtgridListaProductos.SelectedItem == null)
+            if(dtgridListaProductos.SelectedItem == null)
             {
-                conexion.Close();
+                MessageBox.Show("Para ir a modificar debe seleccionar un producto");
             }
             else
             {
-                while (registro.Read())
-                {
-                    cboEspecificacionMod.Items.Add(registro[1].ToString());
-                    dato = registro[1].ToString();
-                    if (dato == view.Row.ItemArray[4].ToString())
+                grModificar.Visibility = Visibility.Visible;
+                grModificar.IsEnabled = true;
+                grAgregar.Visibility = Visibility.Hidden;
+                grAgregar.IsEnabled = false;
+                grInfo.Visibility = Visibility.Hidden;
+                grInfo.IsEnabled = false;
+                grListar.Visibility = Visibility.Hidden;
+                grListar.IsEnabled = false;
+                txtIdProductoMod.IsEnabled = false;
+
+                cboEspecificacionMod.Items.Clear();
+                OracleCommand comando = new OracleCommand("SELECT * FROM ESPECIFICACIONES", conexion);
+                conexion.Open();
+                OracleDataReader registro = comando.ExecuteReader();
+                string dato;
+                DataRowView view = (DataRowView)dtgridListaProductos.SelectedItem;
+                
+                    while (registro.Read())
                     {
-                        cboEspecificacionMod.Text = dato;
+                        cboEspecificacionMod.Items.Add(registro[1].ToString());
+                        dato = registro[1].ToString();
+                        if (dato == view.Row.ItemArray[4].ToString())
+                        {
+                            cboEspecificacionMod.Text = dato;
+                        }
+
                     }
-                }
-                conexion.Close();
+                    conexion.Close();
+                    cboEspecificacionMod.Items.Insert(0, "Seleccione");
+                    CargarCasillasModificar();
             }
-            
-
-
         }
 
         // Mantenedor Agregar Listo 
@@ -272,6 +406,8 @@ namespace RestoAPPWPF
         //    ver_productos.Owner = this;
         //    ver_productos.Show();
         //}
+
+
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ProductosNegocio productos = new ProductosNegocio();
