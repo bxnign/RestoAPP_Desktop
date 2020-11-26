@@ -77,6 +77,8 @@ namespace RestoAPPWPF
 
 
         }
+
+       
         public bool CargarVariablesAgregar(ref PersonasNegocio personas)
         {
 
@@ -149,9 +151,9 @@ namespace RestoAPPWPF
         public bool LargoString(string rut, string nombre, string apellido, string apellido2)
         {
 
-            if (rut.Length <= 2 || nombre.Length <= 2 || apellido.Length <= 2 || apellido2.Length <= 2)
+            if (rut.Length < 8 || nombre.Length <= 2 || apellido.Length <= 2 || apellido2.Length <= 2)
             {
-                MessageBox.Show("El largo del rut , nombre o apellidos son muy cortos \n Ingrese minimo 3 caracteres");
+                MessageBox.Show("El largo del rut debe ser minimo 8 caracteres sin puntos ni guion  \nLos nombre o apellidos son muy cortos \n Ingrese minimo 3 caracteres");
                 return false;
             }
             else

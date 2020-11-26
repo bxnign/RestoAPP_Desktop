@@ -26,6 +26,19 @@ namespace RestoAPPBD
             return table;
         }
 
+          public DataTable SolucionError()
+        {
+
+            OracleCommand comando = new OracleCommand("PKG_MANT_MESAS.SP_LISTAR_MESA", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            return table;
+        }
+
         public int Eliminar(int id)
         {
             conexion.Open();
@@ -43,8 +56,36 @@ namespace RestoAPPBD
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add("NRO", OracleType.Number).Value = nro;
             comando.Parameters.Add("CANTIDAD", OracleType.Number).Value = cantidad_sillas;
-            int resultado = comando.ExecuteNonQuery();
-            return resultado;
+            DataTable datos = SolucionError();
+            int numerito = 0;
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (Convert.ToInt32(row["Id Mesa"].ToString()) == nro)
+                {
+
+                    numerito = 5;
+                    break;
+                }
+
+                else
+                {
+                    numerito = 1;
+                }
+
+
+
+            }
+            if(numerito == 1)
+            {
+                comando.ExecuteNonQuery();
+                return numerito;
+            }
+            else
+            {
+                return numerito;
+            }
+            
         }
 
         public int Modificar(int id, int nro, int cantidad_sillas, string estado)

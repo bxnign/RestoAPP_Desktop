@@ -153,8 +153,6 @@ namespace RestoAPPWPF
                 try
                 {
 
-
-
                     if (mesas.Agregar() == 1)
                     {
                         MessageBox.Show("Se agrego una Mesa Exitosamente " + "El estado de la mesa por defecto es: " + "Disponible");
@@ -163,7 +161,7 @@ namespace RestoAPPWPF
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo crear la mesa");
+                        MessageBox.Show("El numero de la mesa Ya existe en el sistema");
                         conexion.Close();
                     }
 
