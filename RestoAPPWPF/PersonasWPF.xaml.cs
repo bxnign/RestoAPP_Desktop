@@ -630,7 +630,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -650,7 +650,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -670,7 +670,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -690,7 +690,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -718,7 +718,7 @@ namespace RestoAPPWPF
             else
             {
 
-                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -738,7 +738,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -763,7 +763,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -787,7 +787,7 @@ namespace RestoAPPWPF
             else
 
             {
-                if (e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }
@@ -813,7 +813,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z)
+                if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
                 {
                     e.Handled = false;
                 }

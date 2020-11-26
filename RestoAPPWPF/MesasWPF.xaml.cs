@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -70,6 +71,7 @@ namespace RestoAPPWPF
             DataTable datos = new DataTable();
             datos = mesas.Listar();
             dtListarMesas.ItemsSource = datos.DefaultView;
+            dtListarMesas.Columns.RemoveAt(0);
             conexion.Close();
         }
 
@@ -99,6 +101,7 @@ namespace RestoAPPWPF
                 {
                     MessageBox.Show("Estos son todos los menus encontrados");
                     dtListarMesas.ItemsSource = datos.DefaultView;
+                    dtListarMesas.Columns.RemoveAt(0);
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
@@ -114,80 +117,123 @@ namespace RestoAPPWPF
             }
         }
 
+
+        public bool CargarVariablesAgregar(ref MesasNegocio mesa)
+        {
+            if (ValidarAgregar())
+            {
+                
+                mesa.Nro_Mesa = Convert.ToInt32(txtNroMesa.Text);
+                mesa.Cant_Sillas = Convert.ToInt32(cboCantSillas.Text);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool CargarVariablesModificar(ref MesasNegocio mesa)
+        {
+            if (ValidarModificar())
+            {
+
+                mesa.Id_Mesa = Convert.ToInt32(txtNroMesaMod.Text);
+                mesa.Nro_Mesa = Convert.ToInt32(txtNroMesaMod.Text);
+                mesa.Cant_Sillas = Convert.ToInt32(cboCantSillasMod.Text);
+                mesa.Estado = cboEstadoMod.Text;
+                return true;
+            }
+
+            return false;
+        }
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MesasNegocio mesas = new MesasNegocio();
+            if (CargarVariablesAgregar(ref mesas))
             {
-                MesasNegocio mesas = new MesasNegocio();
-                mesas.Nro_Mesa = Convert.ToInt32(txtNroMesa.Text);
-                mesas.Cant_Sillas = Convert.ToInt32(cboCantSillas.Text);
+                try
+                {
+
+
 
                     if (mesas.Agregar() == 1)
-                {
-                    MessageBox.Show("Se agrego una Mesa Exitosamente " + "El estado de la mesa por defecto es: " + "Disponible");
-                    VaciarCasillasAgregar();
-                    conexion.Close();
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo crear la mesa");
-                    conexion.Close();
-                }
+                    {
+                        MessageBox.Show("Se agrego una Mesa Exitosamente " + "El estado de la mesa por defecto es: " + "Disponible");
+                        VaciarCasillasAgregar();
+                        conexion.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo crear la mesa");
+                        conexion.Close();
+                    }
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la base de datos: " + ex);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la base de datos: " + ex);
-            }
+            
         }
 
 
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            CargarCasillasModificar();
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
+
+            if(dtListarMesas.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar una mesa para modificarla");
+            }
+            else
+            {
+                CargarCasillasModificar();
+                grModificar.Visibility = Visibility.Visible;
+                grModificar.IsEnabled = true;
+                grAgregar.Visibility = Visibility.Hidden;
+                grAgregar.IsEnabled = false;
+                grInfo.Visibility = Visibility.Hidden;
+                grInfo.IsEnabled = false;
+                grListar.Visibility = Visibility.Hidden;
+                grListar.IsEnabled = false;
+            }
+            
 
         }
 
         private void btnGuardarMod_Click(object sender, RoutedEventArgs e)
         {
-            try
+            MesasNegocio mesas = new MesasNegocio();
+            if (CargarVariablesModificar(ref mesas))
             {
-                MesasNegocio mesas = new MesasNegocio();
-                mesas.Id_Mesa = Convert.ToInt32(txtIdMod.Text);
-                mesas.Nro_Mesa = Convert.ToInt32(txtNroMesaMod.Text);
-                mesas.Cant_Sillas = Convert.ToInt32(txtCantSillasMod.Text);
-                mesas.Estado = cboEstadoMod.Text;
-                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar la mesa?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                if (result == MessageBoxResult.Yes)
+                try
                 {
-                    if (mesas.Modificar() == 1)
+
+
+                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar la mesa?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Se modifico una mesa Exitosamente");
-                        VaciarCasillasModificar();
-                        conexion.Close();
+                        if (mesas.Modificar() == 1)
+                        {
+                            MessageBox.Show("Se modifico una mesa Exitosamente");
+                            VaciarCasillasModificar();
+                            conexion.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo modificar la mesa");
+                            conexion.Close();
+                        }
+
                     }
-                    else
-                    {
-                        MessageBox.Show("No se pudo modificar la mesa");
-                        conexion.Close();
-                    }
+
 
                 }
-               
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la base de datos: " + ex);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la base de datos: " + ex);
-            }
+            
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -256,7 +302,8 @@ namespace RestoAPPWPF
                 DataTable dato = new DataTable();
                 dato = mesas.ListarMesasPorEstado();
                 dtListarMesas.ItemsSource = dato.DefaultView;
-                conexion.Close();
+                    dtListarMesas.Columns.RemoveAt(0);
+                    conexion.Close();
 
             }else if (cboItemEnLimpiezaEst.IsSelected)
             {
@@ -267,7 +314,8 @@ namespace RestoAPPWPF
                 DataTable dato = new DataTable();
                 dato = mesas.ListarMesasPorEstado();
                 dtListarMesas.ItemsSource = dato.DefaultView;
-                conexion.Close();
+                    dtListarMesas.Columns.RemoveAt(0);
+                    conexion.Close();
 
             }
             else if (cboItemNoDisponibleEst.IsSelected)
@@ -278,7 +326,8 @@ namespace RestoAPPWPF
                 DataTable dato = new DataTable();
                 dato = mesas.ListarMesasPorEstado();
                 dtListarMesas.ItemsSource = dato.DefaultView;
-                conexion.Close();
+                    dtListarMesas.Columns.RemoveAt(0);
+                    conexion.Close();
             }
 
             }
@@ -292,11 +341,10 @@ namespace RestoAPPWPF
             else
             {
                 DataRowView view = (DataRowView)dtListarMesas.SelectedItem;
-                txtIdMod.Text = view.Row.ItemArray[0].ToString();
                 txtNroMesaMod.Text = view.Row.ItemArray[1].ToString();
-                txtCantSillasMod.Text = view.Row.ItemArray[2].ToString();
+                cboCantSillasMod.Text = view.Row.ItemArray[2].ToString();
                 cboEstadoMod.Text = view.Row.ItemArray[3].ToString();
-                txtIdMod.IsEnabled = false;
+                txtNroMesaMod.IsEnabled = false;
             }
         }
 
@@ -312,9 +360,98 @@ namespace RestoAPPWPF
         {
             txtIdMod.Text = string.Empty;
             txtNroMesaMod.Text = string.Empty;
-            txtCantSillasMod.Text = string.Empty;
+            cboCantSillasMod.Text = string.Empty;
             cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
         }
+
+        //VALIDACIONES 
+
+
+         public bool ValidarAgregar()
+        {
+            if (ValidacionAgregarVacios())
+            {
+                if (ValidacionSimbolosyEspacios(txtNroMesa.Text))
+                {
+                    if (ValidacionTamanioNMesa(txtNroMesa.Text))
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+
+            return false;
+        }
+
+        public bool ValidacionSimbolosyEspacios(string nro)
+        {
+            string exp1;
+            exp1 = "^[0-9]*$";
+
+            if (Regex.IsMatch(nro, exp1) == false)
+            {
+
+
+                MessageBox.Show("No se aceptan Espacios ni caracteres como !#$%&/()=?¡-., \n revise su formato e intente nuevamente");
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool ValidarModificar()
+        {
+            if (ValidacionModificarVacios())
+            {
+                if (ValidacionTamanioNMesa(txtNroMesaMod.Text))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public bool ValidacionAgregarVacios()
+        {
+            if(txtNroMesa.Text == string.Empty || cboCantSillas.Text == string.Empty)
+            {
+                MessageBox.Show("No pueden existir elementos vacios");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public bool ValidacionTamanioNMesa(string nro)
+        {
+            if(Convert.ToInt32(nro) < 51)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool ValidacionModificarVacios()
+        {
+            if (txtNroMesaMod.Text == string.Empty || cboCantSillasMod.Text == string.Empty || cboEstadoMod.SelectedItem == cboItemSeleccioneEst || cboEstadoMod.Text == string.Empty)
+            {
+                MessageBox.Show("No pueden existir elementos vacios");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        // VALIDACIONES FIN
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -354,17 +491,6 @@ namespace RestoAPPWPF
             }
         }
 
-        private void txtCantSillasMod_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-        }
 
         private void txtIdMod_KeyDown(object sender, KeyEventArgs e)
         {
