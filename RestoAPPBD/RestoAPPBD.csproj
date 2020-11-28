@@ -91,6 +91,7 @@
     <Compile Include="ProductosBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportesBD.cs" />
+    <Compile Include="RetiroStockBD.cs" />
     <Compile Include="StockBD.cs" />
   </ItemGroup>
   <ItemGroup>

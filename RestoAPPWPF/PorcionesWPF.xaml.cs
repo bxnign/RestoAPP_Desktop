@@ -151,10 +151,10 @@ namespace RestoAPPWPF
         }
         public void VaciarCasillasAgregar()
         {
-            txtCantidadMod.Text = string.Empty;
-            cboNombreProductoMod.Text = string.Empty;
-            txtNombrePorcionMod.Text = string.Empty;
-            txtPrecioMod.Text = string.Empty;
+            txtCantidad.Text = string.Empty;
+            cboNombreProd.Text = string.Empty;
+            txtNombrePorcion.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
         }
         public void CargarCasillasModificar()
         {

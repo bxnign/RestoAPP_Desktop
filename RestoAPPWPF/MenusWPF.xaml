@@ -32,14 +32,14 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  Click="Button_ClickModificar" Height="116" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128"       >
                 <Image Height="68" Source="Imagenes/Ico/modificar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Button x:Name="btnirListar"  Margin="84,401,0,0"
+            <Button x:Name="btnirListar"  Margin="84,248,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="Button_ClickListar" HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top"       >
                 <Image Height="68" Source="Imagenes/Ico/listar  banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Button x:Name="btnirPorciones"  Margin="84,560,0,0"
+            <Button x:Name="btnirPorciones"  Margin="84,401,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
@@ -47,9 +47,9 @@
                 <Image Height="68" Source="Imagenes/Ico/boton ver.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
             <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,488,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Porciones" HorizontalAlignment="Left" Margin="130,650,0,0" VerticalAlignment="Top" Width="87" Foreground="White" RenderTransformOrigin="0.747,0.577"/>
+            <Label Visibility="Hidden" IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Porciones" HorizontalAlignment="Left" Margin="130,491,0,0" VerticalAlignment="Top" Width="72" Foreground="White" RenderTransformOrigin="0.747,0.577"/>
         </Grid>
         <Grid x:Name="grInfo" Margin="390,75,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>

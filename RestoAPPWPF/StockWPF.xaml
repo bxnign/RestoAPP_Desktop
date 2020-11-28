@@ -33,7 +33,13 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"   Height="116" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128" Click="btnirModificarStock_Click">
                 <Image Height="68" Source="Imagenes/Ico/modificar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-
+            <Button x:Name="btnirRetiroStock" Margin="84,248,0,0"
+                    Background="#FF03030F"
+                Foreground="White"
+                FontFamily="Arial"
+                FontSize="20" Style="{DynamicResource RoundedButtonStyle}"   Height="116" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128" Click="btnirRetiroStock_Click">
+                <Image Height="68" Source="Imagenes/Ico/boton ver.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
+            </Button>
             <Button x:Name="btnirListarStock"  Margin="84,401,0,0"
                     Background="#FF03030F"
                 Foreground="White"
@@ -49,7 +55,7 @@
                 <Image Height="68" Source="Imagenes/Ico/boton ver.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
             <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Retiro Stock" HorizontalAlignment="Left" Margin="124,338,0,0" VerticalAlignment="Top" Width="82" Foreground="White" Height="50"/>
             <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,488,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label IsEnabled="False" Content="Productos" HorizontalAlignment="Left" Margin="130,650,0,0" VerticalAlignment="Top" Width="87" Foreground="White" RenderTransformOrigin="0.747,0.577"/>
         </Grid>
@@ -62,7 +68,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,-0.4,0">
             </Rectangle>
 
             <Label Content="Stock" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
@@ -93,7 +99,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,-0.4,0">
             </Rectangle>
             <Label Content="Stock" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
@@ -107,8 +113,7 @@
                     Background="#FF33DC70"
                 Foreground="White"
                 FontFamily="Arial"
-                FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="btnGuardarMod_Click" 
-                 >
+                FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="btnGuardarMod_Click">
                 <Image Height="68" Source="Imagenes/Ico/guardar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
 
@@ -117,7 +122,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,-0.4,0">
             </Rectangle>
             <Label Content="Stock" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/listar  banner.png" RenderTransformOrigin="1.391,0.77"/>
@@ -162,5 +167,4 @@
         </Button>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="44" Margin="10,0,0,0"  VerticalAlignment="Top" Width="1124" MouseDown="Rectangle_MouseDown"/>
     </Grid>
-    
 </Window>

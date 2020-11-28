@@ -11,10 +11,6 @@
             <ImageBrush ImageSource="Imagenes/fondo final.jpg" Opacity="1"/>
         </Grid.Background>
         <Grid Margin="43,75,0,0" HorizontalAlignment="Left" Width="320" Height="697" VerticalAlignment="Top">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="462*"/>
-                <RowDefinition Height="235*"/>
-            </Grid.RowDefinitions>
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
@@ -30,24 +26,25 @@
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
             <Label IsEnabled="False" Content="Reporte ingresos" HorizontalAlignment="Left" Margin="109,184,0,0" VerticalAlignment="Top" Width="103" Foreground="White"/>
-            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="124,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,26.4,0,0" VerticalAlignment="Top" Width="66" Foreground="White" Grid.Row="1"/>
-            <Button x:Name="btnReporteConsumos"  Margin="84,293,0,0"
+            <Button x:Name="btnReporteConsumos"  Margin="84,248,0,0"
                 Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnReporteConsumos_Click">
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Label IsEnabled="False" Content="Reporte Consumos" HorizontalAlignment="Left" Margin="105,383,0,0" VerticalAlignment="Top" Width="112" Foreground="White" Height="55"/>
-            <Button x:Name="btnReporteAtencion"  Margin="80,23,0,0"
+            
+            <Button x:Name="btnReporteAtencion"  Margin="84,401,0,0"
                 Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnReporteAtencion_Click" Grid.Row="1">
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Label IsEnabled="False" Content="Reporte atencion" HorizontalAlignment="Left" Margin="105,113,0,0" VerticalAlignment="Top" Width="152" Foreground="White" Grid.Row="1"/>
+            <Label IsEnabled="False" Content="Reporte Consumos" HorizontalAlignment="Left" Margin="109,338,0,0" VerticalAlignment="Top" Width="112" Foreground="White" Height="55"/>
+            <Label IsEnabled="False" Content="Reporte atencion" HorizontalAlignment="Left" Margin="109,491,0,0" VerticalAlignment="Top" Width="152" Foreground="White"/>
         </Grid>
         <Grid x:Name="grInfo" Margin="390,75,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>

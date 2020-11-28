@@ -27,7 +27,7 @@ namespace RestoAPPWPF
             InitializeComponent();
 
             var videoPath = Directory.GetCurrentDirectory();
-            video.Source = new Uri(videoPath + @"\2020-08-18 19-47-42.mp4", UriKind.Relative);
+            video.Source = new Uri(videoPath + @"\Portafolio 2.0 - Duoc UC.mp4", UriKind.Relative);
         }
 
         private void btnCerrar_Click(object sender, RoutedEventArgs e)

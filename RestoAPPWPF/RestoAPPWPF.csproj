@@ -120,6 +120,9 @@
     <Compile Include="ReportesWPF.xaml.cs">
       <DependentUpon>ReportesWPF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RetiroStockWPF.xaml.cs">
+      <DependentUpon>RetiroStockWPF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StockWPF.xaml.cs">
       <DependentUpon>StockWPF.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReportesWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RetiroStockWPF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

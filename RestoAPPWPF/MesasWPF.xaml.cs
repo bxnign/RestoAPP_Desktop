@@ -30,6 +30,20 @@ namespace RestoAPPWPF
 
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
+        public void VaciarCasillasAgregar()
+        {
+            txtNroMesa.Text = string.Empty;
+            cboCantSillas.SelectedItem = cboItemdos;
+        }
+
+        public void VaciarCasillasModificar()
+        {
+            txtIdMod.Text = string.Empty;
+            txtNroMesaMod.Text = string.Empty;
+            txtCantSillasMod.Text = string.Empty;
+            cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
+        }
+
         // --- BOTONES MENUS --- //
         private void btnirAgregar_Click(object sender, RoutedEventArgs e)
         {
@@ -300,21 +314,7 @@ namespace RestoAPPWPF
             }
         }
 
-        public void VaciarCasillasAgregar()
-        {
 
-            txtNroMesa.Text = string.Empty;
-            cboCantSillas.SelectedItem = cboItemdos;
-
-        }
-
-        public void VaciarCasillasModificar()
-        {
-            txtIdMod.Text = string.Empty;
-            txtNroMesaMod.Text = string.Empty;
-            txtCantSillasMod.Text = string.Empty;
-            cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
-        }
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {

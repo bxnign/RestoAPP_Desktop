@@ -33,14 +33,14 @@
                 <Image Height="68" Source="Imagenes/Ico/modificar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
 
-            <Button x:Name="btnirListar"  Margin="84,401,0,0"
+            <Button x:Name="btnirListar"  Margin="84,248,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnirListar_Click"       >
                 <Image Height="68" Source="Imagenes/Ico/listar  banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Button x:Name="btnirEstadoMesas"  Margin="84,560,0,0"
+            <Button x:Name="btnirEstadoMesas"  Margin="84,401,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
@@ -48,20 +48,20 @@
                 <Image Height="68" Source="Imagenes/Ico/boton ver.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
             <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,488,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Estado Mesas" HorizontalAlignment="Left" Margin="119,650,0,0" VerticalAlignment="Top" Width="87" Foreground="White"/>
+            <Label Visibility="Hidden" IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Estado Mesas" HorizontalAlignment="Left" Margin="119,491,0,0" VerticalAlignment="Top" Width="87" Foreground="White"/>
         </Grid>
         <Grid x:Name="grInfo" Margin="390,75,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
         </Grid>
-        <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="343,145,68,44" KeyDown="grAgregar_KeyDown">
+        <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44" KeyDown="grAgregar_KeyDown">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="791" Margin="0,-74,-0.4,0">
             </Rectangle>
             <Label Content="Mesas" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/agregar banner.png" RenderTransformOrigin="1.391,0.77"/>
@@ -96,7 +96,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="791" Margin="0,-74,-0.4,0">
             </Rectangle>
             <Label Content="Mesas" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Label Content="Id Mesa" HorizontalAlignment="Left" Margin="62,85,0,0" VerticalAlignment="Top"/>
@@ -127,7 +127,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
-            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0">
+            <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="791" Margin="0,-74,-0.4,0">
             </Rectangle>
             <Label Content="Mesas" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/listar  banner.png" RenderTransformOrigin="1.391,0.77"/>

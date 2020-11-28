@@ -29,7 +29,22 @@ namespace RestoAPPWPF
         }
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
+        public void VaciarCasillasAgregar()
+        {
+            txtNombre.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
+            cboPorciones.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
+        }
 
+        public void VaciarCasillasModificar()
+        {
+            txtId_Mod.Text = string.Empty;
+            txtNombreMod.Text = string.Empty;
+            txtPrecioMod.Text = string.Empty;
+            cboPorcionesMod.Text = string.Empty;
+            txtDescripcionMod.Text = string.Empty;
+        }
         // -- Metodos propios -- //
 
         public void CargarCasillasModificar()
@@ -210,6 +225,7 @@ namespace RestoAPPWPF
                     if(menus.AgregarRelacionMenuPorciones() == 1)
                     {
                         MessageBox.Show("Se agrego un Menu Exitosamente");
+                        VaciarCasillasAgregar();
                         conexion.Close();
                     }
                     else
@@ -249,6 +265,7 @@ namespace RestoAPPWPF
                     if (menus.Modificar() == 1 && menus.ModificarRelMenuPorciones() == 1)
                     {
                         MessageBox.Show("Se modifico un Menu Exitosamente");
+                        VaciarCasillasModificar();
                         conexion.Close();
                     }
                     else

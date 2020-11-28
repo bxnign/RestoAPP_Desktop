@@ -18,7 +18,7 @@
             </Rectangle>
             <Image HorizontalAlignment="Left" Height="74" Margin="204,0,0,0" VerticalAlignment="Top" Width="75" Source="Imagenes/Ico/personas banner.png" RenderTransformOrigin="0.764,0.527"/>
             <Label Content="Menu" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="310" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
-            <Button x:Name="btnAgregarStock"  Margin="89,111,0,0"
+            <Button x:Name="btnAgregarStock"  Margin="84,94,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
@@ -33,16 +33,16 @@
                 <Image Height="68" Source="Imagenes/Ico/modificar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
 
-            <Button x:Name="btnirListarStock"  Margin="84,514,0,0"
+            <Button x:Name="btnirListarStock"  Margin="84,248,0,0"
                 Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnirListarProductos_Click">
                 <Image Height="68" Source="Imagenes/Ico/listar  banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="140,196,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,394,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,600,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label Visibility="Hidden" IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,394,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,338,0,0" VerticalAlignment="Top" Width="61" Foreground="White"/>
         </Grid>
         <Grid x:Name="grInfo" Margin="390,75,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>

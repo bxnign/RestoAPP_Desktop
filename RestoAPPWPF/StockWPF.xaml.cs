@@ -108,6 +108,7 @@ namespace RestoAPPWPF
         }
         public void VaciarCasillasModificar()
         {
+            txtidStockMod.Text = string.Empty;
             cboNombreMod.Text = string.Empty;
             txtCantidadMod.Text = string.Empty;
         }
@@ -379,6 +380,13 @@ namespace RestoAPPWPF
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnirRetiroStock_Click(object sender, RoutedEventArgs e)
+        {
+            RetiroStockWPF ver_retirostock = new RetiroStockWPF();
+            ver_retirostock.Owner = this;
+            ver_retirostock.Show();
         }
     }
 }

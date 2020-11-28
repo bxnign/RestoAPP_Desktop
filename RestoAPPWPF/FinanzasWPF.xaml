@@ -19,14 +19,14 @@
             </Rectangle>
             <Image HorizontalAlignment="Left" Height="74" Margin="204,0,0,0" VerticalAlignment="Top" Width="75" Source="Imagenes/Ico/personas banner.png" RenderTransformOrigin="0.764,0.527"/>
             <Label Content="Menu" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="310" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
-            <Button x:Name="btnGenerarReporteIngresos"  Margin="83,324,0,0"
+            <Button x:Name="btnGenerarReporteIngresos"  Margin="84,94,0,0"
                     Background="#FF03030F"
                 Foreground="White"
                 FontFamily="Arial"
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnIrReportes_Click">
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <Label IsEnabled="False" Content="Ir a Generar Reportes" HorizontalAlignment="Left" Margin="99,405,0,0" VerticalAlignment="Top" Width="126" Foreground="White"/>
+            <Label IsEnabled="False" Content="Ir a Generar Reportes" HorizontalAlignment="Left" Margin="99,174,0,0" VerticalAlignment="Top" Width="128" Foreground="White" Height="36"/>
         </Grid>
         <Grid x:Name="grListar" Margin="390,145,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>
