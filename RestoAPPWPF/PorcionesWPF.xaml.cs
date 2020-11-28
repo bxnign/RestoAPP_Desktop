@@ -106,19 +106,21 @@ namespace RestoAPPWPF
             {
                 if(ValidacionEspaciosEnBlancos(txtCantidad.Text) && ValidacionEspacioEnBlancosPrecio(txtPrecio.Text))
                 {
-                    if(ValidacionNumeros(txtCantidad.Text , txtPrecio.Text))
+                    if (ValidacionSignos(txtCantidad.Text))
                     {
-                        porcion.Cant_porcion = Convert.ToDecimal(txtCantidad.Text);
-                        porcion.Id_producto = cboNombreProd.Text;
-                        porcion.Nombre_porcion = txtNombrePorcion.Text;
-                        porcion.Precio_porcion = Convert.ToInt32(txtPrecio.Text);
-                        return true;
+                        if (ValidacionNumeros(txtCantidad.Text, txtPrecio.Text))
+                        {
+                            porcion.Cant_porcion = Convert.ToDecimal(txtCantidad.Text);
+                            porcion.Id_producto = cboNombreProd.Text;
+                            porcion.Nombre_porcion = txtNombrePorcion.Text;
+                            porcion.Precio_porcion = Convert.ToInt32(txtPrecio.Text);
+                            return true;
+                        }
                     }
+                    
                 }
             }
-
             return false;
-
         }
         public bool CargarVariablesModificar(ref PorcionesNegocio porcion)
         {
@@ -126,15 +128,19 @@ namespace RestoAPPWPF
             {
                 if (ValidacionEspaciosEnBlancos(txtCantidadMod.Text) && ValidacionEspacioEnBlancosPrecio(txtPrecioMod.Text))
                 {
-                    if (ValidacionNumeros(txtCantidadMod.Text, txtPrecioMod.Text))
+                    if (ValidacionSignos(txtCantidadMod.Text))
                     {
-                        porcion.Id_porcion = Convert.ToInt32(txtIdPorcionMod.Text);
-                        porcion.Cant_porcion = Convert.ToDecimal(txtCantidadMod.Text);
-                        porcion.Id_producto = cboNombreProductoMod.Text;
-                        porcion.Nombre_porcion = txtNombrePorcionMod.Text;
-                        porcion.Precio_porcion = Convert.ToInt32(txtPrecioMod.Text);
-                        return true;
+                        if (ValidacionNumeros(txtCantidadMod.Text, txtPrecioMod.Text))
+                        {
+                            porcion.Id_porcion = Convert.ToInt32(txtIdPorcionMod.Text);
+                            porcion.Cant_porcion = Convert.ToDecimal(txtCantidadMod.Text);
+                            porcion.Id_producto = cboNombreProductoMod.Text;
+                            porcion.Nombre_porcion = txtNombrePorcionMod.Text;
+                            porcion.Precio_porcion = Convert.ToInt32(txtPrecioMod.Text);
+                            return true;
+                        }
                     }
+                    
                 }
             }
 
@@ -253,6 +259,19 @@ namespace RestoAPPWPF
            
         }
 
+        private bool ValidacionSignos(string dato)
+        {
+            string val2 = "^[0-9]*$";
+            if (Regex.IsMatch(dato, val2))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("En Precio no se aceptan espacios signos como  !#$%&/()=?¡ :  \nVuelva a Intentarlo");
+                return false;
+            }
+        }
         public bool ValidacionEspacioEnBlancosPrecio(string dato)
         {
             string val2 = "^[0-9]*$";
@@ -397,28 +416,28 @@ namespace RestoAPPWPF
  
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
-
-            cboNombreProductoMod.Items.Clear();
-            OracleCommand comando = new OracleCommand("SELECT * FROM productos", conexion);
-            conexion.Open();
-            OracleDataReader registro = comando.ExecuteReader();
-            string dato;
-            DataRowView view = (DataRowView)dtgridListaPorcion.SelectedItem;
             if (dtgridListaPorcion.SelectedItem == null)
             {
-                conexion.Close();
+                MessageBox.Show("Debe seleccionar una Porcion para Modificar");
             }
             else
             {
+                grModificar.Visibility = Visibility.Visible;
+                grModificar.IsEnabled = true;
+                grAgregar.Visibility = Visibility.Hidden;
+                grAgregar.IsEnabled = false;
+                grInfo.Visibility = Visibility.Hidden;
+                grInfo.IsEnabled = false;
+                grListar.Visibility = Visibility.Hidden;
+                grListar.IsEnabled = false;
+
+                cboNombreProductoMod.Items.Clear();
+                OracleCommand comando = new OracleCommand("SELECT * FROM productos", conexion);
+                conexion.Open();
+                OracleDataReader registro = comando.ExecuteReader();
+                string dato;
+                DataRowView view = (DataRowView)dtgridListaPorcion.SelectedItem;
+
                 while (registro.Read())
                 {
 
@@ -433,6 +452,8 @@ namespace RestoAPPWPF
                 conexion.Close();
                 CargarCasillasModificar();
             }
+            
+            
             
         }
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -511,7 +532,7 @@ namespace RestoAPPWPF
 
         private void txtNombrePorcion_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -523,7 +544,7 @@ namespace RestoAPPWPF
 
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -535,7 +556,7 @@ namespace RestoAPPWPF
 
         private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -547,7 +568,7 @@ namespace RestoAPPWPF
 
         private void txtIdPorcionMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -559,7 +580,7 @@ namespace RestoAPPWPF
 
         private void txtNombrePorcionMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -571,7 +592,7 @@ namespace RestoAPPWPF
 
         private void txtCantidadMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -583,7 +604,7 @@ namespace RestoAPPWPF
 
         private void txtPrecioMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -595,7 +616,7 @@ namespace RestoAPPWPF
 
         private void txtBuscarid_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }

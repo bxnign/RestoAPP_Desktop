@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using System.Drawing;
 using RestoAPPNegocio;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -53,7 +54,7 @@ namespace RestoAPPWPF
                 cboNombre.Items.Add(registro[1].ToString());
             }
             conexion.Close();
-            cboNombre.Items.Insert(0, "Seleccione un producto");
+            cboNombre.Items.Insert(0, "Seleccione");
             cboNombre.SelectedIndex = 0;
         }
 
@@ -95,16 +96,29 @@ namespace RestoAPPWPF
             dtgridListaStock.ItemsSource = datos.DefaultView;
             conexion.Close();
         }
-        public void CargarVariablesAgregar(ref StockNegocio stock)
+        public bool CargarVariablesAgregar(ref StockNegocio stock)
         {
-            stock.Id_producto = Convert.ToString(cboNombre.Text);
-            stock.Cantidad = Convert.ToInt32(txtCantidad.Text);
+            if (ValidacionAgregar())
+            {
+                stock.Id_producto = Convert.ToString(cboNombre.Text);
+                stock.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                return true;
+            }
+
+            return false;
+            
         }
-        public void CargarVariablesModificar(ref StockNegocio stock)
+        public bool CargarVariablesModificar(ref StockNegocio stock)
         {
-            stock.Id_stock = Convert.ToInt32(txtidStockMod.Text);
-            stock.Id_producto = Convert.ToString(cboNombreMod.Text);
-            stock.Cantidad = Convert.ToDecimal(txtCantidadMod.Text);
+            if (ValidacionModificar())
+            {
+                stock.Id_stock = Convert.ToInt32(txtidStockMod.Text);
+                stock.Id_producto = Convert.ToString(cboNombreMod.Text);
+                stock.Cantidad = Convert.ToDecimal(txtCantidadMod.Text);
+                return true;
+            }
+
+            return false;
         }
         public void VaciarCasillasModificar()
         {
@@ -129,36 +143,163 @@ namespace RestoAPPWPF
 
                 txtidStockMod.Text = view.Row.ItemArray[0].ToString();
                 txtCantidadMod.Text = view.Row.ItemArray[2].ToString();
-                txtidStockMod.IsEnabled = true;
+                txtidStockMod.IsEnabled = false;
             }
         }
+
+
+        // VALIDACION
+
+        private bool ValidacionAgregar()
+        {
+           if(ValidacionTextoVacioAgregar())
+            {
+                if (ValidacionSignos(txtCantidad.Text))
+                {
+                    if (ValidacionSimbolosDecimalesEspacios(txtCantidad.Text))
+                    {
+                        if (ValidacionNumeros(txtCantidad.Text))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                
+            }
+
+            return false;
+        }
+
+        private bool ValidacionModificar()
+        {
+            if (ValidacionTextoVacioModificar())
+            {
+                if (ValidacionSignos(txtCantidadMod.Text))
+                {
+                    if (ValidacionSimbolosDecimalesEspacios(txtCantidadMod.Text))
+                    {
+                        if (ValidacionNumeros(txtCantidadMod.Text))
+                        {
+                            return true;
+                        }
+                    }
+                }
+               
+            }
+
+            return false;
+        }
+
+        private bool ValidacionTextoVacioAgregar()
+        {
+            if(txtCantidad.Text == string.Empty || cboNombre.Text == string.Empty || cboNombre.Text == "Seleccione")
+            {
+                MessageBox.Show("No deben existir Casillas Vacias");
+                return false;
+            }else
+
+            {
+
+                return true;
+            }
+        }
+        private bool ValidacionTextoVacioModificar()
+        {
+            if (txtCantidadMod.Text == string.Empty || cboNombreMod.Text == string.Empty || cboNombreMod.Text == "Seleccione")
+            {
+                MessageBox.Show("No deben existir Casillas Vacias");
+                return false;
+            }
+            else
+
+            {
+
+                return true;
+            }
+        }
+
+        private bool ValidacionSignos(string dato)
+        {
+                string val2 = "^[0-9]*$";
+            if (Regex.IsMatch(dato, val2))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("En Precio no se aceptan espacios signos como  !#$%&/()=?¡ :  \nVuelva a Intentarlo");
+                return false;
+            }
+        }
+        private bool ValidacionSimbolosDecimalesEspacios(string dato)
+        {
+            string val = "[0-9]*[,]?[0-9]*$";
+            if (Regex.IsMatch(dato, val))
+            {
+                if (dato != ",")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que insertar Numeros");
+                    return false;
+                }
+            }else
+            {
+                MessageBox.Show("No se aceptan espacios ni signos distintos a: , sin estar asociados a un numero \nVuelva a Intentarlo");
+                return false;
+            }
+        }
+
+        private bool ValidacionNumeros(string dato)
+        {
+            if (Convert.ToDouble(dato) < 0.01 || Convert.ToInt32(dato) == 0)
+            {
+
+                MessageBox.Show("No puede ingresar un valor 0 o un valor menor a 0.01 \nVuelva a Intentarlo ");
+                return false;
+            }
+            else
+            {
+
+
+                return true;
+
+            }
+        }
+
+        // FIN VALIDACION
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
             StockNegocio stock = new StockNegocio();
 
 
-            CargarVariablesAgregar(ref stock);
-            try
+            if(CargarVariablesAgregar(ref stock))
             {
-
-                if (stock.Agregar() == 1)
+                try
                 {
-                    MessageBox.Show("El stock se creo correctamente.");
-                    VaciarCasillasAgregar();
+
+                    if (stock.Agregar() == 1)
+                    {
+                        MessageBox.Show("El stock se creo correctamente.");
+                        VaciarCasillasAgregar();
+                        conexion.Close();
+                    }
+                    else if (stock.Agregar() == 0)
+                    {
+                        MessageBox.Show("El stock ya existe o no se ingresaron todos los datos");
+                        conexion.Close();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de Conexion: " + ex);
                     conexion.Close();
                 }
-                else if (stock.Agregar() == 0)
-                {
-                    MessageBox.Show("El stock ya existe o no se ingresaron todos los datos");
-                    conexion.Close();
-                }
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+            
         }
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -193,58 +334,60 @@ namespace RestoAPPWPF
         private void btnGuardarMod_Click(object sender, RoutedEventArgs e)
         {
             StockNegocio stock = new StockNegocio();
-            CargarVariablesModificar(ref stock);
-            try
+           if( CargarVariablesModificar(ref stock))
             {
-                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar el stock?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                if (result == MessageBoxResult.Yes)
+                try
                 {
-                    if (stock.ModificarStock() == 1)
+                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar el stock?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("El stock se modifico correctamente");
-                        VaciarCasillasModificar();
-                        conexion.Close();
-                    }
-                    else if (stock.ModificarStock() == 0)
-                    {
-                        MessageBox.Show("El stock no existe");
-                        conexion.Close();
-                    }
+                        if (stock.ModificarStock() == 1)
+                        {
+                            MessageBox.Show("El stock se modifico correctamente");
+                            VaciarCasillasModificar();
+                            conexion.Close();
+                        }
+                        else if (stock.ModificarStock() == 0)
+                        {
+                            MessageBox.Show("El stock no existe");
+                            conexion.Close();
+                        }
 
+                    }
                 }
-                    
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de Conexion: " + ex);
+                    conexion.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+            
         }
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            CargarCasillasModificar();
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
-
-            cboNombreMod.Items.Clear();
-            OracleCommand comando = new OracleCommand("SELECT * FROM PRODUCTOS", conexion);
-            conexion.Open();
-            OracleDataReader registro = comando.ExecuteReader();
-            string dato;
-            DataRowView view = (DataRowView)dtgridListaStock.SelectedItem;
             if (dtgridListaStock.SelectedItem == null)
             {
-                conexion.Close();
+                MessageBox.Show("Debe seleccionar una Porcion para Modificar");
             }
             else
             {
+                grModificar.Visibility = Visibility.Visible;
+                grModificar.IsEnabled = true;
+                grAgregar.Visibility = Visibility.Hidden;
+                grAgregar.IsEnabled = false;
+                grInfo.Visibility = Visibility.Hidden;
+                grInfo.IsEnabled = false;
+                grListar.Visibility = Visibility.Hidden;
+                grListar.IsEnabled = false;
+
+                cboNombreMod.Items.Clear();
+                OracleCommand comando = new OracleCommand("SELECT * FROM PRODUCTOS", conexion);
+                conexion.Open();
+                OracleDataReader registro = comando.ExecuteReader();
+                string dato;
+                DataRowView view = (DataRowView)dtgridListaStock.SelectedItem;
+
+
                 while (registro.Read())
                 {
                     cboNombreMod.Items.Add(registro[1].ToString());
@@ -255,7 +398,11 @@ namespace RestoAPPWPF
                     }
                 }
                 conexion.Close();
+                cboNombreMod.Items.Insert(0, "Seleccione");
+                CargarCasillasModificar();
             }
+             
+
         }
 
         // Mantenedor Agregar Listo 
@@ -321,7 +468,7 @@ namespace RestoAPPWPF
 
         private void txtBuscarid_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -348,7 +495,7 @@ namespace RestoAPPWPF
 
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -360,7 +507,7 @@ namespace RestoAPPWPF
 
         private void txtCantidadMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -372,7 +519,7 @@ namespace RestoAPPWPF
 
         private void txtidStockMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }

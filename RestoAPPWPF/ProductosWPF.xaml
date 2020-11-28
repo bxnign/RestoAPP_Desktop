@@ -49,7 +49,7 @@
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
         </Grid>
-        <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
+        <Grid  x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
@@ -90,7 +90,7 @@
             <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Tipo de peso:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
             <Label Content="Tipo Especificacion:" HorizontalAlignment="Left" Margin="61,339,0,0" VerticalAlignment="Top"/>
-            <TextBox MaxLength="4" x:Name="txtIdProductoMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtIdProductoMod_KeyDown"/>
+            <TextBox MaxLength="4" x:Name="txtIdProductoMod"  IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtIdProductoMod_KeyDown"/>
             <TextBox MaxLength="25" x:Name="txtNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombreMod_KeyDown"/>
             <ComboBox x:Name="cboDistribucionMod" HorizontalAlignment="Left" Height="26" Margin="189,250,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14">
                 <ComboBoxItem x:Name="cboitemModSeleccione" IsSelected="True" Content="Seleccione"/>

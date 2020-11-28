@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.OracleClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,34 +50,145 @@ namespace RestoAPPWPF
 
         public void CargarCasillasModificar()
         {
-            if (dtListarMenus.SelectedItem == null)
-            {
-
-            }
-            else
-            {
+           
                 DataRowView view = (DataRowView)dtListarMenus.SelectedItem;
                 txtId_Mod.Text = view.Row.ItemArray[0].ToString();
                 txtNombreMod.Text = view.Row.ItemArray[1].ToString();
                 txtPrecioMod.Text = view.Row.ItemArray[2].ToString();
-                txtDescripcionMod.Text = view.Row.ItemArray[4].ToString();
-                txtId_Mod.IsEnabled = false;
-
-
-                cboPorcionesMod.Items.Clear();
-                OracleCommand comando = new OracleCommand("SELECT * FROM PORCIONES", conexion);
-                conexion.Open();
-                OracleDataReader registro = comando.ExecuteReader();
-                while (registro.Read())
-                {
-                    cboPorcionesMod.Items.Add(registro[3].ToString());
-                }
-                conexion.Close();
-                cboPorcionesMod.Items.Insert(0, "Seleccione un tipo");
-                cboPorcionesMod.SelectedIndex = 0;
                 cboPorcionesMod.Text = view.Row.ItemArray[3].ToString();
+                txtDescripcionMod.Text = view.Row.ItemArray[4].ToString();
+                
+                txtId_Mod.IsEnabled = false;
+            
+        }
+
+        public bool CargarVariablesAgregar(ref MenusNegocio menu)
+        {
+            if (ValidacionAgregar())
+            {
+                menu.Nombre = txtNombre.Text;
+                menu.Precio = Convert.ToInt32(txtPrecio.Text);
+                menu.Descripcion = txtDescripcion.Text;
+                menu.Porcion = cboPorciones.Text;
+                return true;
+            }
+
+            return false;
+            
+        }
+
+        public bool CargarVariablesModificar(ref MenusNegocio menu)
+        {
+            if (ValidacionModificar())
+            {
+                menu.Id_Menu = Convert.ToInt32(txtId_Mod.Text);
+                menu.Nombre = txtNombreMod.Text;
+                menu.Precio = Convert.ToInt32(txtPrecioMod.Text);
+                menu.Descripcion = txtDescripcionMod.Text;
+                menu.Porcion = cboPorcionesMod.Text;
+                txtId_Mod.IsEnabled = false;
+                return true;
+            }
+            return false;
+        }
+
+        // VALIDACIONES 
+
+        public bool ValidacionAgregar()
+        {
+            if (ValidacionElementosVaciosAgregar())
+            {
+                if (ValidacionSimbolosEspacios(txtNombre.Text , txtPrecio.Text , txtDescripcion.Text))
+                {
+                    if(ValidacionLargoNombe(txtNombre.Text) && ValidacionPrecio(txtPrecio.Text))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public bool ValidacionModificar()
+        {
+            if (ValidacionElementosVaciosModificar())
+            {
+                if (ValidacionSimbolosEspacios(txtNombreMod.Text, txtPrecioMod.Text, txtDescripcionMod.Text))
+                {
+                    if (ValidacionLargoNombe(txtNombreMod.Text) && ValidacionPrecio(txtPrecioMod.Text))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+        public bool ValidacionElementosVaciosAgregar()
+        {
+            if (txtNombre.Text == string.Empty || cboPorciones.Text == string.Empty || cboPorciones.Text == "Seleccione")
+            {
+                MessageBox.Show("No puede haber ninguna casilla obligatoria (*) Vacia");
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool ValidacionElementosVaciosModificar()
+        {
+            if (txtNombreMod.Text == string.Empty || cboPorcionesMod.Text == string.Empty || cboPorcionesMod.Text == "Seleccione")
+            {
+                MessageBox.Show("No puede haber ninguna casilla obligatoria (*) Vacia");
+                return false;
+            }
+
+            return true;
+        }
+    
+
+        public bool ValidacionLargoNombe(string nombre)
+        {
+           if(nombre.Length < 4)
+            {
+                MessageBox.Show("El largo del nombre del menu no puede ser menos de 4 caracteres");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
+
+        public bool ValidacionSimbolosEspacios(string nombre , string precio , string descripcion)
+        {
+            string val = "^[ A-Za-z ]*$";
+            string val2 = "^[0-9]*$";
+            if (Regex.IsMatch(nombre, val)  == false || Regex.IsMatch(precio, val2) == false || Regex.IsMatch(descripcion, val) == false)
+            {
+                MessageBox.Show("No pueden haber Simbolos en las casillas ni espacios en precio");
+                return false;
+            }
+
+            return true;
+        }
+       
+   
+
+        public bool ValidacionPrecio(string precio)
+        {  
+            if(Convert.ToInt32(precio) <= 900)
+            {
+                MessageBox.Show("El valor que esta ingreasando es muy bajo, el monto no debe ser menor a 1000 pesos");
+                return false;
+            }
+
+            return true;
+        }
+
+        // VALIDACIONES FIN 
+
 
         // -- Metodos propios -- //
 
@@ -103,33 +215,15 @@ namespace RestoAPPWPF
                 cboPorciones.Items.Add(registro[3].ToString());
             }
             conexion.Close();
-            cboPorciones.Items.Insert(0, "Seleccione un tipo");
+            cboPorciones.Items.Insert(0, "Seleccione");
             cboPorciones.SelectedIndex = 0;
 
         }
 
         private void Button_ClickModificar(object sender, RoutedEventArgs e)
         {
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
-
-            cboPorcionesMod.Items.Clear();
-            OracleCommand comando = new OracleCommand("SELECT * FROM PORCIONES", conexion);
-            conexion.Open();
-            OracleDataReader registro = comando.ExecuteReader();
-            while (registro.Read())
-            {
-                cboPorcionesMod.Items.Add(registro[3].ToString());
-            }
-            conexion.Close();
-            cboPorcionesMod.Items.Insert(0, "Seleccione un tipo");
-            cboPorcionesMod.SelectedIndex = 0;
+           
+            
         }
 
         private void Button_ClickListar(object sender, RoutedEventArgs e)
@@ -152,24 +246,39 @@ namespace RestoAPPWPF
 
         }
 
-
-        
-
-       
-        
-
         // --- BOTONES MENU VENTANAS --- //
         private void btnirModificar_Click(object sender, RoutedEventArgs e)
         {
-            CargarCasillasModificar();
-            grModificar.Visibility = Visibility.Visible;
-            grModificar.IsEnabled = true;
-            grAgregar.Visibility = Visibility.Hidden;
-            grAgregar.IsEnabled = false;
-            grInfo.Visibility = Visibility.Hidden;
-            grInfo.IsEnabled = false;
-            grListar.Visibility = Visibility.Hidden;
-            grListar.IsEnabled = false;
+            
+         
+
+            if (dtListarMenus.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un menu para modificar");
+            }
+            else
+            {
+                grModificar.Visibility = Visibility.Visible;
+                grModificar.IsEnabled = true;
+                grAgregar.Visibility = Visibility.Hidden;
+                grAgregar.IsEnabled = false;
+                grInfo.Visibility = Visibility.Hidden;
+                grInfo.IsEnabled = false;
+                grListar.Visibility = Visibility.Hidden;
+                grListar.IsEnabled = false;
+
+                cboPorcionesMod.Items.Clear();
+                OracleCommand comando = new OracleCommand("SELECT * FROM PORCIONES", conexion);
+                conexion.Open();
+                OracleDataReader registro = comando.ExecuteReader();
+                while (registro.Read())
+                {
+                    cboPorcionesMod.Items.Add(registro[3].ToString());
+                }
+                conexion.Close();
+                cboPorcionesMod.Items.Insert(0, "Seleccione");
+                CargarCasillasModificar();
+            }
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -212,56 +321,57 @@ namespace RestoAPPWPF
 
         private void Button_AgregarClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                MenusNegocio menus = new MenusNegocio();
-                menus.Nombre = txtNombre.Text;
-                menus.Precio = Convert.ToInt32(txtPrecio.Text);
-                menus.Descripcion = txtDescripcion.Text;
-                menus.Porcion = cboPorciones.Text;
+            MenusNegocio menus = new MenusNegocio();
 
-                if (menus.Agregar() == 1)
+            if (CargarVariablesAgregar(ref menus))
+            {
+                try
                 {
-                    if(menus.AgregarRelacionMenuPorciones() == 1)
+
+
+                    if (menus.Agregar() == 1)
                     {
+<<<<<<< HEAD
                         MessageBox.Show("Se agrego un Menu Exitosamente");
                         VaciarCasillasAgregar();
                         conexion.Close();
+=======
+                        if (menus.AgregarRelacionMenuPorciones() == 1)
+                        {
+                            MessageBox.Show("Se agrego un Menu Exitosamente");
+                            conexion.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo crear el menu");
+                            conexion.Close();
+                        }
+
+>>>>>>> origin
                     }
                     else
                     {
                         MessageBox.Show("No se pudo crear el menu");
                         conexion.Close();
                     }
-                   
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo crear el menu");
-                    conexion.Close();
-                }
 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la base de datos: " + ex);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la base de datos: " + ex);
-            }
+           
         }
 
         private void Button_ModificarClick(object sender, RoutedEventArgs e)
         {
-            try
+            MenusNegocio menus = new MenusNegocio();
+            if (CargarVariablesModificar(ref menus))
             {
-                MenusNegocio menus = new MenusNegocio();
-                menus.Id_Menu = Convert.ToInt32(txtId_Mod.Text);
-                menus.Nombre = txtNombreMod.Text;
-                menus.Precio = Convert.ToInt32(txtPrecioMod.Text);
-                menus.Descripcion = txtDescripcionMod.Text;
-                menus.Porcion = cboPorcionesMod.Text;
-                txtId_Mod.IsEnabled = false;
-                MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar este menu?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                if (result == MessageBoxResult.Yes)
+                try
                 {
+<<<<<<< HEAD
                     if (menus.Modificar() == 1 && menus.ModificarRelMenuPorciones() == 1)
                     {
                         MessageBox.Show("Se modifico un Menu Exitosamente");
@@ -269,18 +379,32 @@ namespace RestoAPPWPF
                         conexion.Close();
                     }
                     else
-                    {
-                        MessageBox.Show("No se pudo modificar el menu");
-                        conexion.Close();
-                    }
-                }
-                   
+=======
 
+                    MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar este menu?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                    if (result == MessageBoxResult.Yes)
+>>>>>>> origin
+                    {
+                        if (menus.Modificar() == 1 && menus.ModificarRelMenuPorciones() == 1)
+                        {
+                            MessageBox.Show("Se modifico un Menu Exitosamente");
+                            conexion.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo modificar el menu");
+                            conexion.Close();
+                        }
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error en la base de datos: " + ex);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la base de datos: " + ex);
-            }
+                
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -336,7 +460,7 @@ namespace RestoAPPWPF
 
         private void txtNombre_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -348,7 +472,7 @@ namespace RestoAPPWPF
 
         private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -360,7 +484,7 @@ namespace RestoAPPWPF
 
         private void txtDescripcion_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.A && e.Key <= Key.Z)
+            if (e.Key >= Key.A && e.Key <= Key.Z || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -372,7 +496,7 @@ namespace RestoAPPWPF
 
         private void txtId_Mod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -396,7 +520,7 @@ namespace RestoAPPWPF
 
         private void txtPrecioMod_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }

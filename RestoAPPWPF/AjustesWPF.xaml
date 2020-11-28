@@ -27,12 +27,12 @@
             <Label Content="Fecha de Nacimiento" HorizontalAlignment="Left" Margin="116,382,0,0" VerticalAlignment="Top" Height="30" Width="120"/>
             <Label Content="Correo" HorizontalAlignment="Left" Margin="116,474,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
             <Label Content="Contraseña" HorizontalAlignment="Left" Margin="116,564,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
-            <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="22" Margin="254,110,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <TextBox x:Name="txtApellidoPat" HorizontalAlignment="Left" Height="24" Margin="254,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <TextBox x:Name="txtApellidoMat" HorizontalAlignment="Left" Height="22" Margin="254,292,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <DatePicker x:Name="dtpFechaNacimiento" HorizontalAlignment="Left" Margin="254,382,0,0" VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="254,474,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <TextBox x:Name="txtPass" HorizontalAlignment="Left" Height="22" Margin="254,564,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
+            <TextBox MaxLength="15" x:Name="txtNombre" HorizontalAlignment="Left" Height="22" Margin="254,110,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtNombre_KeyDown"/>
+            <TextBox MaxLength="35" x:Name="txtApellidoPat" HorizontalAlignment="Left" Height="24" Margin="254,200,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtApellidoPat_KeyDown"/>
+            <TextBox MaxLength="35" x:Name="txtApellidoMat" HorizontalAlignment="Left" Height="22" Margin="254,292,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtApellidoMat_KeyDown"/>
+            <DatePicker  x:Name="dtpFechaNacimiento" HorizontalAlignment="Left" Margin="254,382,0,0" VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="dtpFechaNacimiento_KeyDown"/>
+            <TextBox MaxLength="40" x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="254,474,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtCorreo_KeyDown"/>
+            <TextBox MaxLength="35" x:Name="txtPass" HorizontalAlignment="Left" Height="22" Margin="254,564,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtPass_KeyDown"/>
             <Button x:Name="btnModInforPersonal"  HorizontalAlignment="Left" Margin="771,502,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
