@@ -24,6 +24,9 @@ namespace RestoAPPNegocio
         public string Id_Rol { get; set; }
         public string Id_Cargo { get; set; }
         public string Email { get; set; }
+        public string Asunto { get; set; }
+        public string Descripcion { get; set; }
+        public int Telefono { get; set; }
 
 
         public bool Login()
@@ -69,6 +72,11 @@ namespace RestoAPPNegocio
         public DataTable Filtrar()
         {
             return new PersonasBD().Filtrado(this.filtrar);
+        }
+
+        public int HistorialAyuda()
+        {
+            return new PersonasBD().HistorialAyuda(this.Asunto, this.Descripcion, this.Telefono, this.Rut_Persona);
         }
     }
 }

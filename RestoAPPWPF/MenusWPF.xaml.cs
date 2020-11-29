@@ -331,11 +331,11 @@ namespace RestoAPPWPF
 
                     if (menus.Agregar() == 1)
                     {
-<<<<<<< HEAD
+
                         MessageBox.Show("Se agrego un Menu Exitosamente");
                         VaciarCasillasAgregar();
                         conexion.Close();
-=======
+
                         if (menus.AgregarRelacionMenuPorciones() == 1)
                         {
                             MessageBox.Show("Se agrego un Menu Exitosamente");
@@ -347,7 +347,7 @@ namespace RestoAPPWPF
                             conexion.Close();
                         }
 
->>>>>>> origin
+
                     }
                     else
                     {
@@ -371,19 +371,9 @@ namespace RestoAPPWPF
             {
                 try
                 {
-<<<<<<< HEAD
-                    if (menus.Modificar() == 1 && menus.ModificarRelMenuPorciones() == 1)
-                    {
-                        MessageBox.Show("Se modifico un Menu Exitosamente");
-                        VaciarCasillasModificar();
-                        conexion.Close();
-                    }
-                    else
-=======
-
                     MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea modificar este menu?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                     if (result == MessageBoxResult.Yes)
->>>>>>> origin
+
                     {
                         if (menus.Modificar() == 1 && menus.ModificarRelMenuPorciones() == 1)
                         {

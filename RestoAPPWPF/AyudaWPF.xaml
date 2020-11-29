@@ -17,19 +17,18 @@
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
-            <Label  Content="Nombre" HorizontalAlignment="Left" Margin="95,181,0,0" VerticalAlignment="Top" Height="30" Width="102" />
+            <Label FontSize="16" FontWeight="Bold" Content="Nombre" HorizontalAlignment="Left" Margin="95,173,0,0" VerticalAlignment="Top" Height="30" Width="102" />
             <Label Content="Asunto" HorizontalAlignment="Left" Margin="95,271,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
             <Label Content="Mensaje" HorizontalAlignment="Left" Margin="540,173,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
-            <Label Content="Correo" HorizontalAlignment="Left" Margin="95,363,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
-            <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="22" Margin="233,181,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
+            <Label  Content="Correo" HorizontalAlignment="Left" Margin="95,363,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
             <ComboBox x:Name="cboAsunto" HorizontalAlignment="Left" Height="24" Margin="233,271,0,0"   VerticalAlignment="Top" Width="156" BorderBrush="Black">
                 <ComboBoxItem IsSelected="True" x:Name="cboItemSeleccione" Content="Seleccione"></ComboBoxItem>
                 <ComboBoxItem x:Name="cboItemAyuda" Content="Ayuda"></ComboBoxItem>
                 <ComboBoxItem x:Name="cboItemReclamo" Content="Reclamo"></ComboBoxItem>
                 <ComboBoxItem x:Name="cboitemContacto" Content="Contacto "></ComboBoxItem>
             </ComboBox>
-            <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="233,363,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
-            <TextBox x:Name="txtCuerpo" HorizontalAlignment="Left" Height="161" Margin="618,173,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="343" BorderBrush="Black"/>
+            <TextBox MaxLength="40" x:Name="txtCorreo" HorizontalAlignment="Left" Height="22" Margin="233,363,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtCorreo_KeyDown" KeyUp="txtCorreo_KeyUp"/>
+            <TextBox MaxLength="300" x:Name="txtCuerpo" HorizontalAlignment="Left" Height="161" Margin="618,173,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="343" BorderBrush="Black"/>
             <Button x:Name="btnEnviar"  HorizontalAlignment="Left" Margin="771,502,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
                 Foreground="White"
@@ -38,8 +37,14 @@
                  >
                 <Image Height="68" Source="Imagenes/Ico/guardar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
-            <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="22" Margin="233,432,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black"/>
+            <TextBox MaxLength="9" x:Name="txtTelefono" HorizontalAlignment="Left" Height="22" Margin="233,432,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="156" BorderBrush="Black" KeyDown="txtTelefono_KeyDown_1" KeyUp="txtTelefono_KeyUp" />
             <Label Content="Telefono" HorizontalAlignment="Left" Margin="95,432,0,0" VerticalAlignment="Top" Height="30" Width="102"/>
+            <Label Visibility="Hidden" x:Name="lblfonoerror" Content="Error Telefono" HorizontalAlignment="Left" Margin="233,459,0,0" VerticalAlignment="Top" Width="387" Foreground="Red"/>
+            <Label Visibility="Hidden" x:Name="lblvalidacioncorreo" Content="label" HorizontalAlignment="Left" Margin="233,390,0,0" VerticalAlignment="Top" Width="387" Foreground="Red"/>
+            <Label   x:Name="lblrut" Content="186191633" HorizontalAlignment="Left" Margin="233,93,0,0" VerticalAlignment="Top" Height="30" Width="247" FontSize="16" FontWeight="Bold"/>
+            <Label Content="RUT:" HorizontalAlignment="Left" Margin="95,93,0,0" VerticalAlignment="Top" Height="30" Width="53" FontSize="16" FontWeight="Bold"/>
+            <Label x:Name="lblNombre" Content="186191633" HorizontalAlignment="Left" Margin="233,173,0,0" VerticalAlignment="Top" Height="30" Width="247" FontSize="16" FontWeight="Bold"/>
+
 
         </Grid>
 

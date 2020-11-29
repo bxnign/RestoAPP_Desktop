@@ -45,6 +45,24 @@ namespace RestoAPPBD
             adaptador.Fill(table);
             return table;
         }
+
+        public int HistorialAyuda(string asunto , string descripcion , int telefono , string rut)
+        {
+            conexion.Open();
+            // especifico  el nombre del procedimiento y la conexion
+            OracleCommand comando = new OracleCommand("PKG_MANT_AYUDA.SP_INGRESAR_AYUDA", conexion);
+            // especifico el tipo de objeto que estoy trayendo de la base de datos
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            // lista de todas las variables que pide por parametro el procedimiento
+            // los parametros y los tipos de valores que genero en  Negocio deben ser del mismos nombres
+            comando.Parameters.Add("ASUN", OracleType.NVarChar).Value = asunto;
+            comando.Parameters.Add("DESCRIP", OracleType.NVarChar).Value = descripcion;
+            comando.Parameters.Add("FONO", OracleType.Number).Value = telefono;
+            comando.Parameters.Add("RUT", OracleType.NVarChar).Value = rut;
+            int resultado = comando.ExecuteNonQuery();
+
+            return resultado;
+        }
         public int Agregar(string rut, string nombre, string apellido_pat, string apellido_mat, string pass, string fecha_naci, string rol, string cargo, string correo)
         {
 

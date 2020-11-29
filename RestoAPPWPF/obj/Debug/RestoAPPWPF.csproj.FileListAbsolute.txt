@@ -768,3 +768,5 @@ D:\Portafolio\Nueva carpeta\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.P
 D:\Portafolio\Nueva carpeta\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
 D:\Portafolio\Nueva carpeta\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CoreCompileInputs.cache
 D:\Portafolio\Nueva carpeta\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RetiroStockWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RetiroStockWPF.baml

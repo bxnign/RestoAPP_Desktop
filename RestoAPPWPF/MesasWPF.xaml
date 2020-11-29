@@ -57,11 +57,9 @@
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
         </Grid>
-<<<<<<< HEAD
-        <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44" KeyDown="grAgregar_KeyDown">
-=======
+
         <Grid x:Name="grAgregar" Visibility="Hidden" IsEnabled="True" Margin="386,145,25,44" KeyDown="grAgregar_KeyDown">
->>>>>>> origin
+
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>

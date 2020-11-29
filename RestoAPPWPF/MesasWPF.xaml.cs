@@ -41,7 +41,7 @@ namespace RestoAPPWPF
         {
             txtIdMod.Text = string.Empty;
             txtNroMesaMod.Text = string.Empty;
-            txtCantSillasMod.Text = string.Empty;
+            cboCantSillasMod.SelectedItem = cboItemdos;
             cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
         }
 
@@ -361,16 +361,8 @@ namespace RestoAPPWPF
         }
 
 
-<<<<<<< HEAD
-=======
-        public void VaciarCasillasModificar()
-        {
-            txtIdMod.Text = string.Empty;
-            txtNroMesaMod.Text = string.Empty;
-            cboCantSillasMod.Text = string.Empty;
-            cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
-        }
->>>>>>> origin
+
+
 
         //VALIDACIONES 
 

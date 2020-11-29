@@ -240,6 +240,7 @@ namespace RestoAPPWPF
         private void mcontacto_Click(object sender, RoutedEventArgs e)
         {
             AyudaWPF ayuda = new AyudaWPF();
+            ayuda.InfoPersona(datos);
             ayuda.Show();
         }
 
