@@ -19,7 +19,11 @@ namespace RestoAPPBD
     public class ReportesBD
     {
         public object DatabaseHelper { get; private set; }
-        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
+        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
+                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
+                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
+                                                         "(SERVICE_NAME=DATABASE)))");
+
 
         public DataTable ListarReporteIngresos()
         {
