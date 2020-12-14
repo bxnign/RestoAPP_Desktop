@@ -37,10 +37,7 @@ namespace RestoAPPWPF
         {
             InitializeComponent();
         }
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                          "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                          "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                          "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
 
         private void btnReporteIngresos_Click(object sender, RoutedEventArgs e)
@@ -86,13 +83,13 @@ namespace RestoAPPWPF
             {
                 if (datos.DefaultView != null)
                 {
-                    MessageBox.Show("Estos el stock encontrado");
+                    MessageBox.Show("Esta es la informacion encontrada en la base de datos");
                     dtgridListaIngresos.ItemsSource = datos.DefaultView;
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No existe informacion en la base de datos");
                     conexion.Close();
                 }
             }
@@ -112,14 +109,14 @@ namespace RestoAPPWPF
             {
                 if (datos1.DefaultView != null || datos2.DefaultView != null)
                 {
-                    MessageBox.Show("Estos el stock encontrado");
+                    MessageBox.Show("Esta es la informacion encontrada en la base de datos");
                     dtgridListaConsumos1.ItemsSource = datos1.DefaultView;
                     dtgridListaConsumos2.ItemsSource = datos2.DefaultView;
                     conexion.Close();
                 }
                 else if (datos1.DefaultView == null || datos2.DefaultView != null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No existe informacion en la base de datos");
                     conexion.Close();
                 }
             }
@@ -138,13 +135,13 @@ namespace RestoAPPWPF
             {
                 if (datos.DefaultView != null)
                 {
-                    MessageBox.Show("Estos el stock encontrado");
+                    MessageBox.Show("Esta es la informacion encontrada en la base de datos");
                     dtgridListaAtencion.ItemsSource = datos.DefaultView;
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No existe informacion en la base de datos");
                     conexion.Close();
                 }
             }
@@ -189,7 +186,7 @@ namespace RestoAPPWPF
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporteInicioIngresos.pdf"), new PdfWriter("ReporteIngresos.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporteInicioIngresos.pdf"), new PdfWriter(@"\ReporteIngresos.pdf"));
             Document doc = new Document(pdfDoc);
 
             int numeros = pdfDoc.GetNumberOfPages();
@@ -207,7 +204,7 @@ namespace RestoAPPWPF
 
             }
             doc.Close();
-            MessageBox.Show("Se genero el reporte");
+            MessageBox.Show("Se genero el reporte en la ruta " + @"D:\ReporteIngresos.pdf");
             conexion.Close();
         }
         private void btnGenerarReporteConsumos_Click(object sender, RoutedEventArgs e)
@@ -245,7 +242,7 @@ namespace RestoAPPWPF
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("ReporteInicioConsumir.pdf"), new PdfWriter("ReporteDeConsumoDeProductos.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("ReporteInicioConsumir.pdf"), new PdfWriter(@"\ReporteDeConsumoDeProductos.pdf"));
             Document doc = new Document(pdfDoc);
 
             int numeros = pdfDoc.GetNumberOfPages();
@@ -263,7 +260,7 @@ namespace RestoAPPWPF
 
             }
             doc.Close();
-            MessageBox.Show("Se genero el reporte");
+            MessageBox.Show("Se genero el reporte en la ruta " + @"D:\ReporteDeConsumoDeProductos.pdf");
             conexion.Close();
         }
         private void btnGenerarReporteAtencion_Click(object sender, RoutedEventArgs e)
@@ -301,7 +298,7 @@ namespace RestoAPPWPF
             var fecha = new Paragraph("Fecha: " + dfecha + "\nHora: " + dhora);
             fecha.SetFontSize(12);
 
-            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporteInicioTiempoPedidos.pdf"), new PdfWriter("reporteTiempoPedidos.pdf"));
+            PdfDocument pdfDoc = new PdfDocument(new PdfReader("reporteInicioTiempoPedidos.pdf"), new PdfWriter(@"\reporteTiempoPedidos.pdf"));
             Document doc = new Document(pdfDoc);
 
             int numeros = pdfDoc.GetNumberOfPages();
@@ -319,7 +316,7 @@ namespace RestoAPPWPF
 
             }
             doc.Close();
-            MessageBox.Show("Se genero el reporte");
+            MessageBox.Show("Se genero el reporte en la ruta " + @"D:\reporteTiempoPedidos.pdf");
             conexion.Close();
         }
     }

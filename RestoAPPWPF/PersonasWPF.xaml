@@ -42,9 +42,13 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="Button_ClickListar" HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top"       >
                 <Image Height="68" Source="Imagenes/Ico/listar  banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
+            
             <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="135,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="135,491,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+            <Button Name="btnAyuda" Click="btnAyuda_Click" Margin="10,639,264,10">
+                <Image Source="Imagenes/Ico/Botonayuda.png" Height="44" Width="46"></Image>
+            </Button>
         </Grid>
         <Grid x:Name="grInfo" Margin="390,75,21,44" Visibility="Visible" IsEnabled="True">
             <Grid.Background>
@@ -67,7 +71,7 @@
             <Label Content="Correo:" HorizontalAlignment="Left" Margin="28,550,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Cargo:" HorizontalAlignment="Left" Margin="436,57,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Rol:" HorizontalAlignment="Left" Margin="436,152,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
-            <TextBox MaxLength="10" x:Name="txtRut_personas" HorizontalAlignment="Left" Height="23" Margin="170,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRut_personas_KeyDown"/>
+            <TextBox MaxLength="9" x:Name="txtRut_personas" HorizontalAlignment="Left" Height="23" Margin="170,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRut_personas_KeyDown"/>
             <TextBox  MaxLength="15" x:Name="txtNombrePer" HorizontalAlignment="Left" Height="24" Margin="170,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtNombrePer_KeyDown"/>
             <TextBox MaxLength="35" x:Name="txtApellidoPat" HorizontalAlignment="Left" Height="23" Margin="170,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtApellidoPat_KeyDown"/>
             <TextBox MaxLength="35" x:Name="txtApellidoMat" HorizontalAlignment="Left" Height="24" Margin="170,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtApellidoMat_KeyDown"/>
@@ -114,7 +118,7 @@
 
             <Label Content="Personas" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="210" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="678,5,0,0" VerticalAlignment="Top" Width="60" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
-            <TextBox x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
+            <TextBox MaxLength="9" x:Name="txtRutMod" Margin="145,114,0,0" TextWrapping="Wrap" HorizontalAlignment="Left" Width="174" Height="23" VerticalAlignment="Top" Background="#FFAAA9A9" BorderBrush="Black" KeyDown="txtRutMod_KeyDown"/>
             <Label Content="*Rut:" Margin="35,115,651,556" Foreground="Black"/>
             <Label Content="*Nombre:" Margin="35,194,651,477" Foreground="Black"/>
             <Label Content=" Password: " Margin="35,272,645,399" Foreground="Black"/>
@@ -124,7 +128,7 @@
             <Label Content="Correo:" Margin="35,619,672,52" Foreground="Black" RenderTransformOrigin="1.141,0.462"/>
             <Label Content="*Cargo:" HorizontalAlignment="Left" Margin="398,111,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
             <Label Content="*Rol:" HorizontalAlignment="Left" Margin="398,191,0,0" VerticalAlignment="Top" Width="78" Foreground="Black"/>
-            <Button  Visibility="Hidden" HorizontalAlignment="Left" Margin="339,111,0,0" VerticalAlignment="Top" Width="30" Height="26" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button x:Name="btnBuscarPorRutPersona"  Visibility="Visible" HorizontalAlignment="Left" Margin="339,111,0,0" VerticalAlignment="Top" Width="30" Height="26" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="btnBuscarPorRutPersona_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" />
                 </Button.Background>

@@ -28,17 +28,14 @@ namespace RestoAPPWPF
             InitializeComponent();
             
         }
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                         "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
 
         public void VaciarCasillasAgregar()
         {
             txtNombre.Text = string.Empty;
             txtPrecio.Text = string.Empty;
-            cboPorciones.Text = string.Empty;
+            cboPorciones.SelectedIndex = 0;
             txtDescripcion.Text = string.Empty;
         }
 
@@ -47,7 +44,7 @@ namespace RestoAPPWPF
             txtId_Mod.Text = string.Empty;
             txtNombreMod.Text = string.Empty;
             txtPrecioMod.Text = string.Empty;
-            cboPorcionesMod.Text = string.Empty;
+            cboPorcionesMod.SelectedIndex = 0;
             txtDescripcionMod.Text = string.Empty;
         }
         // -- Metodos propios -- //
@@ -73,12 +70,17 @@ namespace RestoAPPWPF
                 menu.Nombre = txtNombre.Text;
                 menu.Precio = Convert.ToInt32(txtPrecio.Text);
                 menu.Descripcion = txtDescripcion.Text;
+                if (cboPorciones.Text == "Sin Porcion Adicional")
+                {
+                    menu.Porcion = string.Empty;
+                    return true;
+                }
                 menu.Porcion = cboPorciones.Text;
                 return true;
             }
 
             return false;
-            
+
         }
 
         public bool CargarVariablesModificar(ref MenusNegocio menu)
@@ -89,6 +91,11 @@ namespace RestoAPPWPF
                 menu.Nombre = txtNombreMod.Text;
                 menu.Precio = Convert.ToInt32(txtPrecioMod.Text);
                 menu.Descripcion = txtDescripcionMod.Text;
+                if (cboPorcionesMod.Text == "Sin Porcion Adicional")
+                {
+                    menu.Porcion = null;
+                    return true;
+                }
                 menu.Porcion = cboPorcionesMod.Text;
                 txtId_Mod.IsEnabled = false;
                 return true;
@@ -131,7 +138,7 @@ namespace RestoAPPWPF
         }
         public bool ValidacionElementosVaciosAgregar()
         {
-            if (txtNombre.Text == string.Empty || cboPorciones.Text == string.Empty || cboPorciones.Text == "Seleccione")
+            if (txtNombre.Text == string.Empty || cboPorciones.Text == string.Empty || cboPorciones.Text == string.Empty)
             {
                 MessageBox.Show("No puede haber ninguna casilla obligatoria (*) Vacia");
                 return false;
@@ -142,7 +149,7 @@ namespace RestoAPPWPF
 
         public bool ValidacionElementosVaciosModificar()
         {
-            if (txtNombreMod.Text == string.Empty || cboPorcionesMod.Text == string.Empty || cboPorcionesMod.Text == "Seleccione")
+            if (txtNombreMod.Text == string.Empty || cboPorcionesMod.Text == string.Empty || cboPorcionesMod.Text == string.Empty)
             {
                 MessageBox.Show("No puede haber ninguna casilla obligatoria (*) Vacia");
                 return false;
@@ -219,7 +226,7 @@ namespace RestoAPPWPF
                 cboPorciones.Items.Add(registro[3].ToString());
             }
             conexion.Close();
-            cboPorciones.Items.Insert(0, "Seleccione");
+            cboPorciones.Items.Insert(0, "Sin Porcion Adicional");
             cboPorciones.SelectedIndex = 0;
 
         }
@@ -280,7 +287,7 @@ namespace RestoAPPWPF
                     cboPorcionesMod.Items.Add(registro[3].ToString());
                 }
                 conexion.Close();
-                cboPorcionesMod.Items.Insert(0, "Seleccione");
+                cboPorcionesMod.Items.Insert(0, "Sin Porcion Adicional");
                 CargarCasillasModificar();
             }
         }
@@ -338,11 +345,9 @@ namespace RestoAPPWPF
 
                         MessageBox.Show("Se agrego un Menu Exitosamente");
                         VaciarCasillasAgregar();
-                        conexion.Close();
 
                         if (menus.AgregarRelacionMenuPorciones() == 1)
                         {
-                            MessageBox.Show("Se agrego un Menu Exitosamente");
                             conexion.Close();
                         }
                         else
@@ -534,6 +539,12 @@ namespace RestoAPPWPF
             {
                 e.Handled = true;
             }
+        }
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            TutorialMenusWPF ver_tutotial_menus = new TutorialMenusWPF();
+            ver_tutotial_menus.Owner = this;
+            ver_tutotial_menus.Show();
         }
     }
 }

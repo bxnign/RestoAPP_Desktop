@@ -29,10 +29,7 @@ namespace RestoAPPWPF
 
         }
 
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                         "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
 
         public void VaciarCasillasAgregar()
@@ -45,7 +42,7 @@ namespace RestoAPPWPF
         {
             txtIdMod.Text = string.Empty;
             txtNroMesaMod.Text = string.Empty;
-            cboCantSillasMod.SelectedItem = cboItemdos;
+            cboCantSillasMod.SelectedItem = cboItemdosMod;
             cboEstadoMod.SelectedItem = cboitemSeleccioneMod;
         }
 
@@ -117,14 +114,14 @@ namespace RestoAPPWPF
 
                 if (datos.DefaultView != null)
                 {
-                    MessageBox.Show("Estos son todos los menus encontrados");
+                    MessageBox.Show("Estas son las mesas encontradas");
                     dtListarMesas.ItemsSource = datos.DefaultView;
                     dtListarMesas.Columns.RemoveAt(0);
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existen menus en la base de datos");
+                    MessageBox.Show("No existen mesas en la base de datos");
                     conexion.Close();
                 }
 
@@ -507,7 +504,11 @@ namespace RestoAPPWPF
                 e.Handled = true;
             }
         }
-        // -- METODOS -- //
-
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            TutorialMesasWPF ver_tutotial_mesas = new TutorialMesasWPF();
+            ver_tutotial_mesas.Owner = this;
+            ver_tutotial_mesas.Show();
+        }
     }
 }

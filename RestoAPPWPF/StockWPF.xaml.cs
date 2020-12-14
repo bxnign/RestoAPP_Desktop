@@ -32,10 +32,7 @@ namespace RestoAPPWPF
             InitializeComponent();
         }
 
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                           "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                           "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                           "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
         private void btnirAgregarStock_Click(object sender, RoutedEventArgs e)
         {
@@ -127,12 +124,12 @@ namespace RestoAPPWPF
         public void VaciarCasillasModificar()
         {
             txtidStockMod.Text = string.Empty;
-            cboNombreMod.Text = string.Empty;
+            cboNombreMod.SelectedIndex = 0;
             txtCantidadMod.Text = string.Empty;
         }
         public void VaciarCasillasAgregar()
         {
-            cboNombre.Text = string.Empty;
+            cboNombre.SelectedIndex = 0;
             txtCantidad.Text = string.Empty;
         }
         public void CargarCasillasModificar()
@@ -324,7 +321,7 @@ namespace RestoAPPWPF
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No existe inforamcion en la base de datos");
                     conexion.Close();
                 }
 
@@ -371,7 +368,7 @@ namespace RestoAPPWPF
         {
             if (dtgridListaStock.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar una Porcion para Modificar");
+                MessageBox.Show("Debe seleccionar un stock  para Modificar");
             }
             else
             {
@@ -538,6 +535,12 @@ namespace RestoAPPWPF
             RetiroStockWPF ver_retirostock = new RetiroStockWPF();
             ver_retirostock.Owner = this;
             ver_retirostock.Show();
+        }
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            TutorialStockWPF ver_tutotial_stock = new TutorialStockWPF();
+            ver_tutotial_stock.Owner = this;
+            ver_tutotial_stock.Show();
         }
     }
 }

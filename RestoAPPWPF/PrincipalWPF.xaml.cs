@@ -246,8 +246,8 @@ namespace RestoAPPWPF
 
         private void mtutorial_Click(object sender, RoutedEventArgs e)
         {
-            TutorialWPF tutorial = new TutorialWPF();
-            tutorial.Show();
+            TutorialPrincipalWPF tutorial_principal = new TutorialPrincipalWPF();
+            tutorial_principal.Show();
         }
     }
 }

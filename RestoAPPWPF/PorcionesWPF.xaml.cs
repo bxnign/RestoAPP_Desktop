@@ -30,11 +30,7 @@ namespace RestoAPPWPF
         {
             InitializeComponent();
         }
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                         "(SERVICE_NAME=DATABASE)))");
-
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
 
         private void btnirAgregarPorcion_Click(object sender, RoutedEventArgs e)
@@ -336,13 +332,13 @@ namespace RestoAPPWPF
 
                     if (porciones.AgregarPorciones() == 1)
                     {
-                        MessageBox.Show("El usuario se creo correctamente.");
+                        MessageBox.Show("La porcion se ingreso correctamente.");
                         VaciarCasillasAgregar();
                         conexion.Close();
                     }
                     else if (porciones.AgregarPorciones() == 0)
                     {
-                        MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                        MessageBox.Show("La porcion ya existe");
                         conexion.Close();
                     }
                 }
@@ -366,13 +362,13 @@ namespace RestoAPPWPF
 
                 if (datos.DefaultView != null)
                 {
-                    MessageBox.Show("Estos el stock encontrado");
+                    MessageBox.Show("Estas son las porciones encontradas");
                     dtgridListaPorcion.ItemsSource = datos.DefaultView;
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No se encontraron porciones");
                     conexion.Close();
                 }
 

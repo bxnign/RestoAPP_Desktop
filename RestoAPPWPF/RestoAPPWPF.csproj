@@ -126,8 +126,23 @@
     <Compile Include="StockWPF.xaml.cs">
       <DependentUpon>StockWPF.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TutorialWPF.xaml.cs">
-      <DependentUpon>TutorialWPF.xaml</DependentUpon>
+    <Compile Include="TutorialFinanzasWPF.xaml.cs">
+      <DependentUpon>TutorialFinanzasWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialMenusWPF.xaml.cs">
+      <DependentUpon>TutorialMenusWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialMesasWPF.xaml.cs">
+      <DependentUpon>TutorialMesasWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialPersonasWPF.xaml.cs">
+      <DependentUpon>TutorialPersonasWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialPrincipalWPF.xaml.cs">
+      <DependentUpon>TutorialPrincipalWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TutorialStockWPF.xaml.cs">
+      <DependentUpon>TutorialStockWPF.xaml</DependentUpon>
     </Compile>
     <Page Include="AjustesWPF.xaml">
       <SubType>Designer</SubType>
@@ -197,7 +212,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TutorialWPF.xaml">
+    <Page Include="TutorialFinanzasWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialMenusWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialMesasWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialPersonasWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialPrincipalWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialStockWPF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -298,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\rest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Ico\Botonayuda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

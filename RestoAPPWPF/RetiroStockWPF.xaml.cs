@@ -31,11 +31,7 @@ namespace RestoAPPWPF
             InitializeComponent();
         }
 
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                          "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                          "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                          "(SERVICE_NAME=DATABASE)))");
-
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
         private void btnirAgregarRetiroStock_Click(object sender, RoutedEventArgs e)
         {
             grAgregar.Visibility = Visibility.Visible;
@@ -67,9 +63,9 @@ namespace RestoAPPWPF
             grInfo.Visibility = Visibility.Hidden;
             grInfo.IsEnabled = false;
 
-            StockNegocio stock = new StockNegocio();
+            RetiroStockNegocio retiro_stock = new RetiroStockNegocio();
             DataTable datos = new DataTable();
-            datos = stock.ListarStock();
+            datos = retiro_stock.ListarStock();
             dtgridListaRetiroStock.ItemsSource = datos.DefaultView;
             conexion.Close();
         }
@@ -95,13 +91,13 @@ namespace RestoAPPWPF
 
                 if (retiro_stock.Agregar() == 1)
                 {
-                    MessageBox.Show("El stock se creo correctamente.");
+                    MessageBox.Show("Se realizo el ingreso del stock en la cocina");
                     VaciarCasillasAgregar();
                     conexion.Close();
                 }
                 else if (retiro_stock.Agregar() == 0)
                 {
-                    MessageBox.Show("El stock ya existe o no se ingresaron todos los datos");
+                    MessageBox.Show("Error , comuniquese con el administrador");
                     conexion.Close();
                 }
 
@@ -125,13 +121,13 @@ namespace RestoAPPWPF
 
                 if (datos.DefaultView != null)
                 {
-                    MessageBox.Show("Estos el stock encontrado");
+                    MessageBox.Show("Estos son los registros de stock retirados");
                     dtgridListaRetiroStock.ItemsSource = datos.DefaultView;
                     conexion.Close();
                 }
                 else if (datos.DefaultView == null)
                 {
-                    MessageBox.Show("No existe personas en la base de datos");
+                    MessageBox.Show("No existe informacion en la base de datos");
                     conexion.Close();
                 }
 
@@ -158,12 +154,12 @@ namespace RestoAPPWPF
                 {
                     if (retiro_stock.Eliminar() == 1)
                     {
-                        MessageBox.Show("Se Elimino el stock exitosamente");
+                        MessageBox.Show("El stock ha vuelto desde cocina, registro del retiro eliminado correctamente");
                         conexion.Close();
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar el stock");
+                        MessageBox.Show("Error , comuniquese con el administrador");
                         conexion.Close();
                     }
                 }
@@ -185,11 +181,11 @@ namespace RestoAPPWPF
             }
             else
             {
-                StockNegocio stock = new StockNegocio();
+                RetiroStockNegocio retirostock = new RetiroStockNegocio();
                 DataTable datos = new DataTable();
                 string idstock = txtBuscarid.Text;
-                stock.Id_stock = Convert.ToInt32(idstock);
-                datos = stock.ListarPorId();
+                retirostock.Id_retiro_stock = Convert.ToInt32(idstock);
+                datos = retirostock.ListarStock();
                 dtgridListaRetiroStock.ItemsSource = datos.DefaultView;
                 conexion.Close();
             }

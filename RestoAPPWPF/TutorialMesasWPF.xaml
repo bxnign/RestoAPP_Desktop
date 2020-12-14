@@ -1,0 +1,52 @@
+﻿<Window x:Class="RestoAPPWPF.TutorialMesasWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestoAPPWPF"
+        mc:Ignorable="d"
+        Title="TutorialMesasWPF" Height="844.661" Width="1201.529" ResizeMode="NoResize" WindowStyle="None" ShowInTaskbar="True" WindowStartupLocation="CenterScreen" Icon="Imagenes/rest.png" >
+    <Window.Background>
+        <ImageBrush ImageSource="Imagenes/fondo final.jpg"/>
+    </Window.Background>
+
+    <Grid x:Name="grPrincipal">
+        <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="61" Margin="10,0,0,0" VerticalAlignment="Top" Width="1129" MouseDown="Rectangle_MouseDown"/>
+
+        <Grid   x:Name="gridContenedorDatos" Margin="81,87,84,101">
+            <Grid.Background>
+                <SolidColorBrush Color="White" Opacity="0.93"/>
+            </Grid.Background>
+            <Slider x:Name="slider2" HorizontalAlignment="Left" Margin="779,582,0,0" VerticalAlignment="Top" Width="178" ValueChanged="slider2_ValueChanged" LargeChange="0.1" Maximum="1"/>
+
+        </Grid>
+
+
+        <Rectangle Fill="#FF192444" HorizontalAlignment="Left" Height="76" Margin="81,87,0,0" Stroke="Black" VerticalAlignment="Top" Width="1037"/>
+        <Label Content="Tutorial" HorizontalAlignment="Left" Margin="98,96,0,0" VerticalAlignment="Top" Height="52" Width="223" Foreground="White" FontWeight="Bold" FontStyle="Italic" FontSize="36"/>
+        <Image HorizontalAlignment="Left" Height="52" Margin="1027,99,0,0" VerticalAlignment="Top" Width="61" Source="Imagenes/Ico/ajustes_personales ico.png"/>
+        <Button x:Name="btnCerrar"  HorizontalAlignment="Left" Margin="1171,0,-0.471,0" VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.662,0.275" Height="28" Foreground="White" FontWeight="Bold" Click="btnCerrar_Click" FontFamily="Microsoft Sans Serif" FontSize="18">
+            <Button.Background>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.BorderBrush>
+            <Image Source="Imagenes/Ico/cerrar.png"></Image>
+        </Button>
+        <Button x:Name="btnminimizar"  HorizontalAlignment="Left" Margin="1139,0,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.662,0.275" Height="28" Foreground="White" FontFamily="Goudy Stout" Click="btnMinimizar_Click" FontWeight="Bold" FontSize="16">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <SolidColorBrush Color="#FFCBC7C7" Opacity="0.635"/>
+            </Button.Background>
+            <Image Source="Imagenes/Ico/minimizar.png"></Image>
+        </Button>
+        <MediaElement x:Name="video" LoadedBehavior="Manual" Margin="136,197,146.6,194.8"/>
+        <Button x:Name="btnPlay" Content="Play" Click="btnPlay_Click" Height="25" Margin="401,669,703.6,150.8"/>
+        <Button x:Name="btnPause" Content="Pause" Click="btnPause_Click" Height="25" Margin="549,669,555.6,150.8"/>
+        <Button x:Name="btnStop" Content="Stop" Click="btnStop_Click" Height="25" Margin="703,669,401.6,150.8"/>
+
+    </Grid>
+</Window>

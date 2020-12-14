@@ -46,6 +46,9 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}"  HorizontalAlignment="Left" Width="128" Height="116" VerticalAlignment="Top" Click="btnirPorciones_Click">
                 <Image Height="68" Source="Imagenes/Ico/boton ver.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
+            <Button Name="btnAyuda" Click="btnAyuda_Click" Margin="10,639,264,10">
+                <Image Source="Imagenes/Ico/Botonayuda.png" Height="44" Width="46"></Image>
+            </Button>
             <Label IsEnabled="False" Content="Agregar" HorizontalAlignment="Left" Margin="135,180,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label Visibility="Hidden" IsEnabled="False" Content="Modificar" HorizontalAlignment="Left" Margin="130,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
             <Label IsEnabled="False" Content="Listar" HorizontalAlignment="Left" Margin="140,338,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>

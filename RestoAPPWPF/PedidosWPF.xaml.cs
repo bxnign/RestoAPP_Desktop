@@ -37,11 +37,7 @@ namespace RestoAPPWPF
             }
         }
 
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                          "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                          "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                          "(SERVICE_NAME=DATABASE)))");
-
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
         public void MostrarPedidos()
         {
 
@@ -62,69 +58,77 @@ namespace RestoAPPWPF
                 {
                     bloque = new TextBlock();
                     boton = new Button();
-                    bloque.Text = "Nro del pedido: " + view.Row.ItemArray[0].ToString() + "\n Descripcion del Pedido \n" + view.Row.ItemArray[1].ToString() + " \n Comentario: "
-                    + view.Row.ItemArray[2].ToString() + "\n Hora inicio Pedido \n" + view.Row.ItemArray[3].ToString() + "\n Mesa: " + view.Row.ItemArray[5].ToString();
+                    bloque.Text = "\n" + "\n" + "Nro del pedido: " + view.Row.ItemArray[0].ToString() + "\n Descripcion del Pedido: \n" + view.Row.ItemArray[1].ToString()
+                        + "\n Hora inicio Pedido: \n" + view.Row.ItemArray[3].ToString() + "\n Mesa: " + view.Row.ItemArray[5].ToString();
                     BrushConverter bc = new BrushConverter();
                     boton.Height = 39;
-                    boton.Width = 219;
+                    boton.Width = 290;
+                    bloque.Background = (Brush)bc.ConvertFrom("#05B0E3");
                     boton.HorizontalAlignment = HorizontalAlignment.Left;
                     boton.VerticalAlignment = VerticalAlignment.Top;
+                    boton.Background = (Brush)bc.ConvertFrom("#6EF677");
+                    boton.Foreground = (Brush)bc.ConvertFrom("#000000");
+                    boton.BorderBrush = (Brush)bc.ConvertFrom("#373535");
+                    boton.FontStyle = FontStyles.Italic;
+                    boton.FontSize = 15;
                     boton.Margin = new Thickness(x, by, 0, 0);
                     bloque.FontSize = 14;
-                    bloque.TextAlignment = TextAlignment.Left;
+                    bloque.TextAlignment = TextAlignment.Center;
                     bloque.FontWeight = FontWeights.UltraBold;
                     bloque.HorizontalAlignment = HorizontalAlignment.Left;
                     bloque.VerticalAlignment = VerticalAlignment.Top;
                     bloque.Height = 184;
                     bloque.Width = 290;
                     bloque.Margin = new Thickness(x, y, 0, 0);
-                    //   boton.Content = "Pedido Listo Para Servir";
-                    //  boton.Click += Boton_Click;
-                    //  void Boton_Click(object sender, RoutedEventArgs e)
-                    //    {
-                    //      MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea cambiar el estado?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-                    //     if (result == MessageBoxResult.Yes)
-                    //     {
-                    //        menus.Id_pedido = Convert.ToInt64(view.Row.ItemArray[0].ToString());
-                    //         menus.Estado_Pedido = 2;
-                    //       try
-                    // {
-                    //if (menus.ActualizarEstado() == 1)
-                    //{
-                    //MessageBox.Show("El pedido " + view.Row.ItemArray[0].ToString() + "\n esta listo para entregar \n" + "Mesa: " + view.Row.ItemArray[5].ToString());
-                    // }
-                    //else
-                    // {
-                    //MessageBox.Show("No se pudo modificar el estado");
-                    //}
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    // MessageBox.Show("ERROR DE BASE DE DATOS :" + ex);
-                    // }
-                    //menus.ActualizarEstado();
-                    //conexion.Close();
+                    boton.Content = "Pedido Listo Para Servir";
+                    boton.Click += Boton_Click;
+                    void Boton_Click(object sender, RoutedEventArgs e)
+                    {
+                        MessageBoxResult result = System.Windows.MessageBox.Show("¿Esta seguro que desea cambiar el estado?", "Informacion", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            menus.Id_pedido = Convert.ToInt64(view.Row.ItemArray[0].ToString());
+                            menus.Estado_Pedido = 2;
+                            try
+                            {
+                                if (menus.ActualizarEstado() == 1)
+                                {
+                                    MessageBox.Show("El pedido " + view.Row.ItemArray[0].ToString() + "\n esta listo para entregar \n" + "Mesa: " + view.Row.ItemArray[5].ToString());
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudo modificar el estado");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("ERROR DE BASE DE DATOS :" + ex);
+                            }
+                            menus.ActualizarEstado();
+                            conexion.Close();
 
-                    //PedidosWPF recargar = new PedidosWPF();
-                    //recargar.Show();
-                    //this.Close();
+                            PedidosWPF recargar = new PedidosWPF();
+                            recargar.Show();
+                            this.Close();
+                        }
+
+
+                    }
+                    x = (x + 355);
+                    contador = contador + 1;
+                    if (contador == 3)
+                    {
+                        x = 66;
+                        y = (y + 300);
+                        by = (by + 300);
+                        contador = 0;
+                    }
+                    gridContenedor.Children.Add(bloque);
+                    gridContenedor.Children.Add(boton);
+                    conexion.Close();
+
                 }
-
-
             }
-            x = (x + 355);
-            contador = contador + 1;
-            if (contador == 3)
-            {
-                x = 66;
-                y = (y + 300);
-                by = (by + 300);
-                contador = 0;
-            }
-            gridContenedor.Children.Add(bloque);
-         //   gridContenedor.Children.Add(boton);
-            conexion.Close();
-
         }
 
 
@@ -151,3 +155,4 @@ namespace RestoAPPWPF
         }
     }
 }
+

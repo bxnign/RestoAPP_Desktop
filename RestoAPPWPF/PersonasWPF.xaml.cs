@@ -29,10 +29,7 @@ namespace RestoAPPWPF
     public partial class PersonasWPF : Window
     {
         // conexion a la base de datos (creo que oracle connection para cerrar la conexion abierta en controlador //
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                         "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
         public PersonasWPF()
         {
@@ -238,8 +235,8 @@ namespace RestoAPPWPF
             txtApellidoPatMod.Text = string.Empty;
             txtApellidoMatMod.Text = string.Empty;
             dtFechaNacMod.Text = string.Empty;
-            cboCargoMod.Text = string.Empty;
-            cboRolMod.Text = string.Empty;
+            cboCargoMod.SelectedItem = cboitemSeleccione;
+            cboRolMod.SelectedItem = cborolSeleccione;
             txtpassmod.Text = string.Empty;
             txtCorreoMod.Text = string.Empty;
 
@@ -253,8 +250,8 @@ namespace RestoAPPWPF
             txtApellidoMat.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             dtpFechaNac.Text = string.Empty;
-            cboCargo.Text = string.Empty;
-            cboRoles.Text = string.Empty;
+            cboCargo.SelectedItem = cboitemSeleccioneMOD;
+            cboRoles.SelectedItem = cborolSeleccioneMOD;
         }
 
         public bool ValidarCorreoAgregar()
@@ -829,6 +826,59 @@ namespace RestoAPPWPF
                 }
             }
            
+        }
+
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            TutorialPersonasWPF ver_tutotial_personas = new TutorialPersonasWPF();
+            ver_tutotial_personas.Owner = this;
+            ver_tutotial_personas.Show();
+        }
+
+        private void btnBuscarPorRutPersona_Click(object sender, RoutedEventArgs e)
+        {
+            PersonasNegocio personas = new PersonasNegocio();
+            DataTable datos = new DataTable();
+            personas.Rut_Persona = txtRutMod.Text;
+            datos = personas.ListarPorRUT();
+            if(txtRutMod.Text.Length > 7)
+            {
+                if (txtRutMod.Text != string.Empty)
+                {
+                    if (datos.Rows.Count > 0)
+                    {
+                        txtRutMod.Text = datos.Rows[0]["Rut persona"].ToString();
+                        txtNombremod.Text = datos.Rows[0]["Nombre persona"].ToString();
+                        txtApellidoPatMod.Text = datos.Rows[0]["Apellido paterno"].ToString();
+                        txtApellidoMatMod.Text = datos.Rows[0]["Apellido materno"].ToString();
+                        dtFechaNacMod.Text = datos.Rows[0]["Fecha de nacimiento"].ToString();
+                        txtpassmod.Text = datos.Rows[0]["Contraseña"].ToString();
+                        cboRolMod.Text = datos.Rows[0]["Rol"].ToString();
+                        cboCargoMod.Text = datos.Rows[0]["Cargo"].ToString();
+                        txtCorreoMod.Text = datos.Rows[0]["Correo"].ToString();
+                        txtRutMod.IsEnabled = false;
+                        MessageBox.Show("El cliente se encontro exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El cliente no existe");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe de digitar un rut para poder buscar");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No puede buscar un rut de menos de 8 caracteres");
+            }
+
+
+
+
+            conexion.Close();
         }
 
 

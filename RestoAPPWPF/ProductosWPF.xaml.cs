@@ -30,10 +30,7 @@ namespace RestoAPPWPF
         {
             InitializeComponent();
         }
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                         "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                         "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                         "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
 
         //CAMBIO DE VENTANA PRINCIPAL
@@ -155,14 +152,16 @@ namespace RestoAPPWPF
         {
             txtIdProductoMod.Text = string.Empty;
             txtNombreMod.Text = string.Empty;
-            cboDistribucionMod.Text = string.Empty;
-            cboEspecificacionMod.Text = string.Empty;
+            cboDistribucionMod.SelectedItem = cboitemModSeleccione;
+            cboEspecificacionMod.SelectedIndex = 0; 
         }
+
+        // LOS COMBOBOX NUNCA NUNCA NUNCA DEBEN QUEDAR VACIOS , FIJARSE EN ESOS DETALLES IMPORTANTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES
         public void VaciarCasillasAgregar()
         {
             txtNombre.Text = string.Empty;
-            cboDistribucion.Text = string.Empty;
-            cboEspecificacion.Text = string.Empty;
+            cboDistribucion.SelectedItem = cboitemSeleccione;
+            cboEspecificacion.SelectedIndex = 0;
         }
 
         // FIN LIMPIAR ELEMENTOS
@@ -250,7 +249,7 @@ namespace RestoAPPWPF
             }
             else
             {
-                if(txtNombre.Text.Length >= 2)
+                if(dato.Length >= 2)
                 {
                     return true;
                 }
@@ -281,13 +280,13 @@ namespace RestoAPPWPF
 
                     if (productos.AgregarProductos() == 1)
                     {
-                        MessageBox.Show("El usuario se creo correctamente.");
+                        MessageBox.Show("El producto se ingreso correctamente.");
                         VaciarCasillasAgregar();
                         conexion.Close();
                     }
                     else if (productos.AgregarProductos() == 0)
                     {
-                        MessageBox.Show("El usuario ya existe o no se ingresaron todos los datos");
+                        MessageBox.Show("no se pudo ingresar el producto , contactese con el administrador");
                         conexion.Close();
                     }
                 }

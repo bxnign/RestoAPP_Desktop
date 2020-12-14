@@ -42,10 +42,7 @@ namespace RestoAPPWPF
             dtgridListaFinanzas.ItemsSource = datos.DefaultView;
             conexion.Close();
         }
-        OracleConnection conexion = new OracleConnection("user id=topherapp;password=restoapp;data source=" +
-                                                          "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" +
-                                                          "(HOST=restaurante.c8e27p3hegzq.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=" +
-                                                          "(SERVICE_NAME=DATABASE)))");
+        OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -96,6 +93,12 @@ namespace RestoAPPWPF
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+        private void btnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+            TutorialFinanzasWPF ver_tutotial_finanzas = new TutorialFinanzasWPF();
+            ver_tutotial_finanzas.Owner = this;
+            ver_tutotial_finanzas.Show();
         }
     }
 }
