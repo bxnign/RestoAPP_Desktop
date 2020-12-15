@@ -78,7 +78,7 @@
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/agregar banner.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Cantidad productos:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="cboNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <ComboBox x:Name="cboNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" SelectionChanged="cboNombre_SelectionChanged" MouseDown="cboNombre_MouseDown" MouseUp="cboNombre_MouseUp"/>
             <TextBox MaxLength="4" x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidad_KeyDown"/>
             <Button x:Name="btnAgregar"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
@@ -97,6 +97,7 @@
                 <Image Height="68" Source="Imagenes/Ico/agregar banner.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
             <Label IsEnabled="False" Content="Nuevo Producto" HorizontalAlignment="Left" Margin="605,170,0,0" VerticalAlignment="Top" Width="134" Foreground="White"/>
+            <Label Visibility="Hidden" x:Name="lbldistribucion" Content="" HorizontalAlignment="Left" Margin="386,167,0,0" VerticalAlignment="Top" Height="29" Width="154" FontSize="14" FontWeight="Bold"/>
         </Grid>
         <Grid x:Name="grModificar" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
@@ -110,7 +111,7 @@
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,170,0,0" VerticalAlignment="Top"/>
             <Label Content="Cantidad productos:" HorizontalAlignment="Left" Margin="50,247,0,0" VerticalAlignment="Top"/>
             <TextBox MaxLength="3" x:Name="txtidStockMod" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" TextWrapping="Wrap" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtidStockMod_KeyDown"/>
-            <ComboBox x:Name="cboNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <ComboBox x:Name="cboNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" SelectionChanged="cboNombreMod_SelectionChanged"/>
             <TextBox MaxLength="4" x:Name="txtCantidadMod" HorizontalAlignment="Left" Height="26" Margin="189,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidadMod_KeyDown"/>
             <Button x:Name="btnGuardarMod"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
@@ -119,6 +120,7 @@
                 FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="btnGuardarMod_Click">
                 <Image Height="68" Source="Imagenes/Ico/guardar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
+            <Label x:Name="lbldistribucionmod" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="386,170,0,0" VerticalAlignment="Top" Width="170" FontSize="14" FontWeight="Bold"/>
 
         </Grid>
         <Grid x:Name="grListar" Margin="390,145,21,44" Visibility="Hidden" IsEnabled="True">

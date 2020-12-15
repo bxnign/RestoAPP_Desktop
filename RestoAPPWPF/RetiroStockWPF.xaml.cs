@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using System.Drawing;
 using RestoAPPNegocio;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace RestoAPPWPF
 {
@@ -43,7 +44,7 @@ namespace RestoAPPWPF
 
             cboNombre.Items.Clear();
 
-            OracleCommand comando = new OracleCommand("SELECT * FROM PRODUCTOS", conexion);
+            OracleCommand comando = new OracleCommand(" SELECT * FROM PRODUCTOS where cant_producto >= 5 and DISTRIBUCION_PRODUCT = 'Kilogramos' or cant_producto >= 500 and DISTRIBUCION_PRODUCT = 'Gramos' or cant_producto >= 5 and DISTRIBUCION_PRODUCT = 'Litros' ", conexion);
             conexion.Open();
             OracleDataReader registro = comando.ExecuteReader();
             while (registro.Read())
@@ -69,15 +70,104 @@ namespace RestoAPPWPF
             dtgridListaRetiroStock.ItemsSource = datos.DefaultView;
             conexion.Close();
         }
-        public void CargarVariablesAgregar(ref RetiroStockNegocio retiro_stock)
+
+    
+        public bool CargarVariablesAgregar(ref RetiroStockNegocio retiro_stock)
         {
-            retiro_stock.Id_producto = Convert.ToString(cboNombre.Text);
-            retiro_stock.Cantidad = Convert.ToInt32(txtCantidad.Text);
+            if (Validaciones())
+            {
+                retiro_stock.Id_producto = cboNombre.Text;
+                retiro_stock.Cantidad = Convert.ToDouble(txtCantidad.Text);
+                return true;
+            }
+
+            return false;
         }
         public void VaciarCasillasAgregar()
         {
-            cboNombre.Text = string.Empty;
+            cboNombre.SelectedIndex = 0;
             txtCantidad.Text = string.Empty;
+        }
+
+        public bool  Validaciones()
+        {
+            if (ValidacionSinEspaciosEnBlancos())
+            {
+                if (ValidacionSignos(txtCantidad.Text))
+                {
+                    if (ValidacionDecimales(txtCantidad.Text))
+                    {
+                        if (ValidacionCantidad())
+                        {
+                            return true;
+                        }
+                    }
+                }
+                
+            }
+
+            return false;
+            
+        }
+
+        public bool ValidacionSinEspaciosEnBlancos()
+        {
+            if(cboNombre.SelectedIndex == 0 || txtCantidad.Text == string.Empty)
+            {
+                MessageBox.Show("Las casillas no deben ir vacias");
+                return false;
+
+            }
+
+            return true;
+    
+        }
+
+
+        public bool ValidacionCantidad()
+        {
+            if(Convert.ToDouble(txtCantidad.Text) <= 0)
+            {
+                MessageBox.Show("La cantidad no puede ser 0");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidacionSignos(string dato)
+        {
+            string val2 = "^[0-9]*$";
+            if (Regex.IsMatch(dato, val2))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("no se aceptan espacios signos como  !#$%&/()=?¡ :  \nVuelva a Intentarlo");
+                return false;
+            }
+        }
+        public bool ValidacionDecimales(string dato)
+        {
+            string val = "[0-9]*[,]?[0-9]*$";
+            if (Regex.IsMatch(dato, val))
+            {
+                if (dato != ",")
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Tiene que insertar Numeros");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se aceptan espacios ni signos distintos a: , sin estar asociados a un numero \nVuelva a Intentarlo");
+                return false;
+            }
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
@@ -85,28 +175,31 @@ namespace RestoAPPWPF
             RetiroStockNegocio retiro_stock = new RetiroStockNegocio();
 
 
-            CargarVariablesAgregar(ref retiro_stock);
-            try
+            if(CargarVariablesAgregar(ref retiro_stock))
             {
-
-                if (retiro_stock.Agregar() == 1)
+                try
                 {
-                    MessageBox.Show("Se realizo el ingreso del stock en la cocina");
-                    VaciarCasillasAgregar();
+
+                    if (retiro_stock.Agregar() == 1)
+                    {
+                        MessageBox.Show("Se realizo el ingreso del stock en la cocina");
+                        VaciarCasillasAgregar();
+                        conexion.Close();
+                    }
+                    else if (retiro_stock.Agregar() == 0)
+                    {
+                        MessageBox.Show("Error , comuniquese con el administrador");
+                        conexion.Close();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de Conexion: " + ex);
                     conexion.Close();
                 }
-                else if (retiro_stock.Agregar() == 0)
-                {
-                    MessageBox.Show("Error , comuniquese con el administrador");
-                    conexion.Close();
-                }
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de Conexion: " + ex);
-                conexion.Close();
-            }
+         
         }
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
@@ -221,7 +314,7 @@ namespace RestoAPPWPF
 
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
             {
                 e.Handled = false;
             }
@@ -230,29 +323,33 @@ namespace RestoAPPWPF
                 e.Handled = true;
             }
         }
-
-        private void txtCantidadMod_KeyDown(object sender, KeyEventArgs e)
+        public void CargarDistribucion(string text)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+            DataTable datos = new DataTable();
+            StockNegocio stock = new StockNegocio();
+            datos = stock.ListarStock();
+
+            foreach (DataRow row in datos.Rows)
             {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
+
+                if (row["Nombre del producto"].ToString() == text)
+                {
+                    lblDistribucion.Content = row["Distribucion"].ToString();
+                    lblDistribucion.Visibility = Visibility.Visible;
+                    break;
+                }
+                else
+                {
+                    lblDistribucion.Content = "";
+                    lblDistribucion.Visibility = Visibility.Hidden;
+                }
+
             }
         }
-
-        private void txtidStockMod_KeyDown(object sender, KeyEventArgs e)
+        private void cboNombre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            string text = (sender as ComboBox).SelectedItem as string;
+            CargarDistribucion(text);
         }
     }
 }

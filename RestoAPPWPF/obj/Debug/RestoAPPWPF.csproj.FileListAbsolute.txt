@@ -661,7 +661,6 @@ C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\Princi
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\ProductosWPF.g.cs
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\ReportesWPF.g.cs
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\StockWPF.g.cs
-C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialWPF.g.cs
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\App.g.cs
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.cache
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF_MarkupCompile.lref
@@ -680,7 +679,6 @@ C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\Princi
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\ProductosWPF.baml
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\ReportesWPF.baml
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\StockWPF.baml
-C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialWPF.baml
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.g.resources
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.Properties.Resources.resources
 C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.GenerateResource.cache
@@ -950,3 +948,15 @@ C:\proyectos\portafolio\escritorio\version ricardo\RestoAPP_Desktop\RestoAPPWPF\
 C:\proyectos\portafolio\escritorio\version ricardo\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.csproj.CopyComplete
 C:\proyectos\portafolio\escritorio\version ricardo\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.exe
 C:\proyectos\portafolio\escritorio\version ricardo\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\RestoAPPWPF.pdb
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialFinanzasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialMenusWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialMesasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialPersonasWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialPrincipalWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialStockWPF.g.cs
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialFinanzasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialMenusWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialMesasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialPersonasWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialPrincipalWPF.baml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\TutorialStockWPF.baml

@@ -14,7 +14,7 @@ namespace RestoAPPBD
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
         public object DatabaseHelper { get; private set; }
-        public int AgregarRetiroStock(decimal cantidad, string id_produc)
+        public int AgregarRetiroStock(double cantidad, string id_produc)
         {
             conexion.Open();
             // especifico  el nombre del procedimiento y la conexion

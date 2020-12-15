@@ -52,7 +52,7 @@
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/agregar banner.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Nombre producto:" HorizontalAlignment="Left" Margin="50,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Cantidad productos:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="cboNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14"/>
+            <ComboBox x:Name="cboNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" SelectionChanged="cboNombre_SelectionChanged"/>
             <TextBox MaxLength="4" x:Name="txtCantidad" HorizontalAlignment="Left" Height="23" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtCantidad_KeyDown"/>
             <Button x:Name="btnAgregar"  HorizontalAlignment="Left" Margin="556,475,0,0" VerticalAlignment="Top" Width="162" Height="77"
                     Background="#FF33DC70"
@@ -62,6 +62,7 @@
                 >
                 <Image Height="68" Source="Imagenes/Ico/guardar boton.png" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.528,0.5" Width="74"/>
             </Button>
+            <Label x:Name="lblDistribucion" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="386,170,0,0" VerticalAlignment="Top" Width="175" FontSize="14" FontWeight="Bold"/>
         </Grid>
         <Grid x:Name="grListar" Margin="390,145,21,44" Visibility="Hidden" IsEnabled="True">
             <Grid.Background>

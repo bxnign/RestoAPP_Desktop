@@ -59,6 +59,8 @@ namespace RestoAPPWPF
             cboNombre.SelectedIndex = 0;
         }
 
+    
+
         private void btnirModificarStock_Click(object sender, RoutedEventArgs e)
         {
             grModificar.Visibility = Visibility.Visible;
@@ -332,6 +334,9 @@ namespace RestoAPPWPF
             }
 
         }
+
+        // distribucion segun el producto
+      
         private void btnGuardarMod_Click(object sender, RoutedEventArgs e)
         {
             StockNegocio stock = new StockNegocio();
@@ -542,5 +547,74 @@ namespace RestoAPPWPF
             ver_tutotial_stock.Owner = this;
             ver_tutotial_stock.Show();
         }
-    }
-}
+
+        public void CargarDistribucion(string text)
+        {
+            DataTable datos = new DataTable();
+            StockNegocio stock = new StockNegocio();
+            datos = stock.ListarStock();
+
+                foreach (DataRow row in datos.Rows)
+                {
+
+                    if (row["Nombre del producto"].ToString() == text)
+                    {
+                        lbldistribucion.Content = row["Distribucion"].ToString();
+                        lbldistribucion.Visibility = Visibility.Visible;
+                        break;
+                    }
+                    else
+                    {
+                        lbldistribucion.Content = "";
+                        lbldistribucion.Visibility = Visibility.Hidden;
+                    }
+
+                }
+        }
+
+        private void cboNombre_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string text = (sender as ComboBox).SelectedItem as string;
+            CargarDistribucion(text);
+        }
+
+        private void cboNombre_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+
+        private void cboNombre_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+           
+        }
+        public void CargarDistribucionMod(string text)
+        {
+            DataTable datos = new DataTable();
+            StockNegocio stock = new StockNegocio();
+            datos = stock.ListarStock();
+
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (row["Nombre del producto"].ToString() == text)
+                {
+                    lbldistribucionmod.Content = row["Distribucion"].ToString();
+                    lbldistribucionmod.Visibility = Visibility.Visible;
+                    break;
+                }
+                else
+                {
+                    lbldistribucionmod.Content = "";
+                    lbldistribucionmod.Visibility = Visibility.Hidden;
+                }
+
+            }
+        }
+
+        private void cboNombreMod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                string text = (sender as ComboBox).SelectedItem as string;
+                CargarDistribucionMod(text);
+            }
+     }
+ }

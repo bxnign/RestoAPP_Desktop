@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\obj\Debug\
 RestoAPPWPF
 none
 false
 DEBUG;TRACE
-D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPWPF\App.xaml
+C:\proyectos\portafolio\escritorio\RestoAPP_Desktop\RestoAPPWPF\App.xaml
 21-1717281373
 
 261700043814
-30-130150767
+301828737259
 AjustesWPF.xaml;AyudaWPF.xaml;EstadoMesaWPF.xaml;FinanzasWPF.xaml;MainWindow.xaml;MenusWPF.xaml;MesasWPF.xaml;PedidosWPF.xaml;PersonasWPF.xaml;PorcionesWPF.xaml;PrincipalWPF.xaml;ProductosWPF.xaml;ReportesWPF.xaml;RetiroStockWPF.xaml;StockWPF.xaml;TutorialFinanzasWPF.xaml;TutorialMenusWPF.xaml;TutorialMesasWPF.xaml;TutorialPersonasWPF.xaml;TutorialPrincipalWPF.xaml;TutorialStockWPF.xaml;
 
-False
+True
 

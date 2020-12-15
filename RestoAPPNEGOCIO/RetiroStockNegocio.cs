@@ -12,7 +12,7 @@ namespace RestoAPPNegocio
     public class RetiroStockNegocio
     {
         public int Id_retiro_stock { get; set; }
-        public decimal Cantidad { get; set; }
+        public double Cantidad { get; set; }
         public string Fecha_retiro { get; set; }
         public string Id_producto { get; set; }
 
