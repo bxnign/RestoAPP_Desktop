@@ -15,13 +15,16 @@ namespace RestoAPPNegocio
         public string Fecha_entrega { get; set; }
         public string Id_producto { get; set; }
 
+        public int Precio { get; set; }
+
+
         public int Agregar()
         {
-            return new StockBD().AgregarStock(this.Cantidad, this.Id_producto);
+            return new StockBD().AgregarStock(this.Cantidad, this.Id_producto, this.Precio);
         }
         public int ModificarStock()
         {
-            return new StockBD().ModificarStock(this.Id_stock, this.Cantidad, this.Id_producto);
+            return new StockBD().ModificarStock(this.Id_stock, this.Cantidad, this.Id_producto, this.Precio);
         }
         public DataTable ListarStock()
         {

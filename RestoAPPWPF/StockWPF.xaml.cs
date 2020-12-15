@@ -105,6 +105,7 @@ namespace RestoAPPWPF
             {
                 stock.Id_producto = Convert.ToString(cboNombre.Text);
                 stock.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                stock.Precio = Convert.ToInt32(txtPrecio.Text);
                 return true;
             }
 
@@ -118,6 +119,7 @@ namespace RestoAPPWPF
                 stock.Id_stock = Convert.ToInt32(txtidStockMod.Text);
                 stock.Id_producto = Convert.ToString(cboNombreMod.Text);
                 stock.Cantidad = Convert.ToDecimal(txtCantidadMod.Text);
+                stock.Precio = Convert.ToInt32(txtPrecioMod.Text);
                 return true;
             }
 
@@ -128,11 +130,13 @@ namespace RestoAPPWPF
             txtidStockMod.Text = string.Empty;
             cboNombreMod.SelectedIndex = 0;
             txtCantidadMod.Text = string.Empty;
+            txtPrecioMod.Text = string.Empty;
         }
         public void VaciarCasillasAgregar()
         {
             cboNombre.SelectedIndex = 0;
             txtCantidad.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
         }
         public void CargarCasillasModificar()
         {
@@ -146,6 +150,7 @@ namespace RestoAPPWPF
 
                 txtidStockMod.Text = view.Row.ItemArray[0].ToString();
                 txtCantidadMod.Text = view.Row.ItemArray[2].ToString();
+                txtPrecioMod.Text = view.Row.ItemArray[5].ToString();
                 txtidStockMod.IsEnabled = false;
             }
         }
@@ -157,11 +162,11 @@ namespace RestoAPPWPF
         {
            if(ValidacionTextoVacioAgregar())
             {
-                if (ValidacionSignos(txtCantidad.Text))
+                if (ValidacionSignos(txtCantidad.Text, txtPrecio.Text))
                 {
                     if (ValidacionSimbolosDecimalesEspacios(txtCantidad.Text))
                     {
-                        if (ValidacionNumeros(txtCantidad.Text))
+                        if (ValidacionNumeros(txtCantidad.Text, txtPrecio.Text))
                         {
                             return true;
                         }
@@ -177,11 +182,11 @@ namespace RestoAPPWPF
         {
             if (ValidacionTextoVacioModificar())
             {
-                if (ValidacionSignos(txtCantidadMod.Text))
+                if (ValidacionSignos(txtCantidadMod.Text , txtPrecioMod.Text))
                 {
                     if (ValidacionSimbolosDecimalesEspacios(txtCantidadMod.Text))
                     {
-                        if (ValidacionNumeros(txtCantidadMod.Text))
+                        if (ValidacionNumeros(txtCantidadMod.Text, txtPrecioMod.Text))
                         {
                             return true;
                         }
@@ -195,7 +200,7 @@ namespace RestoAPPWPF
 
         private bool ValidacionTextoVacioAgregar()
         {
-            if(txtCantidad.Text == string.Empty || cboNombre.Text == string.Empty || cboNombre.Text == "Seleccione")
+            if(txtCantidad.Text == string.Empty || cboNombre.Text == string.Empty || cboNombre.Text == "Seleccione" || txtPrecio.Text == string.Empty)
             {
                 MessageBox.Show("No deben existir Casillas Vacias");
                 return false;
@@ -208,7 +213,7 @@ namespace RestoAPPWPF
         }
         private bool ValidacionTextoVacioModificar()
         {
-            if (txtCantidadMod.Text == string.Empty || cboNombreMod.Text == string.Empty || cboNombreMod.Text == "Seleccione")
+            if (txtCantidadMod.Text == string.Empty || cboNombreMod.Text == string.Empty || cboNombreMod.Text == "Seleccione" || txtPrecioMod.Text == string.Empty)
             {
                 MessageBox.Show("No deben existir Casillas Vacias");
                 return false;
@@ -221,16 +226,16 @@ namespace RestoAPPWPF
             }
         }
 
-        private bool ValidacionSignos(string dato)
+        private bool ValidacionSignos(string dato , string dato2)
         {
                 string val2 = "^[0-9]*$";
-            if (Regex.IsMatch(dato, val2))
+            if (Regex.IsMatch(dato, val2) && Regex.IsMatch(dato2, val2))
             {
                 return true;
             }
             else
             {
-                MessageBox.Show("En Precio no se aceptan espacios signos como  !#$%&/()=?¡ :  \nVuelva a Intentarlo");
+                MessageBox.Show("En Precio y cantidad no se aceptan espacios ni signos como  !#$%&/()=?¡ :  \nVuelva a Intentarlo");
                 return false;
             }
         }
@@ -255,12 +260,13 @@ namespace RestoAPPWPF
             }
         }
 
-        private bool ValidacionNumeros(string dato)
+     
+        private bool ValidacionNumeros(string dato , string dato2)
         {
-            if (Convert.ToDouble(dato) < 0.01 || Convert.ToInt32(dato) == 0)
+            if (Convert.ToInt32(dato2) <= 0|| Convert.ToInt32(dato) <= 0)
             {
 
-                MessageBox.Show("No puede ingresar un valor 0 o un valor menor a 0.01 \nVuelva a Intentarlo ");
+                MessageBox.Show("No puede ingresar un valor 0  \nVuelva a Intentarlo ");
                 return false;
             }
             else
@@ -552,7 +558,9 @@ namespace RestoAPPWPF
         {
             DataTable datos = new DataTable();
             StockNegocio stock = new StockNegocio();
-            datos = stock.ListarStock();
+            ProductosNegocio producto = new ProductosNegocio();
+            datos = producto.ListarProductos();
+          //  datos = stock.ListarStock();
 
                 foreach (DataRow row in datos.Rows)
                 {
@@ -591,7 +599,9 @@ namespace RestoAPPWPF
         {
             DataTable datos = new DataTable();
             StockNegocio stock = new StockNegocio();
-            datos = stock.ListarStock();
+            ProductosNegocio producto = new ProductosNegocio();
+            datos = producto.ListarProductos();
+            //datos = stock.ListarStock();
 
             foreach (DataRow row in datos.Rows)
             {
@@ -616,5 +626,29 @@ namespace RestoAPPWPF
                 string text = (sender as ComboBox).SelectedItem as string;
                 CargarDistribucionMod(text);
             }
-     }
+
+        private void txtPrecioMod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecio_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+    }
  }

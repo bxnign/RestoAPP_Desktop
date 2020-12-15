@@ -14,7 +14,7 @@ namespace RestoAPPBD
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
         public object DatabaseHelper { get; private set; }
-        public int AgregarStock(decimal cantidad, string id_produc)
+        public int AgregarStock(decimal cantidad, string id_produc , int precio)
         {
             conexion.Open();
             // especifico  el nombre del procedimiento y la conexion
@@ -25,6 +25,7 @@ namespace RestoAPPBD
             // los parametros y los tipos de valores que genero en  Negocio deben ser del mismos nombres
             comando.Parameters.Add("cant", OracleType.Number).Value = cantidad;
             comando.Parameters.Add("id_prod", OracleType.NVarChar).Value = id_produc;
+            comando.Parameters.Add("PRECIO", OracleType.Number).Value = precio;
             int resultado = comando.ExecuteNonQuery();
             // se devuelte el resultado que es un int
             // update , insert , delete , retorna el numero de filas
@@ -32,7 +33,7 @@ namespace RestoAPPBD
             // todo lo demas un -1
             return resultado;
         }
-        public int ModificarStock(int id_stock, decimal cantidad, string id_prod)
+        public int ModificarStock(int id_stock, decimal cantidad, string id_prod , int precio)
         {
 
             conexion.Open();
@@ -41,6 +42,7 @@ namespace RestoAPPBD
             comando.Parameters.Add("id", OracleType.Int32).Value = id_stock;
             comando.Parameters.Add("CANT", OracleType.Number).Value = cantidad;
             comando.Parameters.Add("ID_PROD", OracleType.NVarChar).Value = id_prod;
+            comando.Parameters.Add("PRECIO_MOD", OracleType.Number).Value = precio;
             int resultado = comando.ExecuteNonQuery();
             return resultado;
 
