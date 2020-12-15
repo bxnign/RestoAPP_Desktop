@@ -20,10 +20,21 @@ namespace RestoAPPNegocio
     {
         public int Id_registro { get; set; }
         public int Ingreso { get; set; }
-        public int Id_boleta { get; set; }
+        public string v_Fecha { get; set; }
+
         public DataTable ListarFinanzas()
         {
             return new FinanzasBD().ListarFinanzas();
+        }
+
+        public DataTable ListarPorDia()
+        {
+            return new FinanzasBD().ListarPorDia(this.v_Fecha);
+        }
+
+        public DataTable ListarporMes()
+        {
+            return new FinanzasBD().ListarPorMes(this.v_Fecha);
         }
     }
 }

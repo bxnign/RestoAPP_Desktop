@@ -33,5 +33,34 @@ namespace RestoAPPBD
             adaptador.Fill(table);
             return table;
         }
+
+        public DataTable ListarPorDia(string dia)
+        {
+
+             conexion.Open();
+            OracleCommand comando = new OracleCommand("SP_LISTAR_FINANZAS_FILTR_DIARIA", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            comando.Parameters.Add("v_fecha", OracleType.NVarChar).Value = dia;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            return table;
+        }
+
+        public DataTable ListarPorMes(string mes)
+        {
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("SP_LISTAR_FINANZAS_FILTR_MENSUAL", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            comando.Parameters.Add("v_fecha", OracleType.Number).Value = Convert.ToInt32(mes);
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            return table;
+        }
     }
 }

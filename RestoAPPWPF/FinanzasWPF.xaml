@@ -37,9 +37,9 @@
             </Grid.Background>
             <Rectangle  Fill="#FF03030F" HorizontalAlignment="Left" Height="78" Stroke="Black" VerticalAlignment="Top" Width="785" Margin="0,-74,0,0"></Rectangle>
             <Label Content="Finanzas" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
-            <Label Content="Buscar" HorizontalAlignment="Left" Margin="95,174,0,0" VerticalAlignment="Top" Width="175" Foreground="Black" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
+            <Label x:Name="lblfiltrar" Content="Buscar" HorizontalAlignment="Left" Margin="473,176,0,0" VerticalAlignment="Top" Width="175" Foreground="Black" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/listar  banner.png" RenderTransformOrigin="1.391,0.77"/>
-            <Button x:Name="btnBuscar" Content="btnBuscar" HorizontalAlignment="Left" Margin="356,180,0,0" VerticalAlignment="Top" Width="71" Height="66" BorderBrush="{x:Null}" Foreground="{x:Null}"  RenderTransformOrigin="-0.14,0.024" Click="btnBuscar_Click">
+            <Button x:Name="btnBuscar" Content="btnBuscar" HorizontalAlignment="Left" Margin="736,180,-16,0" VerticalAlignment="Top" Width="71" Height="66" BorderBrush="{x:Null}" Foreground="{x:Null}"  RenderTransformOrigin="-0.14,0.024" Click="btnBuscar_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -52,7 +52,42 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
+
             <DataGrid x:Name="dtgridListaFinanzas" IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="57,255,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4" />
+
+            <Button x:Name="btnFiltrar" Content="Filtrar" HorizontalAlignment="Left" Margin="94,188,0,0" VerticalAlignment="Top" Width="126" Height="54" Background="#FF03030F"
+                Foreground="White"
+                FontFamily="Arial"
+                FontSize="20" Style="{DynamicResource RoundedButtonStyle}" Click="btnFiltrar_Click"/>
+            <Grid Visibility="Hidden" x:Name="dtgFiltrar" Margin="57,148,69,409">
+                <Grid.Background>
+                    <SolidColorBrush Color="White"/>
+                </Grid.Background>
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="665" Margin="0,0,0,-1"/>
+                <Button  Content="X" HorizontalAlignment="Left" Margin="642,0,0,0" VerticalAlignment="Top" Width="23" Height="25" BorderBrush="{x:Null}" Background="#FF03030F" Click="Button_Click" Foreground="White"/>
+                <ComboBox x:Name="cboFiltromes" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top" Width="165" Height="22" SelectionChanged="cboFiltromes_SelectionChanged">
+                    <ComboBoxItem x:Name="itemSeleccione"  TabIndex="0" IsSelected="True" Content="Seleccione"/>
+                    <ComboBoxItem x:Name="itemEnero"  Content="Enero"/>
+                    <ComboBoxItem x:Name="itemFebrero" Content="Febrero"/>
+                    <ComboBoxItem x:Name="itemMarzo" Content="Marzo"/>
+                    <ComboBoxItem x:Name="itemAbril" Content="Abril"/>
+                    <ComboBoxItem x:Name="itemMayo" Content="Mayo"/>
+                    <ComboBoxItem x:Name="itemJunio" Content="Junio"/>
+                    <ComboBoxItem x:Name="itemJulio" Content="Julio"/>
+                    <ComboBoxItem x:Name="itemAgosto" Content="Agosto"/>
+                    <ComboBoxItem x:Name="itemSeptiembre" Content="Septiembre"/>
+                    <ComboBoxItem x:Name="itemOctubre" Content="Octubre"/>
+                    <ComboBoxItem x:Name="itemNoviembre" Content="Noviembre"/>
+                    <ComboBoxItem x:Name="itemDiciembre" Content="Diciembre"/>
+                </ComboBox>
+                <DatePicker x:Name="dtpfechafiltro" HorizontalAlignment="Left" Margin="455,49,0,0" VerticalAlignment="Top" SelectedDateChanged="dtpfechafiltro_SelectedDateChanged" KeyDown="dtpfechafiltro_KeyDown"/>
+
+
+                <Rectangle Fill="#FF03030F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="643"/>
+                <Label Content="Filtrar por mes" HorizontalAlignment="Left" Margin="40,-1,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+                <Label Content="Filtrar por dia" HorizontalAlignment="Left" Margin="455,-2,0,0" VerticalAlignment="Top" Width="165" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+            </Grid>
+
         </Grid>
         <Button x:Name="btnCerrar"  HorizontalAlignment="Left" Margin="1171,0,-0.471,0" VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.662,0.275" Height="28" Foreground="White" FontWeight="Bold" Click="btnCerrar_Click" FontFamily="Microsoft Sans Serif" FontSize="18">
             <Button.Background>
