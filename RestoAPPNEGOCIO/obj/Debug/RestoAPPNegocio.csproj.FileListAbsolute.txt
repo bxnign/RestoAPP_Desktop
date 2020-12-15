@@ -361,3 +361,39 @@ D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPN
 D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.csproj.CopyComplete
 D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.dll
 D:\Portafolio\Escritorio C#\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\RestoAPPNegocio.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\RestoAPPNegocio.pdb
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\BouncyCastle.Crypto.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.Core.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.barcodes.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.forms.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.io.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.kernel.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.layout.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.pdfa.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.sign.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.styledxmlparser.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.svg.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\RestoAPPBD.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\RestoAPPBD.pdb
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\RestoAPPBD.dll.config
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\BouncyCastle.Crypto.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.pdb
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.Core.pdb
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\Common.Logging.Core.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.barcodes.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.forms.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.io.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.kernel.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.layout.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.pdfa.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.sign.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.styledxmlparser.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\bin\Debug\itext.svg.xml
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.csprojAssemblyReference.cache
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.csproj.CoreCompileInputs.cache
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.csproj.CopyComplete
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.dll
+D:\Portafolio\RestoAPP_Desktop\RestoAPPNegocio\obj\Debug\RestoAPPNegocio.pdb

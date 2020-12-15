@@ -36,6 +36,8 @@ namespace RestoAPPWPF
         public ReportesWPF()
         {
             InitializeComponent();
+
+
         }
         OracleConnection conexion = new OracleConnection("DATA SOURCE = xe ; PASSWORD = admin ; USER ID = TOPHERAPP");
 
@@ -50,6 +52,15 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
+
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos1 = new DataTable();
+            DataTable datos2 = new DataTable();
+            datos1 = reportes.ListarReporteIngresos();
+            datos2 = reportes.ListarReporteEgresos();
+            dtgridListaIngresos.ItemsSource = datos1.DefaultView;
+            dtgridListaEgresos.ItemsSource = datos2.DefaultView;
+            conexion.Close();
         }
         private void btnReporteConsumos_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +72,15 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Hidden;
             grListarAtencion.IsEnabled = false;
+
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos1 = new DataTable();
+            DataTable datos2 = new DataTable();
+            datos1 = reportes.ListarReporteConsumosMenu();
+            datos2 = reportes.ListarReporteConsumosPorcion();
+            dtgridListaConsumos1.ItemsSource = datos1.DefaultView;
+            dtgridListaConsumos2.ItemsSource = datos2.DefaultView;
+            conexion.Close();
         }
         private void btnReporteAtencion_Click(object sender, RoutedEventArgs e)
         {
@@ -72,22 +92,31 @@ namespace RestoAPPWPF
             grInfo.IsEnabled = false;
             grListarAtencion.Visibility = Visibility.Visible;
             grListarAtencion.IsEnabled = true;
+
+            ReportesNegocio reportes = new ReportesNegocio();
+            DataTable datos = new DataTable();
+            datos = reportes.ListarReporteAtencion();
+            dtgridListaAtencion.ItemsSource = datos.DefaultView;
+            conexion.Close();
         }
         private void btnBuscarListaIngresos_Click(object sender, RoutedEventArgs e)
         {
             ReportesNegocio reportes = new ReportesNegocio();
-            DataTable datos = new DataTable();
-            datos = reportes.ListarReporteIngresos();
+            DataTable datos1 = new DataTable();
+            DataTable datos2 = new DataTable();
+            datos1 = reportes.ListarReporteIngresos();
+            datos2 = reportes.ListarReporteEgresos();
 
             try
             {
-                if (datos.DefaultView != null)
+                if (datos1.DefaultView != null || datos2.DefaultView != null)
                 {
                     MessageBox.Show("Esta es la informacion encontrada en la base de datos");
-                    dtgridListaIngresos.ItemsSource = datos.DefaultView;
+                    dtgridListaIngresos.ItemsSource = datos1.DefaultView;
+                    dtgridListaEgresos.ItemsSource = datos2.DefaultView;
                     conexion.Close();
                 }
-                else if (datos.DefaultView == null)
+                else if (datos1.DefaultView == null)
                 {
                     MessageBox.Show("No existe informacion en la base de datos");
                     conexion.Close();
@@ -155,12 +184,12 @@ namespace RestoAPPWPF
         {
             PdfWriter pdfWriter = new PdfWriter("reporteInicioIngresos.pdf");
             PdfDocument pdf = new PdfDocument(pdfWriter);
-            PageSize tamannoH = new PageSize(792, 612);
+            PageSize tamannoH = new PageSize(612, 792);
             Document documento = new Document(pdf, tamannoH);
             Document documento2 = new Document(pdf, tamannoH);
 
-            documento.SetMargins(100, 20, 55, 20);
-            documento2.SetMargins(500, 70, 100, 600);
+            documento.SetMargins(100, 20, 125, 20);
+            documento2.SetMargins(700, 20, 120, 500);
 
             ReportesNegocio reportes = new ReportesNegocio();
             Table tabla;
@@ -215,8 +244,8 @@ namespace RestoAPPWPF
             Document documento = new Document(pdf, tamannoH);
             Document documento2 = new Document(pdf, tamannoH);
 
-            documento.SetMargins(100, 55, 20, 400);
-            documento2.SetMargins(100, 400, 20, 20);
+            documento.SetMargins(100, 20, 120, 396);
+            documento2.SetMargins(100, 396, 120, 20);
 
             ReportesNegocio reportes = new ReportesNegocio();
             Table tabla;
@@ -271,8 +300,8 @@ namespace RestoAPPWPF
             Document documento = new Document(pdf, tamannoH);
             Document documento2 = new Document(pdf, tamannoH);
 
-            documento.SetMargins(100, 20, 55, 20);
-            documento2.SetMargins(500, 70, 100, 600);
+            documento.SetMargins(100, 20, 105, 20);
+            documento2.SetMargins(500, 20, 100, 650);
 
             ReportesNegocio reportes = new ReportesNegocio();
             Table tabla;

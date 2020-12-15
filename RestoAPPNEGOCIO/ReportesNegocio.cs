@@ -22,6 +22,10 @@ namespace RestoAPPNegocio
         {
             return new ReportesBD().ListarReporteIngresos();
         }
+        public DataTable ListarReporteEgresos()
+        {
+            return new ReportesBD().ListarReporteEgresos();
+        }
         public DataTable ListarReporteAtencion()
         {
             return new ReportesBD().ListarReporteAtencion();

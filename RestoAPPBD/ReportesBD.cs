@@ -34,6 +34,18 @@ namespace RestoAPPBD
             adaptador.Fill(table);
             return table;
         }
+        public DataTable ListarReporteEgresos()
+        {
+            conexion.Open();
+            OracleCommand comando = new OracleCommand("SP_LISTAR_REPORTE_EGRESOS", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add("registros", OracleType.Cursor).Direction = ParameterDirection.Output;
+            OracleDataAdapter adaptador = new OracleDataAdapter();
+            DataTable table = new DataTable();
+            adaptador.SelectCommand = comando;
+            adaptador.Fill(table);
+            return table;
+        }
         public DataTable ListarReporteConsumosPorcion()
         {
             conexion.Open();
@@ -73,7 +85,7 @@ namespace RestoAPPBD
         public Table ReporteIngresos()
         {
             conexion.Open();
-            string oracle = "select re.ID_REGISTRO id, NOMBRE_PERSONA as nombre, INGRESO as ingreso, to_char(bo.fecha_boleta,'hh/mm/yyyy') as fecha, bo.ID_BOLETA as boleta from REGISTROS re join BOLETAS bo on re.id_boleta = bo.id_boleta";
+            string oracle = "select ID_REGISTRO as Id, INGRESO as Ingresos, to_char(fecha,'hh/mm/yyyy') as Fecha from registros";
             OracleCommand comando = new OracleCommand(oracle, conexion);
             OracleDataReader reader = comando.ExecuteReader();
             OracleDataAdapter adaptador = new OracleDataAdapter();
@@ -81,8 +93,8 @@ namespace RestoAPPBD
             PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
             PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
 
-            string[] columnas = { "Id Registro", "Nombre Garzon", "Ingresos", "Fecha de Compra", "Id Boleta" };
-            float[] tamannos = { 2, 7, 2, 4, 3 };
+            string[] columnas = { "Id Registro", "Ingresos", "Fecha de Compra" };
+            float[] tamannos = { 2, 7, 2 };
             Table tabla = new Table(UnitValue.CreatePercentArray(tamannos));
             tabla.SetWidth(UnitValue.CreatePercentValue(100));
             foreach (string columna in columnas)
@@ -93,10 +105,8 @@ namespace RestoAPPBD
             while (reader.Read())
             {
                 tabla.AddCell(new Cell().Add(new Paragraph(reader["id"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["nombre"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["ingreso"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["fecha"].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader["boleta"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Ingresos"].ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(reader["Fecha"].ToString()).SetFont(fontContenido)));
             }
             return tabla;
         }

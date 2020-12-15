@@ -51,7 +51,7 @@
                 <SolidColorBrush Color="White" Opacity="0.93"/>
             </Grid.Background>
         </Grid>
-        <Grid x:Name="grListarIngresos" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
+        <Grid x:Name="grListarIngresos" Visibility="Visible" IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
                 <SolidColorBrush Color="White" Opacity="0.925"/>
             </Grid.Background>
@@ -72,12 +72,13 @@
                     <ImageBrush ImageSource="Imagenes/Ico/buscar banner.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <DataGrid x:Name="dtgridListaIngresos"  IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="665"  BorderBrush="Black" Background="#FFA8A4A4"/>
+            <DataGrid x:Name="dtgridListaIngresos"  IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="74,217,0,0" VerticalAlignment="Top" Width="312"  BorderBrush="Black" Background="#FFA8A4A4"/>
             <Button x:Name="btnGenerarReporteIngresos" Content="Generar Reporte" HorizontalAlignment="Left" Margin="590,539,0,0" VerticalAlignment="Top" Width="128" Height="63" Click="btnGenerarReporteIngresos_Click"
                     Background="#FF03030F"
                     Foreground="White"
                     FontFamily="Arial"
                     FontSize="20" Style="{DynamicResource RoundedButtonStyle}"/>
+            <DataGrid x:Name="dtgridListaEgresos"  IsReadOnly="True" ItemsSource="{Binding}" Visibility="Visible" IsEnabled="True" HorizontalAlignment="Left" Height="287" Margin="427,217,0,0" VerticalAlignment="Top" Width="312"  BorderBrush="Black" Background="#FFA8A4A4"/>
         </Grid>
         <Grid x:Name="grListarConsumos" Visibility="Hidden" IsEnabled="True" Margin="390,145,21,44">
             <Grid.Background>
