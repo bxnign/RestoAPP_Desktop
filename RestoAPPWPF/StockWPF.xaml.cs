@@ -560,7 +560,7 @@ namespace RestoAPPWPF
             StockNegocio stock = new StockNegocio();
             ProductosNegocio producto = new ProductosNegocio();
             datos = producto.ListarProductos();
-          //  datos = stock.ListarStock();
+          //datos = stock.ListarStock();
 
                 foreach (DataRow row in datos.Rows)
                 {

@@ -144,8 +144,8 @@
             <ComboBox  x:Name="cboBuscarPorEstado"  HorizontalAlignment="Left" Height="23" Margin="57,208,0,0"   VerticalAlignment="Top" Width="189" BorderBrush="Black" RenderTransformOrigin="0.484,2.565" SelectionChanged="cboBuscarPorEstado_SelectionChanged"  >
                 <ComboBoxItem BorderBrush="Black" x:Name="cboItemSeleccioneEst" IsSelected="True"  Content="Seleccione"></ComboBoxItem>
                 <ComboBoxItem BorderBrush="Black" x:Name="cboItemDisponibleEst" Content="Disponible"></ComboBoxItem>
-                <ComboBoxItem BorderBrush="Black" x:Name="cboItemNoDisponibleEst" Content="No disponible"></ComboBoxItem>
-                <ComboBoxItem BorderBrush="Black" x:Name="cboItemEnLimpiezaEst" Content="En limpieza"></ComboBoxItem>
+                <ComboBoxItem BorderBrush="Black" x:Name="cboItemNoDisponibleEst" Content="No Disponible"></ComboBoxItem>
+                <ComboBoxItem BorderBrush="Black" x:Name="cboItemEnLimpiezaEst" Content="En Limpieza"></ComboBoxItem>
             </ComboBox>
             <Button x:Name="btnBuscar" Content="btnBuscar" HorizontalAlignment="Left" Margin="317,184,0,0" VerticalAlignment="Top" Width="50" Height="47" BorderBrush="{x:Null}" Foreground="{x:Null}"  RenderTransformOrigin="-0.14,0.024" Click="btnBuscar_Click">
                 <Button.Background>
