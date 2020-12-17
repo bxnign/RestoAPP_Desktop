@@ -110,7 +110,8 @@ namespace RestoAPPWPF
                     {
                         if (ValidacionNumeros(txtCantidad.Text, txtPrecio.Text))
                         {
-                            porcion.Cant_porcion = Convert.ToDecimal(txtCantidad.Text);
+                            decimal numero = Convert.ToDecimal(txtCantidad.Text.Replace(",", "."));
+                            porcion.Cant_porcion = numero;
                             porcion.Id_producto = cboNombreProd.Text;
                             porcion.Nombre_porcion = txtNombrePorcion.Text;
                             porcion.Precio_porcion = Convert.ToInt32(txtPrecio.Text);
@@ -132,8 +133,9 @@ namespace RestoAPPWPF
                     {
                         if (ValidacionNumeros(txtCantidadMod.Text, txtPrecioMod.Text))
                         {
+                            decimal numero = Convert.ToDecimal(txtCantidadMod.Text.Replace(",", "."));
                             porcion.Id_porcion = Convert.ToInt32(txtIdPorcionMod.Text);
-                            porcion.Cant_porcion = Convert.ToDecimal(txtCantidadMod.Text);
+                            porcion.Cant_porcion = numero;
                             porcion.Id_producto = cboNombreProductoMod.Text;
                             porcion.Nombre_porcion = txtNombrePorcionMod.Text;
                             porcion.Precio_porcion = Convert.ToInt32(txtPrecioMod.Text);
@@ -174,7 +176,8 @@ namespace RestoAPPWPF
 
                 txtIdPorcionMod.Text = view.Row.ItemArray[0].ToString();
                 txtNombrePorcionMod.Text = view.Row.ItemArray[1].ToString();
-                txtCantidadMod.Text = view.Row.ItemArray[2].ToString();
+                string cantidad = view.Row.ItemArray[2].ToString().Replace(".",",");
+                txtCantidadMod.Text = cantidad;
                 cboNombreProductoMod.Text = view.Row.ItemArray[3].ToString();
                 txtPrecioMod.Text = view.Row.ItemArray[4].ToString();
                 txtIdPorcionMod.IsEnabled = false;
@@ -261,7 +264,7 @@ namespace RestoAPPWPF
 
         private bool ValidacionSignos(string dato)
         {
-            string val2 = "^[0-9]*$";
+            string val2 = "^[,0-9]*$";
             if (Regex.IsMatch(dato, val2))
             {
                 return true;
@@ -546,9 +549,14 @@ namespace RestoAPPWPF
             }
         }
 
+        private void TranformarComa()
+        {
+            txtCantidad.Text.Replace(",", ".");
+        }
+
         private void txtCantidad_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab)
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Tab || e.Key == Key.OemComma )
             {
                 e.Handled = false;
             }
@@ -628,6 +636,69 @@ namespace RestoAPPWPF
             {
                 e.Handled = true;
             }
+        }
+
+        public void CargarDistribucionMod(string text)
+        {
+            DataTable datos = new DataTable();
+            StockNegocio stock = new StockNegocio();
+            ProductosNegocio producto = new ProductosNegocio();
+            datos = producto.ListarProductos();
+            //datos = stock.ListarStock();
+
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (row["Nombre del producto"].ToString() == text)
+                {
+                    lbldistribucionmod.Content = row["Distribucion"].ToString();
+                    lbldistribucionmod.Visibility = Visibility.Visible;
+                    break;
+                }
+                else
+                {
+                    lbldistribucionmod.Content = "";
+                    lbldistribucionmod.Visibility = Visibility.Hidden;
+                }
+
+            }
+        }
+        private void cboNombreProductoMod_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string text = (sender as ComboBox).SelectedItem as string;
+            CargarDistribucionMod(text);
+        }
+
+        public void CargarDistribucion(string text)
+        {
+            DataTable datos = new DataTable();
+            StockNegocio stock = new StockNegocio();
+            ProductosNegocio producto = new ProductosNegocio();
+            datos = producto.ListarProductos();
+            //datos = stock.ListarStock();
+
+            foreach (DataRow row in datos.Rows)
+            {
+
+                if (row["Nombre del producto"].ToString() == text)
+                {
+                    lbldistribucion.Content = row["Distribucion"].ToString();
+                    lbldistribucion.Visibility = Visibility.Visible;
+                    break;
+                }
+                else
+                {
+                    lbldistribucion.Content = "";
+                    lbldistribucion.Visibility = Visibility.Hidden;
+                }
+
+            }
+        }
+
+        private void cboNombreProd_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string text = (sender as ComboBox).SelectedItem as string;
+            CargarDistribucion(text);
         }
     }
 }

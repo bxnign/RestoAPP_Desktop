@@ -58,7 +58,7 @@
             <Label Content="Productos" HorizontalAlignment="Left" Margin="3,-74,0,0" VerticalAlignment="Top" Width="344" Foreground="White" FontSize="48" Height="74" FontStyle="Italic" FontWeight="Bold"/>
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/agregar banner.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="61,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
-            <Label Content="Tipo de peso:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
+            <Label Content="Tipo de Distribucion:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Tipo Especificacion:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
             <TextBox MaxLength="25" x:Name="txtNombre" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombre_KeyDown"/>
             <ComboBox x:Name="cboDistribucion" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14">
@@ -88,7 +88,7 @@
             <Image HorizontalAlignment="Left" Height="74" Margin="675,-74,0,0" VerticalAlignment="Top" Width="64" Source="Imagenes/Ico/modificar boton.png" RenderTransformOrigin="1.391,0.77"/>
             <Label Content="Id Producto:" HorizontalAlignment="Left" Margin="61,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
             <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="61,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.885"/>
-            <Label Content="Tipo de peso:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
+            <Label Content="Tipo de Distribucion:" HorizontalAlignment="Left" Margin="61,250,0,0" VerticalAlignment="Top"/>
             <Label Content="Tipo Especificacion:" HorizontalAlignment="Left" Margin="61,339,0,0" VerticalAlignment="Top"/>
             <TextBox MaxLength="4" x:Name="txtIdProductoMod"  IsEnabled="False" HorizontalAlignment="Left" Height="26" Margin="189,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtIdProductoMod_KeyDown"/>
             <TextBox MaxLength="25" x:Name="txtNombreMod" HorizontalAlignment="Left" Height="26" Margin="189,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Background="#FFAAA9A9" BorderBrush="Black" FontSize="14" KeyDown="txtNombreMod_KeyDown"/>
