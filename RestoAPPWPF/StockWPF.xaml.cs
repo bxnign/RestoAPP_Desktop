@@ -441,6 +441,9 @@ namespace RestoAPPWPF
                     if (stock.Eliminar() == 1)
                     {
                         MessageBox.Show("Se Elimino el stock exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = stock.ListarStock();
+                        dtgridListaStock.ItemsSource = datos.DefaultView;
                         conexion.Close();
                     }
                     else

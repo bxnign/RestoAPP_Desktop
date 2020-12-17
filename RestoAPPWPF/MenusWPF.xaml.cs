@@ -308,6 +308,9 @@ namespace RestoAPPWPF
                     if (menus.Eliminar() == 1 && menus.EliminarRefPorcionesMenu() == 1)
                     {
                         MessageBox.Show("Se Elimino el menu Exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = menus.Listar();
+                        dtListarMenus.ItemsSource = datos.DefaultView;
                         conexion.Close();
                     }
                     else

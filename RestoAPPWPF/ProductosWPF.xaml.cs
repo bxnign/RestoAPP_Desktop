@@ -156,7 +156,7 @@ namespace RestoAPPWPF
             cboEspecificacionMod.SelectedIndex = 0; 
         }
 
-        // LOS COMBOBOX NUNCA NUNCA NUNCA DEBEN QUEDAR VACIOS , FIJARSE EN ESOS DETALLES IMPORTANTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEES
+        // LOS COMBOBOX NUNCA NUNCA NUNCA DEBEN QUEDAR VACIOS , FIJARSE EN ESOS DETALLES IMPORTANTES
         public void VaciarCasillasAgregar()
         {
             txtNombre.Text = string.Empty;
@@ -303,7 +303,9 @@ namespace RestoAPPWPF
             ProductosNegocio productos = new ProductosNegocio();
             DataTable datos = new DataTable();
             datos = productos.ListarProductos();
-           
+
+
+
             try
             {
 
@@ -427,6 +429,9 @@ namespace RestoAPPWPF
                     if (productos.Eliminar() == 1)
                     {
                         MessageBox.Show("Se Elimino el producto Exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = productos.ListarProductos();
+                        dtgridListaProductos.ItemsSource = datos.DefaultView;
                         conexion.Close();
                     }
                     else

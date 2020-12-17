@@ -248,6 +248,9 @@ namespace RestoAPPWPF
                     if (retiro_stock.Eliminar() == 1)
                     {
                         MessageBox.Show("El stock ha vuelto desde cocina, registro del retiro eliminado correctamente");
+                        DataTable datos = new DataTable();
+                        datos = retiro_stock.ListarStock();
+                        dtgridListaRetiroStock.ItemsSource = datos.DefaultView;
                         conexion.Close();
                     }
                     else

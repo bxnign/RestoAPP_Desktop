@@ -194,7 +194,7 @@ namespace RestoAPPBD
         public Table ReporteTotalMinutosPedidos()
         {
             conexion.Open();
-            string oracle = "SELECT TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24))))||':'||TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) * 60))) ||':'|| TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) * 60))) PROMEDIO FROM PEDIDOS";
+            string oracle = "SELECT TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24))))||':'||TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) * 60))) ||':'|| TRUNC(AVG(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) * 60))) PROMEDIO FROM PEDIDOS where ID_EST_PEDIDO = 2";
             OracleCommand comando = new OracleCommand(oracle, conexion);
             OracleDataReader reader = comando.ExecuteReader();
             OracleDataAdapter adaptador = new OracleDataAdapter();
@@ -219,7 +219,7 @@ namespace RestoAPPBD
         public Table ReporteMinutosPedidos()
         {
             conexion.Open();
-            string oracle = "select id_pedido id, to_char(HORA_INI_PEDIDO, 'dd/mm/yyyy') Fecha, trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) ||':'|| round(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) * 60)) ||':'|| round(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) * 60)) TIEMPO from pedidos";
+            string oracle = "select id_pedido id, to_char(HORA_INI_PEDIDO, 'dd/mm/yyyy') Fecha, trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) ||':'|| round(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (24)) * 60)) ||':'|| round(trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 60 * 24)) - (trunc((HORA_TER_PEDIDO - HORA_INI_PEDIDO) * (60 * 24)) * 60)) TIEMPO from pedidos where ID_EST_PEDIDO = 2";
             OracleCommand comando = new OracleCommand(oracle, conexion);
             OracleDataReader reader = comando.ExecuteReader();
             OracleDataAdapter adaptador = new OracleDataAdapter();

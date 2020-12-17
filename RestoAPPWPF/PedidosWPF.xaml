@@ -38,12 +38,14 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Grid Visibility="Visible" x:Name="gridContenedor" Margin="63,81,72,114">
-            <Grid.Background>
-                <SolidColorBrush Color="White" Opacity="0.92"/>
-            </Grid.Background>
+        <ScrollViewer x:Name="scroll" Grid.Row="1" Margin="63,81,72,114">
+            <Grid Visibility="Visible" x:Name="gridContenedor" Height="1752" Width="1050">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.92"/>
+                </Grid.Background>
 
-        </Grid>
+            </Grid>
+        </ScrollViewer>
         <Button x:Name="btnCerrar" HorizontalAlignment="Left" Margin="1173,0,0,0" VerticalAlignment="Top" Width="29" Height="26" Click="btnCerrar_Click">
             <Button.Background>
                 <SolidColorBrush Color="White" Opacity="0.84"/>

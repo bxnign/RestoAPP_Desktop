@@ -235,8 +235,8 @@ namespace RestoAPPWPF
             txtApellidoPatMod.Text = string.Empty;
             txtApellidoMatMod.Text = string.Empty;
             dtFechaNacMod.Text = string.Empty;
-            cboCargoMod.SelectedItem = cboitemSeleccione;
-            cboRolMod.SelectedItem = cborolSeleccione;
+            cboCargoMod.SelectedItem = cboitemSeleccioneMOD;
+            cboRolMod.SelectedItem = cborolSeleccioneMOD;
             txtpassmod.Text = string.Empty;
             txtCorreoMod.Text = string.Empty;
 
@@ -250,8 +250,8 @@ namespace RestoAPPWPF
             txtApellidoMat.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             dtpFechaNac.Text = string.Empty;
-            cboCargo.SelectedItem = cboitemSeleccioneMOD;
-            cboRoles.SelectedItem = cborolSeleccioneMOD;
+            cboCargo.SelectedItem = cboitemSeleccione;
+            cboRoles.SelectedItem = cborolSeleccione;
         }
 
         public bool ValidarCorreoAgregar()
@@ -527,6 +527,9 @@ namespace RestoAPPWPF
                     if (personas.Eliminar() == 1)
                     {
                         MessageBox.Show("Se Elimino La persona Exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = personas.ListarPersonas();
+                        dtgridListaPersonas.ItemsSource = datos.DefaultView;
                         conexion.Close();
                     }
                     else

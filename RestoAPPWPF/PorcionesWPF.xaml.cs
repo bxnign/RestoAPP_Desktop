@@ -151,14 +151,14 @@ namespace RestoAPPWPF
         {
             txtIdPorcionMod.Text = string.Empty;
             txtCantidadMod.Text = string.Empty;
-            cboNombreProductoMod.Text = string.Empty;
+            cboNombreProductoMod.SelectedIndex = 0;
             txtNombrePorcionMod.Text = string.Empty;
             txtPrecioMod.Text = string.Empty;
         }
         public void VaciarCasillasAgregar()
         {
             txtCantidad.Text = string.Empty;
-            cboNombreProd.Text = string.Empty;
+            cboNombreProd.SelectedIndex = 0;
             txtNombrePorcion.Text = string.Empty;
             txtPrecio.Text = string.Empty;
         }
@@ -472,6 +472,10 @@ namespace RestoAPPWPF
                     if (porciones.EliminarPorciones() == 1)
                     {
                         MessageBox.Show("La porcion se elimino exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = porciones.ListarPorciones();
+                        dtgridListaPorcion.ItemsSource = datos.DefaultView;
+                        conexion.Close();
                         conexion.Close();
                     }
                     else

@@ -27,11 +27,13 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <Grid Visibility="Visible" x:Name="gridContenedor" Margin="63,51,72,108">
-            <Grid.Background>
-                <SolidColorBrush Color="White" Opacity="0.92"/>
-            </Grid.Background>
-        </Grid>
+        <ScrollViewer x:Name="scroll" Grid.Row="1" Margin="63,81,72,114">
+            <Grid Visibility="Visible" x:Name="gridContenedor" Height="1777" Width="1085">
+                <Grid.Background>
+                    <SolidColorBrush Color="White" Opacity="0.92"/>
+                </Grid.Background>
+            </Grid>
+        </ScrollViewer>
         <Button  x:Name="btnActualizar"  Margin="980,713,0,0"
                     Background="{x:Null}"
                 Foreground="{x:Null}"

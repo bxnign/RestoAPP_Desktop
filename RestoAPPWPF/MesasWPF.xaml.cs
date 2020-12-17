@@ -265,6 +265,10 @@ namespace RestoAPPWPF
                     if (mesas.Eliminar() == 1)
                     {
                         MessageBox.Show("Se Elimino La mesa Exitosamente");
+                        DataTable datos = new DataTable();
+                        datos = mesas.Listar();
+                        dtListarMesas.ItemsSource = datos.DefaultView;
+                        dtListarMesas.Columns.RemoveAt(0);
                         conexion.Close();
                     }
                     else
